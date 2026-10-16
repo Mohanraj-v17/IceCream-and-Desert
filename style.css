@@ -13,7 +13,6 @@ body {
   font-family: var(--font-fun);
 }
 
-/* Permanent Fixed Floating Navbar Lock */
 #navbar-placeholder {
   position: fixed !important;
   top: 0.75rem !important;
@@ -27,7 +26,6 @@ body {
   pointer-events: auto !important;
 }
 
-/* Dessert Card Hover Bounce Effect */
 .dessert-card {
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
@@ -35,7 +33,6 @@ body {
   transform: translateY(-8px) scale(1.02);
 }
 
-/* 1. Card Lift + Soft Neon Sugar Glow */
   .dessert-hover {
     transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
                 box-shadow 0.35s ease, 
@@ -52,7 +49,6 @@ body {
     box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px 2px rgba(255, 107, 139, 0.15);
   }
 
-  /* 2. Interactive Button Pop & Click Squash */
   .btn-hover {
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
                 box-shadow 0.2s ease, 
@@ -66,7 +62,6 @@ body {
     transform: translateY(1px) scale(0.97);
   }
 
-  /* 3. Image Zoom Wrapper */
   .img-zoom-box img {
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -74,7 +69,6 @@ body {
     transform: scale(1.08);
   }
 
-  /* 4. Filter Tab & Chip Hover */
   .chip-hover {
     transition: all 0.25s ease;
   }

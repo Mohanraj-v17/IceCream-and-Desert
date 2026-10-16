@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  // ==========================================================================
-  // 1. INSTANT ZERO-FLASH EXECUTION (Runs immediately on load)
-  // ==========================================================================
   function applyThemeImmediately() {
     try {
       const savedTheme = localStorage.getItem('sugarswirl_theme') || 'light';
@@ -21,9 +18,6 @@
   }
   applyThemeImmediately();
 
-  // ==========================================================================
-  // 2. SWEET TOAST NOTIFICATION UTILITY
-  // ==========================================================================
   function showToast(message, type = 'pink') {
     let container = document.getElementById('toast-container');
     if (!container) {
@@ -61,9 +55,6 @@
     showToast(`Added "${item}" to your dessert tray!`, 'pink');
   }
 
-  // ==========================================================================
-  // 3. THEME & RTL CONTROLS
-  // ==========================================================================
   function syncThemeIcons() {
     const isDark = document.documentElement.classList.contains('dark');
     const icon = document.getElementById('theme-icon');
@@ -95,9 +86,6 @@
     return false;
   }
 
-  // ==========================================================================
-  // 4. DYNAMIC GLOBAL NAVBAR & MOBILE DRAWER
-  // ==========================================================================
   function renderNavbar() {
     const mount = document.getElementById('navbar-placeholder');
     if (!mount) return;
@@ -174,22 +162,22 @@
         <div id="mobile-menu" class="hidden mt-2.5 max-w-lg mx-auto bg-white/95 dark:bg-[#1E1715]/95 backdrop-blur-2xl rounded-3xl p-5 sm:p-6 shadow-2xl border border-pink-100 dark:border-stone-800 pointer-events-auto space-y-1.5 text-xs font-bold transition-all max-h-[calc(100vh-5.5rem)] overflow-y-auto overscroll-contain">
           <div class="text-[10px] uppercase tracking-wider text-rose-500 font-black px-3 pt-1">Home Editions</div>
           <a href="index.html" class="drawer-link py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 flex justify-between items-center ${isLinkActive('index.html')}">
-            <span>Home 1 (Classic Parlour)</span> <i class="fas fa-ice-cream text-rose-500"></i>
+            <span>Home 1</span> <i class="fas fa-ice-cream text-rose-500"></i>
           </a>
           <a href="home-2.html" class="drawer-link py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 flex justify-between items-center ${isLinkActive('home-2.html')}">
-            <span>Home 2 (Artisan Boutique)</span> <i class="fas fa-candy-cane text-amber-500"></i>
+            <span>Home 2</span> <i class="fas fa-candy-cane text-amber-500"></i>
           </a>
           
           <hr class="border-pink-100 dark:border-stone-800 my-1">
           <div class="text-[10px] uppercase tracking-wider text-amber-600 font-black px-3 pt-1">Parlour Treats & Pages</div>
-          <a href="menu.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('menu.html')}">🍦 Menu & 36 Flavours</a>
-          <a href="sundaes.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('sundaes.html')}">🍨 Signature Molten Sundaes</a>
-          <a href="pricing.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('pricing.html')}">🏷️ Transparent Pricing & Tubs</a>
-          <a href="offers.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('offers.html')}">🎁 Special Deals & Vouchers</a>
-          <a href="party-orders.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('party-orders.html')}">🎉 Bulk Tubs & Scoop Wagon</a>
-          <a href="about.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('about.html')}">📖 Our Churning Philosophy</a>
-          <a href="faq.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('faq.html')}">❓ Allergen & Parlour FAQs</a>
-          <a href="contacts.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('contacts.html')}">📍 Visit Hosur Parlour</a>
+          <a href="menu.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('menu.html')}">🍦 Menu </a>
+          <a href="sundaes.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('sundaes.html')}">🍨 Sundaes</a>
+          <a href="pricing.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('pricing.html')}">🏷️Pricing & Tubs</a>
+          <a href="offers.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('offers.html')}">🎁 Offers</a>
+          <a href="party-orders.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('party-orders.html')}">🎉 Party Orders</a>
+          <a href="about.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('about.html')}">📖 About us</a>
+          <a href="faq.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('faq.html')}">❓ FAQs</a>
+          <a href="contacts.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('contacts.html')}">📍 Contacts</a>
           
           <div class="pt-3">
             <a href="menu.html" class="drawer-link block w-full py-3 text-center rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 text-white font-black text-xs uppercase tracking-wider shadow-lg hover:scale-[1.02] active:scale-95 transition-all">
@@ -250,9 +238,6 @@
     }
   }
 
-  // ==========================================================================
-  // 5. DYNAMIC FOOTER
-  // ==========================================================================
   function renderFooter() {
     const mount = document.getElementById('footer-placeholder');
     if (!mount) return;
@@ -331,9 +316,6 @@
     `;
   }
 
-  // ==========================================================================
-  // 6. MASTER MENU ENGINE
-  // ==========================================================================
   let menuCurrentCat = 'all';
   let menuCurrentQuery = '';
 
@@ -403,9 +385,6 @@
     }
   }
 
-  // ==========================================================================
-  // 7. MASTER FAQ ENGINE
-  // ==========================================================================
   let faqCurrentCat = 'all';
   let faqCurrentQuery = '';
 
@@ -478,9 +457,6 @@
     }
   }
 
-  // ==========================================================================
-  // 8. SUNDAES SPOTLIGHT & PROMO VOUCHERS
-  // ==========================================================================
   const sundaeSpotlightData = {
     volcano: {
       title: "Molten Fudge",
@@ -565,13 +541,9 @@
     showToast(`Promo Code "${code}" copied!`, 'amber');
   }
 
-  // ==========================================================================
-  // 9. EVENT DELEGATION & ANCHOR ACTIVE SWITCHER (Zero Reload Guard)
-  // ==========================================================================
   function setupGlobalEventDelegation() {
     document.addEventListener('click', function (e) {
       
-      // 1. Menu Category Tabs Click
       const menuBtn = e.target.closest('.filter-btn');
       if (menuBtn) {
         e.preventDefault();
@@ -585,7 +557,6 @@
         return;
       }
 
-      // 2. FAQ Category Tabs Click
       const faqBtn = e.target.closest('.faq-filter-btn');
       if (faqBtn) {
         e.preventDefault();
@@ -599,7 +570,6 @@
         return;
       }
 
-      // 3. Hero Anchor Jump Chips (#hash)
       const anchor = e.target.closest('a[href^="#"]');
       if (anchor) {
         e.preventDefault();
@@ -610,7 +580,6 @@
 
         const targetEl = document.querySelector(hash);
 
-        // Active color switch on sibling buttons
         const chipContainer = anchor.closest('.flex');
         if (chipContainer) {
           const siblingChips = chipContainer.querySelectorAll('a[href^="#"]');
@@ -677,14 +646,10 @@
     });
   }
 
-  // ==========================================================================
-  // 10. DYNAMIC FAVICON SWAPPER HELPER
-  // ==========================================================================
   function updateDynamicFavicon(doc) {
     if (!doc) return;
     const newIcon = doc.querySelector('link[rel*="icon"]');
     if (newIcon) {
-      // Remove all existing icon links so browser updates tab immediately
       document.querySelectorAll('link[rel*="icon"]').forEach(el => el.remove());
 
       const freshLink = document.createElement('link');
@@ -695,9 +660,6 @@
     }
   }
 
-  // ==========================================================================
-  // 11. SEAMLESS SPA NAVIGATION ROUTER (Zero Reload + Dynamic Favicon/Title)
-  // ==========================================================================
   function setupSmartNavigation() {
     document.addEventListener('click', async function (e) {
       const link = e.target.closest('a');
@@ -706,7 +668,6 @@
       const href = link.getAttribute('href');
       if (!href) return;
 
-      // Ignore anchor jumps, mailto, tel, javascript calls
       if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) {
         return;
       }
@@ -716,7 +677,6 @@
 
       const targetUrl = new URL(link.href, window.location.href);
 
-      // Ignore external origin links
       if (targetUrl.origin !== window.location.origin) {
         return;
       }
@@ -724,14 +684,12 @@
       const curPage = window.location.pathname.split('/').pop() || 'index.html';
       const targetPage = targetUrl.pathname.split('/').pop() || 'index.html';
 
-      // Clicking link to current page: smooth scroll to top without reload
       if (curPage === targetPage && !targetUrl.hash) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
 
-      // If running on local server (Live Server / Node / Vite)
       if (window.location.protocol !== 'file:') {
         e.preventDefault();
         try {
@@ -753,7 +711,6 @@
               curMain.className = newMain.className;
               curMain.style.opacity = '1';
 
-              // 1. Update Title & Favicon dynamically!
               document.title = doc.title || document.title;
               updateDynamicFavicon(doc);
 
@@ -802,9 +759,6 @@
     });
   }
 
-  // ==========================================================================
-  // 12. GLOBAL FORM SUBMISSION INTERCEPTOR (Permanent Reload Blocker)
-  // ==========================================================================
   function blockAccidentalFormReloads() {
     document.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -830,9 +784,6 @@
     }, true);
   }
 
-  // ==========================================================================
-  // 13. SUNDAE LIVE MIXER & PARTY ESTIMATOR
-  // ==========================================================================
   const sundaeState = {
     base: { name: 'Madagascar Vanilla', price: 3.50 },
     drizzle: { name: 'Hot Fudge Lava', price: 1.00 },
@@ -925,9 +876,6 @@
     return false;
   }
 
-  // ==========================================================================
-  // 14. GLOBAL WINDOW EXPOSURES
-  // ==========================================================================
   window.toggleTheme = toggleTheme;
   window.toggleDirection = toggleDirection;
   window.toastCart = toastCart;
@@ -942,9 +890,6 @@
   window.quickFaq = quickFaq;
   window.copyCode = copyCode;
 
-  // ==========================================================================
-  // 15. AUTO INITIALIZATION ON DOM READY
-  // ==========================================================================
   document.addEventListener('DOMContentLoaded', () => {
     renderNavbar();
     renderFooter();

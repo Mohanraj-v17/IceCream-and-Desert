@@ -9,7 +9,6 @@
   
   <meta name="description" content="Explore our complete menu of small-batch Italian gelato scoops, molten sundaes, loaded freakshakes, gelato cakes, and vegan sorbets.">
 
-  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs instantly in head before <body> paints) -->
   <script>
     (function () {
       try {
@@ -28,7 +27,6 @@
     })();
   </script>
   
-  <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -54,16 +52,13 @@
     }
   </script>
 
-  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* 1. Card Lift & Neon Dessert Glow */
     .dessert-hover {
       transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
                   box-shadow 0.35s ease, 
@@ -80,7 +75,6 @@
       box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.75), 0 0 20px 2px rgba(255, 107, 139, 0.15);
     }
 
-    /* 2. Interactive Button Pop & Active Squash */
     .btn-hover {
       transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
                   box-shadow 0.2s ease, 
@@ -95,7 +89,6 @@
       transform: translateY(1px) scale(0.96);
     }
 
-    /* 3. Image Micro Zoom */
     .img-zoom-box img {
       transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
     }
@@ -103,7 +96,6 @@
       transform: scale(1.08);
     }
 
-    /* 4. Filter Chips & Quick Chips Hover */
     .chip-hover {
       transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
@@ -130,16 +122,10 @@
 </head>
 <body class="bg-[#FFF9F0] dark:bg-[#14100E] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
 
-  <!-- ====================================================================
-       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
-       ==================================================================== -->
   <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
 
   <main class="pt-24 lg:pt-28 flex-1">
 
-    <!-- ====================================================================
-         SECTION 1: HERO & RESPONSIVE SEARCH BAR (Interactive Hovers)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-14 text-center">
       <div class="max-w-2xl mx-auto space-y-3 sm:space-y-4">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 dark:bg-rose-950/70 text-rose-700 dark:text-rose-300 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
@@ -155,7 +141,6 @@
           Crafted with 100% single-farm mountain dairy, slow-melt chocolate lava, and cold-pressed seasonal fruits. Filter by category or search your craving below.
         </p>
 
-        <!-- Search Bar with Absolute Centered Icons -->
         <div class="pt-2 sm:pt-4 max-w-lg mx-auto w-full px-1">
           <div class="relative flex items-center w-full shadow-lg rounded-full group">
             <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-rose-500 group-focus-within:scale-110 transition-transform">
@@ -172,7 +157,6 @@
             </button>
           </div>
 
-          <!-- Quick Trending Chips with Hover Effects -->
           <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-3 text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400">
             <span class="font-bold">Trending:</span>
             <button type="button" onclick="quickFilter('pistachio')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100/80 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Pistachio</button>
@@ -183,7 +167,6 @@
         </div>
       </div>
 
-      <!-- Category Filter Tabs: Responsive Wrap & Button Hover -->
       <div class="flex flex-wrap items-center justify-center gap-2 pt-6 sm:pt-8" id="category-tabs">
         <button class="filter-btn btn-hover active px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-rose-500 text-white shadow-md shadow-rose-500/25" data-cat="all">
           ✨ All Treats
@@ -206,13 +189,9 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 2: DESSERT PRODUCTS GRID (All Cards with Interactive Hovers)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-4 pb-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8 items-stretch" id="menu-grid">
         
-        <!-- Item 1: Scoop -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="scoop" data-name="madagascar vanilla bean">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -236,7 +215,6 @@
           </div>
         </div>
 
-        <!-- Item 2: Scoop -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="scoop" data-name="belgian dark chocolate 70% truffle">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -260,7 +238,6 @@
           </div>
         </div>
 
-        <!-- Item 3: Scoop -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="scoop" data-name="sicilian bronte roasted pistachio">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -284,7 +261,6 @@
           </div>
         </div>
 
-        <!-- Item 4: Sundae -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="sundae" data-name="molten fudge volcano bowl sundae brownie">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -308,7 +284,6 @@
           </div>
         </div>
 
-        <!-- Item 5: Sundae -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="sundae" data-name="wild berry cheesecake waffle stack sundae">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -332,7 +307,6 @@
           </div>
         </div>
 
-        <!-- Item 6: Shake -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="shake" data-name="salted pretzel caramel freakshake malt">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -356,7 +330,6 @@
           </div>
         </div>
 
-        <!-- Item 7: Shake -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="shake" data-name="matcha mint botanical malt shake green tea">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -380,7 +353,6 @@
           </div>
         </div>
 
-        <!-- Item 8: Cake -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="cake" data-name="sicilian pistachio rose gelato cake torte">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -404,7 +376,6 @@
           </div>
         </div>
 
-        <!-- Item 9: Cake -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="cake" data-name="black forest dark chocolate raspberry truffle cake">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -428,7 +399,6 @@
           </div>
         </div>
 
-        <!-- Item 10: Vegan -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="vegan" data-name="ratnagiri alphonso mango sorbetto vegan dairy free">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -452,7 +422,6 @@
           </div>
         </div>
 
-        <!-- Item 11: Vegan -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="vegan" data-name="wild mountain black raspberry sorbetto vegan berry">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -476,7 +445,6 @@
           </div>
         </div>
 
-        <!-- Item 12: Vegan -->
         <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="vegan" data-name="creamy coconut cocoa chocolate fudge gelato vegan">
           <div class="space-y-3">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -502,7 +470,6 @@
 
       </div>
 
-      <!-- No items found state -->
       <div id="no-results" class="hidden text-center py-12 sm:py-16 space-y-3">
         <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-pink-100 dark:bg-stone-800 text-rose-500 mx-auto flex items-center justify-center text-xl sm:text-2xl shadow-sm">
           🔍
@@ -512,9 +479,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 3: WAFFLE CONES & VESSEL PAIRING BAR (Interactive Hovers)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       <div class="bg-gradient-to-br from-amber-50 to-pink-50 dark:from-[#1E1715] dark:to-[#221614] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-12 border border-pink-200 dark:border-stone-800 shadow-xl space-y-6 sm:space-y-8">
         <div class="text-center max-w-xl mx-auto space-y-1.5 sm:space-y-2">
@@ -564,9 +528,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 4: CHEF'S LIMITED-BATCH SECRET DROPS (Hover Pop)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       <div class="bg-stone-900 text-white rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-14 border border-stone-800 shadow-2xl relative overflow-hidden">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4 text-center sm:text-left">
@@ -615,9 +576,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 5: DIETARY & ALLERGEN TRANSPARENCY MATRIX (Hover Lift)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       <div class="bg-white dark:bg-[#1C1614] rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-pink-200 dark:border-stone-800 shadow-md space-y-5 sm:space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 border-b border-stone-100 dark:border-stone-800 pb-3 sm:pb-4 text-center sm:text-left">
@@ -649,9 +607,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 6: FAQ ACCORDION (Interactive Hover & Rotate)
-         ==================================================================== -->
     <section class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       <div class="text-center mb-8 sm:mb-10 space-y-2">
         <span class="text-xs font-black uppercase tracking-widest text-rose-500">Got Questions?</span>
@@ -691,9 +646,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 7: TAKEAWAY TUBS REDIRECT BANNER
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
       <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
         <div class="space-y-2 sm:space-y-3 max-w-xl">
@@ -711,14 +663,8 @@
 
   </main>
 
-  <!-- ====================================================================
-       SHARED FOOTER PLACEHOLDER (Injected by app.js)
-       ==================================================================== -->
   <div id="footer-placeholder"></div>
 
-
-
-  <!-- Shared Global JavaScript Engine -->
   <script src="app.js"></script>
 </body>
 </html>

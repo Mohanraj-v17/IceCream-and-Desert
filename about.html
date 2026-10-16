@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Our Artisan Parlour & Craft | SugarSwirl & Co.</title>
   
-  <!-- Browser Tab Favicon Logo -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍦</text></svg>">
   
   <meta name="description" content="Discover SugarSwirl's artisan philosophy: single-farm grass-fed dairy, 12-hour maturation churning, and wholehearted dessert craft in Hosur.">
 
-  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs instantly in head before <body> paints) -->
   <script>
     (function () {
       try {
@@ -29,7 +27,6 @@
     })();
   </script>
   
-  <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -55,7 +52,6 @@
     }
   </script>
 
-  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -64,7 +60,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* 1. Card Lift & Neon Dessert Glow */
     .dessert-hover {
       transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
                   box-shadow 0.35s ease, 
@@ -81,7 +76,6 @@
       box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.75), 0 0 20px 2px rgba(255, 107, 139, 0.15);
     }
 
-    /* 2. Button Pop & Active Squash */
     .btn-hover {
       transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
                   box-shadow 0.2s ease, 
@@ -96,7 +90,6 @@
       transform: translateY(1px) scale(0.96);
     }
 
-    /* 3. Image Micro Zoom */
     .img-zoom-box img {
       transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
     }
@@ -104,7 +97,6 @@
       transform: scale(1.08);
     }
 
-    /* 4. Filter Chips & Quick Links */
     .chip-hover {
       transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
@@ -131,26 +123,19 @@
 </head>
 <body class="bg-[#FFF9F0] dark:bg-[#120E0D] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
 
-  <!-- ====================================================================
-       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
-       ==================================================================== -->
+
   <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
 
   <main class="pt-24 lg:pt-28 flex-1">
 
-    <!-- ====================================================================
-         SECTION 1: EDITORIAL MANIFESTO HERO (Interactive Hover & Badges)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 sm:pt-4 pb-8 sm:py-12">
       <div class="relative bg-gradient-to-br from-amber-50 via-pink-50/60 to-rose-100/70 dark:from-[#1D1412] dark:via-[#221613] dark:to-[#170E0C] rounded-[2rem] sm:rounded-[3.5rem] p-5 sm:p-10 lg:p-14 border-2 border-pink-200/80 dark:border-stone-800 shadow-xl overflow-hidden">
         
-        <!-- Ambient Decorative Glow -->
         <div class="absolute -top-24 -right-24 w-80 h-80 bg-rose-400/20 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-amber-400/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           
-          <!-- Left Column: Narrative -->
           <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
             
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-stone-800 text-rose-600 dark:text-rose-400 border border-pink-200 dark:border-stone-700 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
@@ -166,7 +151,6 @@
               SugarSwirl & Co. was founded on a simple observation: modern commercial ice cream is mostly pumped air and powdered palm oil. We chose the slower, harder road—partnering directly with highland mountain dairies to slow-churn uncompromised, velvety gelato fresh every single morning.
             </p>
 
-            <!-- Brand Fast-Facts Badges with Hover Micro-Lift -->
             <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-1 sm:pt-2 max-w-lg mx-auto lg:mx-0">
               <div class="dessert-hover p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-stone-800/80 border border-pink-100 dark:border-stone-700 hover:border-rose-400 shadow-sm text-center cursor-default">
                 <span class="text-base sm:text-2xl font-black text-rose-500 font-fun block">Est. 2021</span>
@@ -182,7 +166,6 @@
               </div>
             </div>
 
-            <!-- Action Links with Button Bounce -->
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-2">
               <a href="#churn-lifecycle" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-stone-900 hover:bg-rose-500 text-white font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-rose-500/25 transition-all text-center">
                 Explore How We Churn
@@ -194,7 +177,6 @@
 
           </div>
 
-          <!-- Right Column: Visual Composition with Safe Floating Badges -->
           <div class="lg:col-span-5 relative w-full pt-4 lg:pt-0">
             
             <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-stone-800 aspect-[4/3] sm:aspect-[1/1] img-zoom-box cursor-pointer group">
@@ -205,7 +187,6 @@
               </div>
             </div>
 
-            <!-- Floating Farm Badge Top Left -->
             <div class="absolute -top-2.5 left-2 sm:-left-4 bg-white dark:bg-stone-900 px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl border border-pink-200 dark:border-stone-700 flex items-center gap-2 hover:scale-105 hover:border-rose-400 transition-all cursor-pointer">
               <span class="text-base sm:text-lg">🚜</span>
               <div class="text-left">
@@ -214,7 +195,6 @@
               </div>
             </div>
 
-            <!-- Floating Texture Badge Bottom Right -->
             <div class="absolute -bottom-3 right-2 sm:-right-4 bg-white dark:bg-stone-900 px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl border border-pink-200 dark:border-stone-700 flex items-center gap-2 hover:scale-105 hover:border-amber-400 transition-all cursor-pointer">
               <span class="text-base sm:text-lg">🌡️</span>
               <div class="text-left">
@@ -230,9 +210,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 2: THE 6-STEP COLD-CRAFT CHURNING LIFECYCLE (Hover Lift)
-         ==================================================================== -->
     <section id="churn-lifecycle" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
       <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
         <span class="text-xs font-black uppercase tracking-widest text-rose-500">Methodology</span>
@@ -242,7 +219,6 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch">
         
-        <!-- Step 1 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
           <div class="space-y-2.5">
             <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-rose-500 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">01</div>
@@ -254,7 +230,6 @@
           <span class="text-[10px] font-bold text-rose-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 1 • Gentle Heat</span>
         </div>
 
-        <!-- Step 2 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
           <div class="space-y-2.5">
             <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-stone-950 font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">02</div>
@@ -266,7 +241,6 @@
           <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 2 • 4°C Resting</span>
         </div>
 
-        <!-- Step 3 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
           <div class="space-y-2.5">
             <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">03</div>
@@ -278,7 +252,6 @@
           <span class="text-[10px] font-bold text-emerald-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 3 • Sub-Zero Spin</span>
         </div>
 
-        <!-- Step 4 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-purple-400 dark:hover:border-purple-400 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
           <div class="space-y-2.5">
             <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-500 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">04</div>
@@ -290,7 +263,6 @@
           <span class="text-[10px] font-bold text-purple-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 4 • Manual Swirl</span>
         </div>
 
-        <!-- Step 5 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-pink-400 dark:hover:border-pink-400 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
           <div class="space-y-2.5">
             <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-pink-500 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">05</div>
@@ -302,7 +274,6 @@
           <span class="text-[10px] font-bold text-pink-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 5 • Blast Lock</span>
         </div>
 
-        <!-- Step 6 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
           <div class="space-y-2.5">
             <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-stone-700 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">06</div>
@@ -317,9 +288,7 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 3: OUR 4 CORE CHURNING PILLARS (Interactive Emoji Bounce)
-         ==================================================================== -->
+
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
       <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
         <span class="text-xs font-black uppercase tracking-widest text-rose-500">The Quality Standard</span>
@@ -380,9 +349,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 4: FARM-TO-CONE SOURCING PROVENANCE (Interactive Terroir Bento)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
       <div class="bg-gradient-to-br from-amber-50 via-pink-50 to-rose-50 dark:from-[#1E1715] dark:via-[#221614] dark:to-[#160D0A] rounded-[2rem] sm:rounded-[3.5rem] p-5 sm:p-10 lg:p-12 border-2 border-pink-200 dark:border-stone-800 shadow-xl">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
@@ -433,9 +399,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 5: TIMELINE (Interactive Card Lifts)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
       <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
         <span class="text-xs font-black uppercase tracking-widest text-rose-500">The Journey</span>
@@ -479,9 +442,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 6: MEET OUR MASTER GELATIERS (Micro-Zoom Portraits)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-2 sm:gap-4 text-center md:text-left">
         <div>
@@ -493,7 +453,6 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 items-stretch">
         
-        <!-- Chef 1 -->
         <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full group cursor-pointer">
           <div>
             <div class="aspect-[4/3] w-full overflow-hidden img-zoom-box">
@@ -512,7 +471,6 @@
           </div>
         </div>
 
-        <!-- Chef 2 -->
         <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm flex flex-col justify-between h-full group cursor-pointer">
           <div>
             <div class="aspect-[4/3] w-full overflow-hidden img-zoom-box">
@@ -531,7 +489,6 @@
           </div>
         </div>
 
-        <!-- Chef 3 -->
         <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm flex flex-col justify-between h-full group cursor-pointer">
           <div>
             <div class="aspect-[4/3] w-full overflow-hidden img-zoom-box">
@@ -553,9 +510,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 7: OPEN-KITCHEN HYGIENE PROTOCOL (Hover Lift)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
       <div class="bg-white dark:bg-[#1C1614] rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-pink-200 dark:border-stone-800 shadow-md space-y-5 sm:space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 border-b border-stone-100 dark:border-stone-800 pb-3 sm:pb-4 text-center sm:text-left">
@@ -583,9 +537,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 8: NIGHT OWL PARLOUR VISIT BANNER (Button Pop Hovers)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
       <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
         <div class="space-y-2 sm:space-y-3 max-w-xl">
@@ -608,12 +559,8 @@
 
   </main>
 
-  <!-- ====================================================================
-       SHARED FOOTER PLACEHOLDER (Injected by app.js)
-       ==================================================================== -->
   <div id="footer-placeholder"></div>
 
-  <!-- Shared Global JavaScript Engine -->
   <script src="app.js"></script>
 </body>
 </html>

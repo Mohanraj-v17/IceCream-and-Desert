@@ -9,7 +9,6 @@
   
   <meta name="description" content="Explore decadent molten fudge volcanoes, architectural freakshakes, and warm chocolate dipping boards at SugarSwirl Sundae Lounge.">
 
-  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs instantly in head before <body> paints) -->
   <script>
     (function () {
       try {
@@ -28,7 +27,6 @@
     })();
   </script>
 
-  <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -54,16 +52,13 @@
     }
   </script>
 
-  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* 1. Card Lift & Neon Dessert Glow */
     .dessert-hover {
       transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
                   box-shadow 0.35s ease, 
@@ -80,7 +75,6 @@
       box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.75), 0 0 20px 2px rgba(255, 107, 139, 0.15);
     }
 
-    /* 2. Button Pop & Active Squash */
     .btn-hover {
       transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
                   box-shadow 0.2s ease, 
@@ -95,7 +89,6 @@
       transform: translateY(1px) scale(0.96);
     }
 
-    /* 3. Image Micro Zoom */
     .img-zoom-box img {
       transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
     }
@@ -103,7 +96,6 @@
       transform: scale(1.08);
     }
 
-    /* 4. Filter Chips & Preset Buttons */
     .chip-hover {
       transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
@@ -130,27 +122,19 @@
 </head>
 <body class="bg-[#FFF9F0] dark:bg-[#120E0D] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
 
-  <!-- ====================================================================
-       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
-       ==================================================================== -->
   <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
 
   <main class="pt-24 lg:pt-28 flex-1">
 
-    <!-- ====================================================================
-         SECTION 1: RADICAL "STAGE SHOWCASE" INTERACTIVE HERO
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 sm:pt-4 pb-8 sm:py-12">
       
       <div class="relative bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50 dark:from-[#1D1412] dark:via-[#221613] dark:to-[#160E0C] rounded-[2rem] sm:rounded-[3.5rem] p-5 sm:p-10 lg:p-14 border-2 border-pink-200/80 dark:border-stone-800 shadow-2xl overflow-hidden">
         
-        <!-- Ambient Glow -->
         <div class="absolute -top-20 -right-20 w-80 h-80 bg-rose-400/20 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-amber-400/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           
-          <!-- Left Content & Interactive Preset Tabs -->
           <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
             
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-stone-800 text-rose-600 dark:text-rose-400 border border-pink-200 dark:border-stone-700 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
@@ -166,7 +150,6 @@
               Freshly baked 40°C Valrhona brownies resting under twin mountains of -12°C dark chocolate gelato, drowned in steaming bittersweet chocolate lava.
             </p>
 
-            <!-- Preset Buttons with Hover Pop -->
             <div class="space-y-2 pt-1">
               <span class="text-[10px] font-black uppercase tracking-wider text-stone-400 block">Switch Spotlight Sundae:</span>
               <div class="flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2">
@@ -182,7 +165,6 @@
               </div>
             </div>
 
-            <!-- CTAs with Hover Squash -->
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2 sm:pt-3">
               <button id="hero-order-btn" onclick="toastCart('The Obsidian Volcano Sundae ($7.85)')" class="btn-hover w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-stone-900 hover:bg-rose-500 text-white font-black text-xs uppercase tracking-wider shadow-xl hover:shadow-rose-500/25 transition-all text-center">
                 Order Spotlight ($7.85)
@@ -194,7 +176,6 @@
 
           </div>
 
-          <!-- Right Column: Central Stage Podium with Floating Badges (Interactive Hovers) -->
           <div class="lg:col-span-5 relative w-full pt-4 lg:pt-0">
             
             <div class="relative bg-white dark:bg-[#1A1412] p-3.5 sm:p-5 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border-2 border-pink-200 dark:border-stone-800 dessert-hover group cursor-pointer">
@@ -212,7 +193,6 @@
               </div>
             </div>
 
-            <!-- Floating Badge Top Left with Hover -->
             <div class="absolute -top-2 left-2 sm:-left-4 bg-white dark:bg-stone-900 px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl border border-pink-200 dark:border-stone-700 flex items-center gap-2 hover:scale-105 hover:border-rose-400 transition-all cursor-pointer">
               <span class="text-base sm:text-lg">🍫</span>
               <div class="text-left">
@@ -221,7 +201,6 @@
               </div>
             </div>
 
-            <!-- Floating Badge Bottom Right with Hover -->
             <div class="absolute -bottom-3 right-2 sm:-right-4 bg-white dark:bg-stone-900 px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl border border-pink-200 dark:border-stone-700 flex items-center gap-2 hover:scale-105 hover:border-amber-400 transition-all cursor-pointer">
               <span class="text-base sm:text-lg">⭐</span>
               <div class="text-left">
@@ -236,7 +215,6 @@
 
       </div>
 
-      <!-- Live Marquee Ticker -->
       <div class="mt-4 bg-stone-900 text-white rounded-2xl py-2.5 sm:py-3 px-4 sm:px-6 overflow-hidden shadow-md flex items-center justify-between text-xs font-bold font-fun">
         <div class="flex items-center gap-2 text-amber-400 shrink-0">
           <i class="fas fa-bullhorn text-xs animate-bounce"></i>
@@ -249,9 +227,6 @@
 
     </section>
 
-    <!-- ====================================================================
-         SECTION 2: SIGNATURE SUNDAES (Full Hover Card Suite)
-         ==================================================================== -->
     <section id="signature-sundaes" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
       <div class="text-center max-w-xl mx-auto mb-8 sm:mb-14 space-y-1.5 sm:space-y-2">
         <span class="text-xs font-black uppercase tracking-widest text-rose-500">Parlour Hall of Fame</span>
@@ -285,7 +260,6 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
           <div class="space-y-3.5">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -309,7 +283,6 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
           <div class="space-y-3.5">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -333,7 +306,6 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
           <div class="space-y-3.5">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -357,7 +329,6 @@
           </div>
         </div>
 
-        <!-- Card 5 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
           <div class="space-y-3.5">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -381,7 +352,6 @@
           </div>
         </div>
 
-        <!-- Card 6 -->
         <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
           <div class="space-y-3.5">
             <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
@@ -407,7 +377,6 @@
 
       </div>
 
-      <!-- Wide Family Boat Banner with Hover -->
       <div class="mt-8 dessert-hover bg-gradient-to-r from-stone-900 via-[#231713] to-stone-900 text-white rounded-3xl p-5 sm:p-10 border border-stone-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 group cursor-pointer">
         <div class="space-y-2 text-center md:text-left">
           <span class="text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full inline-block group-hover:scale-105 transition-transform">Serves 4 - 6 Friends</span>
@@ -425,9 +394,7 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 3: ANATOMY OF A SUNDAE (Step Bounce Hovers)
-         ==================================================================== -->
+
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
       <div class="bg-white dark:bg-[#161211] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-12 border border-pink-200 dark:border-stone-800 shadow-xl">
         
@@ -466,9 +433,7 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 4: FREAKSHAKE SHOWDOWN (Interactive Battle Duel)
-         ==================================================================== -->
+  
     <section id="freakshake-duel" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
       <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
         <span class="text-xs font-black uppercase tracking-widest text-amber-500">The Heavyweights</span>
@@ -477,7 +442,6 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 items-stretch">
         
-        <!-- Fighter 1 -->
         <div class="dessert-hover group bg-gradient-to-br from-[#1E1410] to-[#2B1B15] text-white p-5 sm:p-8 rounded-[2rem] border border-stone-800 hover:border-amber-400/80 shadow-xl flex flex-col justify-between h-full space-y-4 sm:space-y-5 cursor-pointer">
           <div class="space-y-3.5 sm:space-y-4">
             <div class="flex justify-between items-center text-xs">
@@ -500,7 +464,6 @@
           </div>
         </div>
 
-        <!-- Fighter 2 -->
         <div class="dessert-hover group bg-gradient-to-br from-[#201017] to-[#2E1422] text-white p-5 sm:p-8 rounded-[2rem] border border-pink-900/60 hover:border-pink-400/80 shadow-xl flex flex-col justify-between h-full space-y-4 sm:space-y-5 cursor-pointer">
           <div class="space-y-3.5 sm:space-y-4">
             <div class="flex justify-between items-center text-xs">
@@ -526,9 +489,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 5: TRADITIONAL AFFOGATO BAR (Interactive Cups)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
       <div class="bg-white dark:bg-[#161211] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-12 border border-pink-200 dark:border-stone-800 shadow-md">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
@@ -562,9 +522,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 6: GUEST POLAROID WALL (Tilt & Pop Hovers)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
       <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
         <span class="text-xs font-black uppercase tracking-widest text-rose-500">Unfiltered Reactions</span>
@@ -607,9 +564,6 @@
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION 7: NIGHT OWL CTA BANNER (Button Pop Hover)
-         ==================================================================== -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
       <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
         <div class="space-y-2 sm:space-y-3 max-w-xl">
@@ -629,7 +583,6 @@
 
   <div id="footer-placeholder"></div>
 
-  <!-- Interactive Hero Sundae Switcher Helper -->
   <script>
     const sundaeData = {
       volcano: {
@@ -683,7 +636,6 @@
     }
   </script>
 
-  <!-- Shared Global JavaScript Engine -->
   <script src="app.js"></script>
 </body>
 </html>

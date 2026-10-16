@@ -1,13 +1,10 @@
-<!-- Shared fixed header: announcement strip collapses after scrolling -->
 <header class="site-header fixed inset-x-0 top-0 z-50 px-3 sm:px-6 lg:px-8 pt-2 pb-2">
   <div class="promo-announcement max-w-7xl mx-auto bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 text-white text-xs py-2 px-4 text-center font-semibold tracking-wide rounded-full shadow-md">
     <span>🍨 Free waffle upgrade above ₹399 · Code: <button type="button" class="bg-transparent border-0 p-0 text-white underline font-extrabold focus-visible:outline-white" onclick="window.copyPromo('SCOOPJOY')">SCOOPJOY</button></span>
   </div>
 
-  <!-- Floating pill navbar -->
   <nav class="max-w-7xl mx-auto mt-2 pill-nav-glass border border-pink-200/80 dark:border-zinc-800 rounded-full px-4 sm:px-6 py-2.5 shadow-xl shadow-pink-500/5 flex items-center justify-between transition-all duration-300">
     
-    <!-- Brand Logo -->
     <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
       <div class="brand-mark rounded-full bg-gradient-to-tr from-pink-500 to-amber-400 flex items-center justify-center text-xl shadow-md group-hover:rotate-12 transition-transform">
         🍨
@@ -20,9 +17,7 @@
       </div>
     </a>
 
-    <!-- Desktop Navigation Links -->
     <div class="hidden 2xl:flex items-center gap-1 text-xs sm:text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-      <!-- Home Dropdown -->
       <div class="relative" data-dropdown>
         <button type="button" data-dropdown-btn aria-haspopup="true" aria-expanded="false" class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 flex items-center gap-1 transition-colors">
           <span>Home</span>
@@ -46,7 +41,6 @@
       <a href="faq.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">FAQ</a>
       <a href="contacts.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">Contact</a>
 
-      <!-- Dashboard Dropdown -->
       <div class="relative" data-dropdown>
         <button type="button" data-dropdown-btn aria-haspopup="true" aria-expanded="false" class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 flex items-center gap-1 transition-colors">
           <span>Dashboard</span>
@@ -63,7 +57,6 @@
       </div>
     </div>
 
-    <!-- Right Controls: Theme, LTR/RTL, Login/Register -->
     <div class="hidden lg:flex items-center gap-2 shrink-0">
       <button type="button" data-theme-toggle aria-label="Toggle light/dark theme" class="w-9 h-9 rounded-full bg-pink-50 dark:bg-zinc-800 text-pink-500 dark:text-amber-300 flex items-center justify-center hover:scale-105 transition-transform">
         <span class="dark:hidden text-sm">🌙</span>
@@ -76,7 +69,6 @@
       <a href="register.html" data-nav-link class="px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-pink-500 to-purple-600 shadow-md hover:opacity-95 transition-all">Register</a>
     </div>
 
-    <!-- Mobile Hamburger Trigger -->
     <div class="flex items-center gap-2 2xl:hidden">
       <button type="button" data-theme-toggle aria-label="Toggle light/dark theme" class="w-9 h-9 rounded-full bg-pink-50 dark:bg-zinc-800 flex items-center justify-center lg:hidden">
         <span class="dark:hidden text-xs">🌙</span>
@@ -91,7 +83,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Dropdown Drawer -->
   <div id="mobileMenu" aria-label="Mobile navigation" class="hidden 2xl:hidden max-w-7xl mx-auto mt-2 bg-white dark:bg-zinc-900 border border-pink-100 dark:border-zinc-800 rounded-3xl shadow-2xl p-5">
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-bold">
       <a href="index.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">✨ Home 1</a>
