@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap');
+
+:root {
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-fun: 'Fredoka', cursive;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-fun {
+  font-family: var(--font-fun);
+}
+
+/* Permanent Fixed Floating Navbar Lock */
+#navbar-placeholder {
+  position: fixed !important;
+  top: 0.75rem !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+  pointer-events: none !important;
+}
+
+#navbar-placeholder > * {
+  pointer-events: auto !important;
+}
+
+/* Dessert Card Hover Bounce Effect */
+.dessert-card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.dessert-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* 1. Card Lift + Soft Neon Sugar Glow */
+  .dessert-hover {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease;
+    will-change: transform;
+  }
+  .dessert-hover:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+  .light .dessert-hover:hover {
+    box-shadow: 0 20px 30px -10px rgba(255, 107, 139, 0.18), 0 10px 15px -5px rgba(255, 183, 3, 0.12);
+  }
+  .dark .dessert-hover:hover {
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px 2px rgba(255, 107, 139, 0.15);
+  }
+
+  /* 2. Interactive Button Pop & Click Squash */
+  .btn-hover {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.2s ease, 
+                filter 0.2s ease;
+  }
+  .btn-hover:hover {
+    transform: translateY(-2px) scale(1.03);
+    filter: brightness(1.06);
+  }
+  .btn-hover:active {
+    transform: translateY(1px) scale(0.97);
+  }
+
+  /* 3. Image Zoom Wrapper */
+  .img-zoom-box img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .img-zoom-box:hover img {
+    transform: scale(1.08);
+  }
+
+  /* 4. Filter Tab & Chip Hover */
+  .chip-hover {
+    transition: all 0.25s ease;
+  }
+  .chip-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px -3px rgba(255, 107, 139, 0.25);
+  }

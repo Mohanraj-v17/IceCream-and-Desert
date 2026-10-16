@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SugarSwirl & Co. | Artisan Ice Cream & Dessert Parlour</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><path fill='%23FF6B8B' d='M368 160h-.94a144 144 0 1 0 -286.12 0H80a48 48 0 0 0 -48 48c0 23.4 16.7 42.9 38.6 47L194.3 490.8c6.6 13.7 20.6 22.3 35.8 22.3s29.2-8.6 35.8-22.3L389.4 255c21.9-4.1 38.6-23.6 38.6-47a48 48 0 0 0 -48-48zM224 458.7L116.8 235.1c11.5-2.2 21.4-8.8 28.2-18.1 13.9 13.3 33 21.6 54 21.6s40.1-8.3 54-21.6c6.8 9.3 16.7 15.9 28.2 18.1L224 458.7z'/></svg>">
+  <meta name="description"
+    content="Handcrafted gelato, decadent sundaes, thick freakshakes, and artisanal ice cream cakes made with 100% organic farm dairy.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parlour: {
+              cream: '#FFF9F0',
+              pink: '#FF6B8B',
+              caramel: '#FFB703',
+              mint: '#06D6A0',
+              cocoa: '#2D1E18',
+              dark: '#14100E'
+            }
+          },
+          fontFamily: {
+            fun: ['Fredoka', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Dessert Specific Micro-Interactions */
+    .dessert-hover {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+
+    .dessert-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .dark .glass-nav {
+      background: rgba(28, 23, 21, 0.94);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-[#FFF9F0] dark:bg-[#14100E] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
+
+  <main class="pt-24 lg:pt-28 flex-1">
+
+    <section class="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <div class="lg:col-span-7 space-y-6">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100 dark:bg-rose-950/70 text-rose-700 dark:text-rose-300 text-xs font-black uppercase tracking-widest shadow-sm">
+            <i class="fas fa-sparkles text-amber-500"></i>
+            <span>Pure Joy in Every Swirl • 100% Real Dairy</span>
+          </div>
+
+          <h1
+            class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-stone-900 dark:text-white leading-[1.08] font-fun">
+            Life is Short, Eat the <span class="text-rose-500 underline decoration-amber-400 decoration-wavy">Extra
+              Scoop!</span>
+          </h1>
+
+          <p class="text-stone-600 dark:text-stone-300 text-base sm:text-lg leading-relaxed max-w-xl">
+            Welcome to SugarSwirl! We craft creamy, small-batch Italian gelato, mountain-high sundae stacks, and waffle
+            freakshakes using pure mountain dairy and fresh organic berries.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="menu.html"
+              class="w-full sm:w-auto px-8 py-4 rounded-full bg-rose-500 hover:bg-rose-600 text-white font-black text-xs uppercase tracking-wider shadow-xl shadow-rose-500/25 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 group">
+              <span>Explore Scoop Menu</span>
+              <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            <a href="#diy-studio"
+              class="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-white dark:bg-stone-800 hover:bg-stone-50 dark:hover:bg-stone-700 text-stone-800 dark:text-white font-black text-xs uppercase tracking-wider border border-stone-200 dark:border-stone-700 hover:border-rose-400 shadow-sm hover:scale-105 active:scale-95 transition-all">
+              Build a Sundae Studio
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-stone-200 dark:border-stone-800 max-w-lg">
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-rose-500 font-fun">36+</div>
+              <div class="text-[11px] text-stone-500 font-semibold">Artisan Flavours</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-amber-500 font-fun">0%</div>
+              <div class="text-[11px] text-stone-500 font-semibold">Artificial Colors</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-emerald-500 font-fun">4.9 ★</div>
+              <div class="text-[11px] text-stone-500 font-semibold">Over 18k Happy Smiles</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative group">
+          <div class="rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white dark:border-stone-800">
+            <img src="public/belgian.avif"
+              alt="Decadent ice cream sundae"
+              class="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-105">
+          </div>
+
+          <div
+            class="absolute -bottom-4 left-2 sm:-left-6 bg-white dark:bg-[#1E1715] p-3.5 sm:p-4 rounded-2xl shadow-xl border border-pink-200 dark:border-stone-800 flex items-center gap-3">
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-black">
+              🍦
+            </div>
+            <div>
+              <div class="text-xs font-black text-stone-900 dark:text-white font-fun">Fresh Waffle Cones</div>
+              <div class="text-[10px] text-stone-500">Baked in-house every 45 mins</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Master Scoops Menu</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-stone-900 dark:text-white font-fun">Fan-Favorite Signature
+          Delights</h2>
+        <p class="text-stone-600 dark:text-stone-300 text-sm">Every scoop is slow-churned at sub-zero temperatures for
+          ultra-dense, velvety goodness.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Item 1 -->
+        <div
+          class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-[2rem] p-5 border border-pink-100 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3.5">
+            <div class="h-48 rounded-2xl overflow-hidden relative">
+              <img src="public/belgian.avif"
+                alt="Belgian Fudge Lava"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <span
+                class="absolute top-3 right-3 px-3 py-1 rounded-full bg-rose-500 text-white font-black text-[10px] uppercase shadow">Bestseller</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Rich Cocoa</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 text-stone-600">Pecan
+                Crunch</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun">Belgian Fudge Molten Lava</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Double dark Belgian chocolate scoops
+              drenched in hot fudge, toasted pecans, and cherry.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun">$7.50</span>
+            <button onclick="toastCart('Belgian Fudge Molten Lava')"
+              class="px-4 py-2 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition-all hover:scale-105 active:scale-95">
+              + Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div
+          class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-[2rem] p-5 border border-pink-100 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3.5">
+            <div class="h-48 rounded-2xl overflow-hidden relative">
+              <img src="public/wild.avif"
+                alt="Wild Berry Cheesecake"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <span
+                class="absolute top-3 right-3 px-3 py-1 rounded-full bg-purple-500 text-white font-black text-[10px] uppercase shadow">Artisan</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-pink-100 text-pink-700">Blueberry</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 text-stone-600">Cheesecake</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun">Wild Blueberry Cheesecake</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Cream cheese gelato rippled with
+              slow-cooked mountain blueberries and graham cracker crumble.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun">$5.25</span>
+            <button onclick="toastCart('Wild Blueberry Cheesecake')"
+              class="px-4 py-2 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition-all hover:scale-105 active:scale-95">
+              + Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div
+          class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-[2rem] p-5 border border-pink-100 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3.5">
+            <div class="h-48 rounded-2xl overflow-hidden relative">
+              <img src="public/salted.avif"
+                alt="Salted Pretzel Freakshake"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <span
+                class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500 text-stone-950 font-black text-[10px] uppercase shadow">Shake</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Caramel
+                Drizzle</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 text-stone-600">Salty
+                Pretzel</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun">Salted Pretzel Freakshake</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Caramel gelato blended with milk,
+              crowned with fresh whipped cream and crunchy pretzels.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun">$6.80</span>
+            <button onclick="toastCart('Salted Pretzel Freakshake')"
+              class="px-4 py-2 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition-all hover:scale-105 active:scale-95">
+              + Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div
+          class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-[2rem] p-5 border border-pink-100 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3.5">
+            <div class="h-48 rounded-2xl overflow-hidden relative">
+              <img src="public/sici.avif"
+                alt="Pistachio Gelato Cake"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <span
+                class="absolute top-3 right-3 px-3 py-1 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase shadow">Ice
+                Cream Cake</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Bronte
+                Nut</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-100 text-rose-800">Rose Petal</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun">Sicilian Pistachio Cake</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">Triple-layered gelato torte layered
+              with Sicilian roasted pistachios and sponge biscuit.</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun">$9.20</span>
+            <button onclick="toastCart('Sicilian Pistachio Cake')"
+              class="px-4 py-2 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition-all hover:scale-105 active:scale-95">
+              + Add
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="diy-studio" class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div
+        class="bg-gradient-to-br from-amber-50 via-pink-50 to-rose-100 dark:from-[#1E1715] dark:via-[#221614] dark:to-[#2B171A] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-14 border border-pink-200 dark:border-stone-800 shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+          <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+            <div class="text-center sm:text-left">
+              <span class="text-[11px] sm:text-xs font-black uppercase tracking-widest text-rose-600">DIY Sundae Mixer</span>
+              <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun mt-1">
+                Customize Your Sundae Bowl
+              </h2>
+              <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-1.5 leading-relaxed">
+                Pick your base scoop, signature drizzles, and crunchy crunch toppings. Live price recalculates instantly!
+              </p>
+            </div>
+
+            <!-- 1. Base Flavours -->
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-stone-800 dark:text-stone-200 block">1. Select Base Flavour ($3.50)</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <button type="button" onclick="setSundae('base', 'Madagascar Vanilla', 3.50, this)"
+                  class="sundae-btn p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border-2 border-rose-500 text-[11px] sm:text-xs font-bold text-stone-800 dark:text-white text-center shadow-sm transition">
+                  🍦 Vanilla Bean
+                </button>
+                <button type="button" onclick="setSundae('base', 'Dark Chocolate', 3.50, this)"
+                  class="sundae-btn p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[11px] sm:text-xs font-bold text-stone-800 dark:text-white text-center hover:border-rose-400 transition">
+                  🍫 Dark Cocoa
+                </button>
+                <button type="button" onclick="setSundae('base', 'Alphonso Mango', 3.50, this)"
+                  class="sundae-btn p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[11px] sm:text-xs font-bold text-stone-800 dark:text-white text-center hover:border-rose-400 transition">
+                  🥭 Mango
+                </button>
+                <button type="button" onclick="setSundae('base', 'Matcha Mint', 3.50, this)"
+                  class="sundae-btn p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[11px] sm:text-xs font-bold text-stone-800 dark:text-white text-center hover:border-rose-400 transition">
+                  🍵 Matcha Mint
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. Warm Drizzles (Clean Mobile Padding & No Multi-line Word Break) -->
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-stone-800 dark:text-stone-200 block">2. Gourmet Warm Drizzle (+$1.00)</label>
+              <div class="grid grid-cols-3 gap-1.5 sm:gap-2.5">
+                <button type="button" onclick="setSundae('drizzle', 'Hot Fudge Lava', 1.00, this)"
+                  class="sundae-btn py-2.5 px-1.5 sm:px-2.5 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border-2 border-rose-500 text-[10px] sm:text-xs font-bold text-stone-800 dark:text-white text-center shadow-sm truncate transition">
+                  Warm Fudge
+                </button>
+                <button type="button" onclick="setSundae('drizzle', 'Salted Butter Caramel', 1.00, this)"
+                  class="sundae-btn py-2.5 px-1.5 sm:px-2.5 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[10px] sm:text-xs font-bold text-stone-800 dark:text-white text-center hover:border-rose-400 truncate transition">
+                  Caramel
+                </button>
+                <button type="button" onclick="setSundae('drizzle', 'Wild Strawberry Glaze', 1.00, this)"
+                  class="sundae-btn py-2.5 px-1.5 sm:px-2.5 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[10px] sm:text-xs font-bold text-stone-800 dark:text-white text-center hover:border-rose-400 truncate transition">
+                  Berry Coulis
+                </button>
+              </div>
+            </div>
+
+            <!-- 3. Crunch Toppings -->
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-stone-800 dark:text-stone-200 block">3. Signature Crunch Topping (+$0.75)</label>
+              <div class="grid grid-cols-3 gap-1.5 sm:gap-2.5">
+                <button type="button" onclick="setSundae('topping', 'Roasted Pecans', 0.75, this)"
+                  class="sundae-btn py-2.5 px-1.5 sm:px-2.5 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border-2 border-rose-500 text-[10px] sm:text-xs font-bold text-stone-800 dark:text-white text-center shadow-sm truncate transition">
+                  Pecans
+                </button>
+                <button type="button" onclick="setSundae('topping', 'Rainbow Confetti', 0.75, this)"
+                  class="sundae-btn py-2.5 px-1.5 sm:px-2.5 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[10px] sm:text-xs font-bold text-stone-800 dark:text-white text-center hover:border-rose-400 truncate transition">
+                  Confetti
+                </button>
+                <button type="button" onclick="setSundae('topping', 'Oreo Biscuit Crumble', 0.75, this)"
+                  class="sundae-btn py-2.5 px-1.5 sm:px-2.5 rounded-xl sm:rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-[10px] sm:text-xs font-bold text-stone-800 dark:text-white text-center hover:border-rose-400 truncate transition">
+                  Oreo Crunch
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Receipt Card: Mobile-Balanced Padding -->
+          <div
+            class="lg:col-span-5 bg-white dark:bg-[#161211] p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-pink-200 dark:border-stone-800 shadow-xl flex flex-col justify-between space-y-5">
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-3">
+                <span class="text-[10px] sm:text-xs font-black uppercase text-stone-400 tracking-wider">Live Bowl Receipt</span>
+                <span class="text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Fresh Scoop</span>
+              </div>
+
+              <div class="space-y-2 text-xs">
+                <div class="flex justify-between font-bold text-stone-900 dark:text-white">
+                  <span id="label-base" class="truncate pr-2">Base: Madagascar Vanilla</span>
+                  <span class="text-stone-400 shrink-0">$3.50</span>
+                </div>
+                <div class="flex justify-between text-stone-600 dark:text-stone-300">
+                  <span id="label-drizzle" class="truncate pr-2">+ Drizzle: Hot Fudge Lava</span>
+                  <span class="text-stone-400 shrink-0">$1.00</span>
+                </div>
+                <div class="flex justify-between text-stone-600 dark:text-stone-300">
+                  <span id="label-topping" class="truncate pr-2">+ Topping: Roasted Pecans</span>
+                  <span class="text-stone-400 shrink-0">$0.75</span>
+                </div>
+              </div>
+
+              <div
+                class="pt-3 border-t border-dashed border-stone-200 dark:border-stone-800 flex items-baseline justify-between">
+                <span class="text-xs sm:text-sm font-black text-stone-900 dark:text-white">Bowl Total:</span>
+                <span id="sundae-total" class="text-2xl sm:text-3xl font-black text-rose-500 font-fun">$5.25</span>
+              </div>
+            </div>
+
+            <button onclick="orderSundae()"
+              class="w-full py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-black text-xs uppercase tracking-wider shadow-md hover:scale-[1.02] active:scale-95 transition-all">
+              <i class="fas fa-bowl-food mr-1.5"></i> Prepare This Custom Bowl
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="bg-stone-900 text-white rounded-[2.5rem] p-8 sm:p-14 relative overflow-hidden shadow-2xl">
+        <div class="max-w-2xl mb-12 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400">The SugarSwirl Standard</span>
+          <h2 class="text-3xl sm:text-4xl font-black font-fun">What Makes Our Scoops Truly Exceptional?</h2>
+          <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+            We refuse powders, corn syrups, and pre-mixed bags. Every single tub is hand-churned in small batches right
+            inside our parlour open kitchen.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 space-y-3 dessert-hover">
+            <div
+              class="w-12 h-12 rounded-xl bg-rose-500 text-white flex items-center justify-center text-xl font-black">
+              🐄
+            </div>
+            <h4 class="text-base font-bold font-fun">100% Single-Farm Dairy</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">Sourced from grass-fed mountain cows daily, giving our
+              gelato a dense, rich creaminess.</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 space-y-3 dessert-hover">
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-400 text-stone-900 flex items-center justify-center text-xl font-black">
+              🍓
+            </div>
+            <h4 class="text-base font-bold font-fun">Real Tree-Ripened Fruit</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">No synthetic food gels. Real Alphonso mangoes, hand-picked
+              raspberries, and ripe bananas.</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 space-y-3 dessert-hover">
+            <div
+              class="w-12 h-12 rounded-xl bg-emerald-400 text-stone-900 flex items-center justify-center text-xl font-black">
+              🌱
+            </div>
+            <h4 class="text-base font-bold font-fun">Vegan & Dairy-Free Gelato</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">Creamy oat milk and coconut cream-based scoops so
+              lactose-sensitive friends never miss out.</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 space-y-3 dessert-hover">
+            <div
+              class="w-12 h-12 rounded-xl bg-pink-400 text-stone-900 flex items-center justify-center text-xl font-black">
+              🧇
+            </div>
+            <h4 class="text-base font-bold font-fun">Warm Caramelized Cones</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">Rolled hot off our waffle irons with brown sugar and
+              cinnamon, filled with melted chocolate tip.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center max-w-xl mx-auto mb-14 space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Weekly Treats</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Special Offers & Combo Boxes
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Offer 1 -->
+        <div
+          class="dessert-hover bg-white dark:bg-[#1A1412] p-8 rounded-3xl border border-pink-200 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="text-xs font-black uppercase text-amber-500">Every Tuesday</span>
+            <h3 class="text-2xl font-black text-stone-900 dark:text-white font-fun">Two-Scoop Twin Tuesday</h3>
+            <div class="text-3xl font-black text-rose-500 font-fun">25% OFF</div>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Order any signature double scoop waffle cone and get 25% off the second cone for your companion!
+            </p>
+          </div>
+          <button onclick="toastCart('Twin Tuesday Coupon Applied')"
+            class="mt-6 w-full py-3 rounded-2xl bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-xs font-black transition-all">
+            Claim Tuesday Deal
+          </button>
+        </div>
+
+        <!-- Offer 2 -->
+        <div
+          class="dessert-hover bg-gradient-to-br from-rose-500 to-pink-500 text-white p-8 rounded-3xl shadow-2xl relative flex flex-col justify-between transform md:-translate-y-3">
+          <div
+            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-stone-950 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-wider shadow">
+            Family Favourite
+          </div>
+          <div class="space-y-4">
+            <span class="text-xs font-black uppercase text-rose-200">Weekend Taster Box</span>
+            <h3 class="text-2xl font-black text-white font-fun">Family Sundae Flight</h3>
+            <div class="text-3xl font-black text-amber-300 font-fun">$24.99 <span
+                class="text-xs line-through text-rose-200">$34</span></div>
+            <p class="text-xs text-rose-100 leading-relaxed">
+              4 mini signature sundaes, 6 warm mini waffle wedges, and 3 dipping bowls of warm chocolate and caramel
+              fudge.
+            </p>
+          </div>
+          <button onclick="toastCart('Family Sundae Flight Box')"
+            class="mt-6 w-full py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-black text-xs uppercase tracking-wider transition-all">
+            Order Combo Flight
+          </button>
+        </div>
+
+        <!-- Offer 3 -->
+        <div
+          class="dessert-hover bg-white dark:bg-[#1A1412] p-8 rounded-3xl border border-pink-200 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="text-xs font-black uppercase text-emerald-500">Late Night Craving</span>
+            <h3 class="text-2xl font-black text-stone-900 dark:text-white font-fun">Midnight Waffle Hour</h3>
+            <div class="text-3xl font-black text-rose-500 font-fun">Free Extra Topping</div>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Visit between 9:30 PM and 11:30 PM on weekends to receive unlimited crunch sprinkles and homemade hot
+              fudge.
+            </p>
+          </div>
+          <button onclick="toastCart('Midnight Special Verified')"
+            class="mt-6 w-full py-3 rounded-2xl bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-xs font-black transition-all">
+            View Late-Night Menu
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div class="bg-stone-900 text-white rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-10 lg:p-14 border border-stone-800 shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+          <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center sm:text-left">
+            <div>
+              <span class="text-[11px] sm:text-xs font-black uppercase tracking-widest text-amber-400">Event Catering Calculator</span>
+              <h2 class="text-2xl sm:text-4xl font-black font-fun mt-1">
+                Party & Bulk Tub Estimator
+              </h2>
+              <p class="text-xs sm:text-sm text-stone-400 mt-1.5 leading-relaxed max-w-xl mx-auto sm:mx-0">
+                Planning a birthday, wedding reception, or corporate social? Slide the guest count to estimate tubs, spoons, and cones needed automatically.
+              </p>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="space-y-2.5 bg-stone-800/80 p-4 sm:p-6 rounded-2xl border border-stone-700 text-left">
+              <div class="flex justify-between items-center text-xs">
+                <span class="font-bold text-stone-300">Estimated Guest Count:</span>
+                <span id="slider-guest-label" class="text-base sm:text-xl font-black text-amber-400 font-fun">40 Guests</span>
+              </div>
+              
+              <!-- Styled Touch-Friendly Slider Track -->
+              <input type="range" id="guest-slider" min="10" max="250" step="5" value="40"
+                class="w-full accent-rose-500 cursor-pointer h-2 bg-stone-700 rounded-lg">
+              
+              <!-- Clean Labels with No Mobile Overlap -->
+              <div class="flex justify-between text-[10px] text-stone-400 font-bold pt-1">
+                <span>10 (Intimate)</span>
+                <span class="hidden sm:inline">120 (Party)</span>
+                <span>250+ (Festival)</span>
+              </div>
+            </div>
+
+            <!-- 3 Output Stat Boxes: Clean Mobile Wrap & Proportional Sizing -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-3 text-center">
+              <div class="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-800/60 border border-stone-700">
+                <div id="stat-tubs" class="text-lg sm:text-2xl font-black text-rose-400 font-fun">4 Tubs</div>
+                <span class="text-[9px] sm:text-[10px] text-stone-400 uppercase font-bold block mt-0.5">5L Tubs</span>
+              </div>
+              <div class="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-800/60 border border-stone-700">
+                <div id="stat-flavours" class="text-lg sm:text-2xl font-black text-amber-400 font-fun">3 Flavours</div>
+                <span class="text-[9px] sm:text-[10px] text-stone-400 uppercase font-bold block mt-0.5">Varieties</span>
+              </div>
+              <div class="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-800/60 border border-stone-700">
+                <div id="stat-price" class="text-lg sm:text-2xl font-black text-emerald-400 font-fun">$120</div>
+                <span class="text-[9px] sm:text-[10px] text-stone-400 uppercase font-bold block mt-0.5">Estimate</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Container -->
+          <div class="lg:col-span-5 bg-white/5 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-white/10 space-y-3.5">
+            <h4 class="text-sm sm:text-base font-black font-fun text-white text-center sm:text-left">Reserve Your Event Tub Cart</h4>
+            <form onsubmit="handlePartyBooking(event)" class="space-y-3">
+              <input type="text" id="party-host" required placeholder="Host / Company Name *"
+                class="w-full text-xs px-3.5 py-3 rounded-xl bg-stone-800/80 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-rose-500 transition">
+              <input type="tel" id="party-phone" required placeholder="Phone / WhatsApp Contact *"
+                class="w-full text-xs px-3.5 py-3 rounded-xl bg-stone-800/80 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-rose-500 transition">
+              <input type="date" id="party-date" required
+                class="w-full text-xs px-3.5 py-3 rounded-xl bg-stone-800/80 border border-stone-700 text-white focus:outline-none focus:border-rose-500 transition">
+              <button type="submit"
+                class="w-full py-3.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-black uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all">
+                Send Bulk Catering Inquiry
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Ice Cream Smiles</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">What Dessert Lovers Say</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="dessert-hover bg-white dark:bg-[#1A1412] p-6 rounded-3xl border border-pink-100 dark:border-stone-800 shadow-sm space-y-3">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-xs text-stone-600 dark:text-stone-300 italic leading-relaxed">
+            "The Wild Blueberry Cheesecake is otherworldly! You can literally taste the fresh berries and cream cheese.
+            My kids refuse to eat any other ice cream now."
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div class="w-9 h-9 rounded-full bg-rose-500 text-white font-bold flex items-center justify-center text-xs">
+              RK</div>
+            <div>
+              <span class="text-xs font-bold text-stone-900 dark:text-white block">Rhea Kapoor</span>
+              <span class="text-[10px] text-stone-400">Regular Weekend Patron</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="dessert-hover bg-white dark:bg-[#1A1412] p-6 rounded-3xl border border-pink-100 dark:border-stone-800 shadow-sm space-y-3">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-xs text-stone-600 dark:text-stone-300 italic leading-relaxed">
+            "Their warm waffle cones smell heavenly from half a block away. We hired their scoop cart for my daughter’s
+            7th birthday party—total showstopper!"
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div
+              class="w-9 h-9 rounded-full bg-amber-500 text-stone-900 font-bold flex items-center justify-center text-xs">
+              MD</div>
+            <div>
+              <span class="text-xs font-bold text-stone-900 dark:text-white block">Marcus Davies</span>
+              <span class="text-[10px] text-stone-400">Birthday Event Host</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="dessert-hover bg-white dark:bg-[#1A1412] p-6 rounded-3xl border border-pink-100 dark:border-stone-800 shadow-sm space-y-3">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-xs text-stone-600 dark:text-stone-300 italic leading-relaxed">
+            "Finally an ice cream shop that makes truly decadent dairy-free gelato! The oat milk matcha mint tastes just
+            as rich and creamy as traditional milk gelato."
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div
+              class="w-9 h-9 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-xs">
+              SV</div>
+            <div>
+              <span class="text-xs font-bold text-stone-900 dark:text-white block">Samantha Vance</span>
+              <span class="text-[10px] text-stone-400">Vegan Food Enthusiast</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+        <div class="h-44 rounded-2xl overflow-hidden shadow-sm group">
+          <img src="public/wild.avif"
+            alt="Ice cream scoops"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="h-44 rounded-2xl overflow-hidden shadow-sm group">
+          <img src="public/belgian.avif"
+            alt="Chocolate sundae"
+            class="w-full h-full object-cover object-[50%_40%] group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="h-44 rounded-2xl overflow-hidden shadow-sm group">
+          <img src="public/salted.avif"
+            alt="Freakshake" class="w-full h-full object-cover object-[50%_40%] group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="h-44 rounded-2xl overflow-hidden shadow-sm group">
+          <img src="public/sici.avif"
+            alt="Gelato cake"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2.5rem] p-10 sm:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-8 shadow-2xl">
+        <div class="space-y-3 max-w-xl">
+          <span
+            class="px-3.5 py-1 rounded-full bg-white text-rose-600 text-xs font-black uppercase tracking-wider">Fresh
+            Batches Ready</span>
+          <h3 class="text-3xl sm:text-4xl font-black font-fun leading-tight">Craving a Sweet Scoop Tonight?</h3>
+          <p class="text-white/90 text-sm">
+            Visit our parlour counter in Hosur or call for insulated takeaway tubs. Open daily until 11:30 PM!
+          </p>
+        </div>
+        <a href="contacts.html"
+          class="whitespace-nowrap px-8 py-4 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-black text-xs uppercase tracking-wider shadow-xl hover:scale-105 active:scale-95 transition-all">
+          Get Parlour Directions
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SHARED FOOTER PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Shared JavaScript Engine -->
+  <script src="app.js"></script>
+  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs instantly before HTML paints) -->
+<script>
+  (function () {
+    try {
+      const theme = localStorage.getItem('sugarswirl_theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const dir = localStorage.getItem('sugarswirl_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', dir);
+    } catch (e) {}
+  })();
+</script>
+</body>
+
+</html>

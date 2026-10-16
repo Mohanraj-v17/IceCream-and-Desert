@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artisan Dessert Menu | SugarSwirl & Co.</title>
+  
+ <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍦%3C/text%3E%3C/svg%3E">
+  
+  <meta name="description" content="Explore our complete menu of small-batch Italian gelato scoops, molten sundaes, loaded freakshakes, gelato cakes, and vegan sorbets.">
+
+  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs instantly in head before <body> paints) -->
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('sugarswirl_theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+        const dir = localStorage.getItem('sugarswirl_direction') || 'ltr';
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parlour: {
+              cream: '#FFF9F0',
+              pink: '#FF6B8B',
+              caramel: '#FFB703',
+              mint: '#06D6A0',
+              cocoa: '#2D1E18',
+              dark: '#14100E'
+            }
+          },
+          fontFamily: {
+            fun: ['Fredoka', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* 1. Card Lift & Neon Dessert Glow */
+    .dessert-hover {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.35s ease, 
+                  border-color 0.35s ease;
+      will-change: transform;
+    }
+    .dessert-hover:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+    .light .dessert-hover:hover {
+      box-shadow: 0 20px 30px -10px rgba(255, 107, 139, 0.20), 0 10px 15px -5px rgba(255, 183, 3, 0.12);
+    }
+    .dark .dessert-hover:hover {
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.75), 0 0 20px 2px rgba(255, 107, 139, 0.15);
+    }
+
+    /* 2. Interactive Button Pop & Active Squash */
+    .btn-hover {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.2s ease, 
+                  filter 0.2s ease,
+                  background-color 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: brightness(1.06);
+    }
+    .btn-hover:active {
+      transform: translateY(1px) scale(0.96);
+    }
+
+    /* 3. Image Micro Zoom */
+    .img-zoom-box img {
+      transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .img-zoom-box:hover img {
+      transform: scale(1.08);
+    }
+
+    /* 4. Filter Chips & Quick Chips Hover */
+    .chip-hover {
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .chip-hover:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 16px -4px rgba(255, 107, 139, 0.3);
+    }
+    .chip-hover:active {
+      transform: scale(0.95);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .dark .glass-nav {
+      background: rgba(28, 23, 21, 0.94);
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#FFF9F0] dark:bg-[#14100E] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- ====================================================================
+       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
+
+  <main class="pt-24 lg:pt-28 flex-1">
+
+    <!-- ====================================================================
+         SECTION 1: HERO & RESPONSIVE SEARCH BAR (Interactive Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-14 text-center">
+      <div class="max-w-2xl mx-auto space-y-3 sm:space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 dark:bg-rose-950/70 text-rose-700 dark:text-rose-300 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
+          <i class="fas fa-sparkles text-amber-500 animate-pulse"></i>
+          <span>Fresh Daily Churn • 36+ Recipes</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white leading-[1.12] font-fun">
+          Our Artisan <span class="text-rose-500 underline decoration-amber-400 decoration-wavy">Dessert Catalog.</span>
+        </h1>
+
+        <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
+          Crafted with 100% single-farm mountain dairy, slow-melt chocolate lava, and cold-pressed seasonal fruits. Filter by category or search your craving below.
+        </p>
+
+        <!-- Search Bar with Absolute Centered Icons -->
+        <div class="pt-2 sm:pt-4 max-w-lg mx-auto w-full px-1">
+          <div class="relative flex items-center w-full shadow-lg rounded-full group">
+            <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-rose-500 group-focus-within:scale-110 transition-transform">
+              <i class="fas fa-magnifying-glass text-xs sm:text-sm"></i>
+            </span>
+            <input 
+              type="text" 
+              id="flavour-search" 
+              placeholder="Search flavours (e.g. mango, pistachio, fudge)..." 
+              class="w-full text-xs sm:text-sm py-3 sm:py-3.5 pl-10 sm:pl-11 pr-10 sm:pr-11 rounded-full bg-white dark:bg-[#1E1715] border-2 border-pink-200 dark:border-stone-800 text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 transition-all"
+            >
+            <button id="search-clear-btn" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-stone-400 hover:text-rose-500 transition text-sm">
+              <i class="fas fa-times-circle"></i>
+            </button>
+          </div>
+
+          <!-- Quick Trending Chips with Hover Effects -->
+          <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-3 text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400">
+            <span class="font-bold">Trending:</span>
+            <button type="button" onclick="quickFilter('pistachio')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100/80 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Pistachio</button>
+            <button type="button" onclick="quickFilter('mango')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100/80 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Mango</button>
+            <button type="button" onclick="quickFilter('fudge')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100/80 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Fudge</button>
+            <button type="button" onclick="quickFilter('vegan')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100/80 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Vegan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs: Responsive Wrap & Button Hover -->
+      <div class="flex flex-wrap items-center justify-center gap-2 pt-6 sm:pt-8" id="category-tabs">
+        <button class="filter-btn btn-hover active px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-rose-500 text-white shadow-md shadow-rose-500/25" data-cat="all">
+          ✨ All Treats
+        </button>
+        <button class="filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="scoop">
+          🍦 Artisan Scoops
+        </button>
+        <button class="filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="sundae">
+          🍨 Molten Sundaes
+        </button>
+        <button class="filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="shake">
+          🥤 Freakshakes
+        </button>
+        <button class="filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="cake">
+          🎂 Gelato Cakes
+        </button>
+        <button class="filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="vegan">
+          🌱 Vegan Sorbets
+        </button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: DESSERT PRODUCTS GRID (All Cards with Interactive Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-4 pb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 lg:gap-8 items-stretch" id="menu-grid">
+        
+        <!-- Item 1: Scoop -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="scoop" data-name="madagascar vanilla bean">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/madagascar.avif" alt="Vanilla bean scoop" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-amber-400 text-stone-950 font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Classic</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 group-hover:bg-amber-200 transition-colors">Bourbon Bean</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Gluten-Free</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Madagascar Bourbon Vanilla</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Infused with real split Bourbon vanilla beans, organic egg yolks, and heavy dairy cream.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$3.50</span>
+            <button onclick="toastCart('Madagascar Bourbon Vanilla ($3.50)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 2: Scoop -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="scoop" data-name="belgian dark chocolate 70% truffle">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/belgian.avif" alt="Dark chocolate scoop" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-rose-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Bestseller</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-200 text-stone-800 group-hover:bg-stone-300 transition-colors">70% Cacao</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Rich Dark</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">70% Belgian Dark Truffle</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Melted Callebaut Belgian dark chocolate with fine cocoa nibs folded into every fold.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$3.75</span>
+            <button onclick="toastCart('Belgian Dark Truffle ($3.75)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 3: Scoop -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="scoop" data-name="sicilian bronte roasted pistachio">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/sici.avif" alt="Pistachio scoop" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Artisan</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 transition-colors">Bronte Nut</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Pure Butter</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Sicilian Roasted Pistachio</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Made purely with D.O.P. Bronte green pistachios roasted in copper pans with sea salt.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$4.25</span>
+            <button onclick="toastCart('Sicilian Roasted Pistachio ($4.25)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 4: Sundae -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="sundae" data-name="molten fudge volcano bowl sundae brownie">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/ice-2.jpeg" alt="Fudge Volcano Sundae" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-rose-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Signature</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 group-hover:bg-amber-200 transition-colors">Warm Lava</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Brownie Bits</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Molten Fudge Volcano Bowl</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Double dark chocolate scoops over warm fudge brownies, roasted pecans, and maraschino cherry.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$7.50</span>
+            <button onclick="toastCart('Molten Fudge Volcano Bowl ($7.50)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 5: Sundae -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="sundae" data-name="wild berry cheesecake waffle stack sundae">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/wild.avif" alt="Wild Berry Waffle Stack" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-purple-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Popular</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-pink-100 text-pink-700 group-hover:bg-pink-200 transition-colors">Berry Swirl</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Waffle Cone</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Wild Berry Cheesecake Stack</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Cheesecake gelato layered with blueberry coulis, fresh strawberries, and butter waffle crisps.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$6.95</span>
+            <button onclick="toastCart('Wild Berry Cheesecake Stack ($6.95)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 6: Shake -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="shake" data-name="salted pretzel caramel freakshake malt">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/salted.avif" alt="Pretzel Freakshake" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-amber-500 text-stone-950 font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Thick Shake</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 group-hover:bg-amber-200 transition-colors">Butter Caramel</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Salty Pretzels</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Salted Pretzel Freakshake</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Salted caramel gelato blended thick, crowned with whipped chantilly cream and glazed pretzels.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$6.80</span>
+            <button onclick="toastCart('Salted Pretzel Freakshake ($6.80)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 7: Shake -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="shake" data-name="matcha mint botanical malt shake green tea">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/malt.avif" alt="Matcha Cream Malt" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Malt Shake</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 transition-colors">Ceremonial Uji</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Nut Milk</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Matcha Mint Botanical Malt</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Uji green tea gelato spun with fresh garden spearmint, oat milk, and crushed wafer biscuit.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$6.50</span>
+            <button onclick="toastCart('Matcha Mint Botanical Malt ($6.50)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 8: Cake -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="cake" data-name="sicilian pistachio rose gelato cake torte">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/ice-3.jpeg" alt="Pistachio Gelato Cake" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-rose-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Gelato Cake</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 transition-colors">Bronte Nut</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 group-hover:bg-rose-200 transition-colors">Rose Petal</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Sicilian Pistachio & Rose Torte</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Triple-layer torte slice: toasted Bronte pistachio gelato, almond sponge, and sugared rose petals.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$9.20</span>
+            <button onclick="toastCart('Pistachio Rose Cake Slice ($9.20)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 9: Cake -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="cake" data-name="black forest dark chocolate raspberry truffle cake">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/blackforest.avif" alt="Dark Chocolate Raspberry Torte" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-amber-500 text-stone-950 font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Decadent</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 group-hover:bg-rose-200 transition-colors">Raspberry Coulis</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">70% Cacao</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Black Forest Raspberry Truffle</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Dark chocolate ganache torte filled with black raspberry sorbet and cherry liqueur reduction.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$8.90</span>
+            <button onclick="toastCart('Raspberry Truffle Cake ($8.90)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 10: Vegan -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="vegan" data-name="ratnagiri alphonso mango sorbetto vegan dairy free">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/ratnagiri.avif" alt="Alphonso Mango Sorbet" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">100% Vegan</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 transition-colors">Dairy-Free</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 group-hover:bg-amber-200 transition-colors">Real Alphonso</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Ratnagiri Alphonso Mango Sorbetto</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Pure cold-pressed tree-ripened Alphonso mango pulp churned with natural cane sugar. 0% milk.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$3.75</span>
+            <button onclick="toastCart('Alphonso Mango Sorbetto ($3.75)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 11: Vegan -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="vegan" data-name="wild mountain black raspberry sorbetto vegan berry">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/ice-4.jpeg" alt="Black Raspberry Sorbetto" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">100% Vegan</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 transition-colors">Dairy-Free</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 group-hover:bg-rose-200 transition-colors">Wild Berries</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Wild Mountain Black Raspberry</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Intense, tart, and deep purple sorbetto crafted from mountain-foraged raspberries and lemon zest.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$3.75</span>
+            <button onclick="toastCart('Wild Black Raspberry Sorbetto ($3.75)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+        <!-- Item 12: Vegan -->
+        <div class="menu-card dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer" data-category="vegan" data-name="creamy coconut cocoa chocolate fudge gelato vegan">
+          <div class="space-y-3">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/ice-5.jpeg" alt="Coconut Dark Chocolate" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Oat & Coconut</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200 transition-colors">Dairy-Free</span>
+              <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Rich Cocoa</span>
+            </div>
+            <h3 class="text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Creamy Coconut Cocoa Gelato</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Pressed virgin coconut cream blended with 65% raw cacao butter. Zero dairy, 100% indulgence.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$4.00</span>
+            <button onclick="toastCart('Coconut Cocoa Gelato ($4.00)')" class="btn-hover px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-800 hover:bg-rose-500 dark:hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add to Cup
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No items found state -->
+      <div id="no-results" class="hidden text-center py-12 sm:py-16 space-y-3">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-pink-100 dark:bg-stone-800 text-rose-500 mx-auto flex items-center justify-center text-xl sm:text-2xl shadow-sm">
+          🔍
+        </div>
+        <h4 class="text-base sm:text-lg font-black text-stone-900 dark:text-white font-fun">No sweet match found!</h4>
+        <p class="text-xs text-stone-500">Try searching for vanilla, mango, fudge, shake, or cake.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: WAFFLE CONES & VESSEL PAIRING BAR (Interactive Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="bg-gradient-to-br from-amber-50 to-pink-50 dark:from-[#1E1715] dark:to-[#221614] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-12 border border-pink-200 dark:border-stone-800 shadow-xl space-y-6 sm:space-y-8">
+        <div class="text-center max-w-xl mx-auto space-y-1.5 sm:space-y-2">
+          <span class="text-[11px] sm:text-xs font-black uppercase tracking-widest text-amber-600">Crisp Craftsmanship</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Choose Your Scoop Vessel</h2>
+          <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300">Rolled hot off cast-iron griddles every 45 minutes using organic butter and brown sugar.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          
+          <div class="dessert-hover group bg-white dark:bg-[#161211] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 space-y-2.5 cursor-pointer">
+            <span class="text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">🧇</span>
+            <div class="flex justify-between items-baseline">
+              <h4 class="font-bold text-stone-900 dark:text-white text-sm font-fun group-hover:text-rose-500 transition-colors">Classic Butter Waffle</h4>
+              <span class="text-xs font-black text-rose-500">Free Upgrade</span>
+            </div>
+            <p class="text-xs text-stone-500 leading-relaxed">Golden caramelized cinnamon waffle cone with chocolate-sealed bottom point.</p>
+          </div>
+
+          <div class="dessert-hover group bg-white dark:bg-[#161211] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 space-y-2.5 cursor-pointer">
+            <span class="text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">🍫</span>
+            <div class="flex justify-between items-baseline">
+              <h4 class="font-bold text-stone-900 dark:text-white text-sm font-fun group-hover:text-rose-500 transition-colors">Belgian Chocolate Rim</h4>
+              <span class="text-xs font-black text-rose-500">+$1.00</span>
+            </div>
+            <p class="text-xs text-stone-500 leading-relaxed">Waffle cone edge dipped in molten 70% dark chocolate and rainbow sprinkles.</p>
+          </div>
+
+          <div class="dessert-hover group bg-white dark:bg-[#161211] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 space-y-2.5 cursor-pointer">
+            <span class="text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">🥣</span>
+            <div class="flex justify-between items-baseline">
+              <h4 class="font-bold text-stone-900 dark:text-white text-sm font-fun group-hover:text-rose-500 transition-colors">Fresh Waffle Bowl</h4>
+              <span class="text-xs font-black text-rose-500">+$1.25</span>
+            </div>
+            <p class="text-xs text-stone-500 leading-relaxed">Deep-dish waffle basket engineered to hold double scoops with zero drips.</p>
+          </div>
+
+          <div class="dessert-hover group bg-white dark:bg-[#161211] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 space-y-2.5 cursor-pointer">
+            <span class="text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">🌱</span>
+            <div class="flex justify-between items-baseline">
+              <h4 class="font-bold text-stone-900 dark:text-white text-sm font-fun group-hover:text-rose-500 transition-colors">Gluten-Free Crisp Cone</h4>
+              <span class="text-xs font-black text-rose-500">+$0.75</span>
+            </div>
+            <p class="text-xs text-stone-500 leading-relaxed">Crafted with almond and rice flours for sensitive food lovers without sacrificing crunch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: CHEF'S LIMITED-BATCH SECRET DROPS (Hover Pop)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="bg-stone-900 text-white rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-14 border border-stone-800 shadow-2xl relative overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4 text-center sm:text-left">
+          <div class="space-y-1.5 sm:space-y-2 max-w-xl mx-auto sm:mx-0">
+            <span class="text-[11px] sm:text-xs font-black uppercase tracking-widest text-amber-400">Limited Monthly Rotation</span>
+            <h2 class="text-2xl sm:text-4xl font-black font-fun leading-tight">Chef Matteo's Secret Drops</h2>
+            <p class="text-stone-400 text-xs sm:text-sm">Only 40 tubs churned per flavor every Friday. When they're gone, they're gone until next season!</p>
+          </div>
+          <div class="flex items-center justify-center sm:justify-start gap-2 shrink-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Now Churning at Parlour</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div class="bg-stone-800/80 hover:bg-stone-800 p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-stone-700/80 hover:border-amber-400/70 dessert-hover space-y-2.5 group cursor-pointer">
+            <span class="text-[10px] sm:text-xs font-black text-rose-400 uppercase tracking-wider">October Drop #1</span>
+            <h4 class="text-base sm:text-lg font-bold font-fun text-white group-hover:text-amber-400 transition-colors">Lavender Wild Honeycomb</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">French lavender infused sweet cream loaded with homemade crunchy honey toffee crunch.</p>
+            <div class="pt-2 flex justify-between items-center">
+              <span class="font-black text-amber-400 font-fun text-base sm:text-lg">$4.50</span>
+              <button onclick="toastCart('Lavender Wild Honeycomb ($4.50)')" class="btn-hover px-3.5 py-1.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold transition">Try Scoop</button>
+            </div>
+          </div>
+
+          <div class="bg-stone-800/80 hover:bg-stone-800 p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-stone-700/80 hover:border-amber-400/70 dessert-hover space-y-2.5 group cursor-pointer">
+            <span class="text-[10px] sm:text-xs font-black text-amber-400 uppercase tracking-wider">October Drop #2</span>
+            <h4 class="text-base sm:text-lg font-bold font-fun text-white group-hover:text-amber-400 transition-colors">Kashmir Saffron & Almond Kulfi</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">Slow-reduced caramelized whole milk infused with pure Kashmiri saffron and slivered almonds.</p>
+            <div class="pt-2 flex justify-between items-center">
+              <span class="font-black text-amber-400 font-fun text-base sm:text-lg">$4.75</span>
+              <button onclick="toastCart('Saffron & Almond Kulfi ($4.75)')" class="btn-hover px-3.5 py-1.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold transition">Try Scoop</button>
+            </div>
+          </div>
+
+          <div class="bg-stone-800/80 hover:bg-stone-800 p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-stone-700/80 hover:border-amber-400/70 dessert-hover space-y-2.5 group cursor-pointer">
+            <span class="text-[10px] sm:text-xs font-black text-emerald-400 uppercase tracking-wider">October Drop #3</span>
+            <h4 class="text-base sm:text-lg font-bold font-fun text-white group-hover:text-amber-400 transition-colors">Espresso Hazelnut Affogato</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">Single-origin Arabica espresso gelato rippled with roasted Piedmont hazelnut praline butter.</p>
+            <div class="pt-2 flex justify-between items-center">
+              <span class="font-black text-amber-400 font-fun text-base sm:text-lg">$4.50</span>
+              <button onclick="toastCart('Espresso Hazelnut Affogato ($4.50)')" class="btn-hover px-3.5 py-1.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold transition">Try Scoop</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: DIETARY & ALLERGEN TRANSPARENCY MATRIX (Hover Lift)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="bg-white dark:bg-[#1C1614] rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-pink-200 dark:border-stone-800 shadow-md space-y-5 sm:space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 border-b border-stone-100 dark:border-stone-800 pb-3 sm:pb-4 text-center sm:text-left">
+          <div>
+            <span class="text-[11px] sm:text-xs font-black uppercase tracking-widest text-rose-500">Clean Food Pledge</span>
+            <h3 class="text-xl sm:text-2xl font-black text-stone-900 dark:text-white font-fun">Allergen & Dietary Quick Guide</h3>
+          </div>
+          <span class="text-xs text-stone-500"><i class="fas fa-shield-halved text-emerald-500 mr-1"></i> Dedicated clean scoops for allergy orders</span>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-xs">
+          <div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 space-y-1 hover:scale-[1.02] hover:shadow-md transition-all cursor-default">
+            <span class="font-black text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm block">100% Dairy-Free</span>
+            <p class="text-stone-600 dark:text-stone-300 text-[10px] sm:text-[11px] leading-tight sm:leading-normal">All fruit sorbettos & coconut churns are made on isolated machines.</p>
+          </div>
+          <div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 space-y-1 hover:scale-[1.02] hover:shadow-md transition-all cursor-default">
+            <span class="font-black text-amber-800 dark:text-amber-300 text-xs sm:text-sm block">Nut-Free Safeties</span>
+            <p class="text-stone-600 dark:text-stone-300 text-[10px] sm:text-[11px] leading-tight sm:leading-normal">Pistachio & pecan tubs stored in segregated color-coded wells.</p>
+          </div>
+          <div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-pink-50 dark:bg-pink-950/40 border border-pink-200 dark:border-pink-800 space-y-1 hover:scale-[1.02] hover:shadow-md transition-all cursor-default">
+            <span class="font-black text-rose-800 dark:text-rose-300 text-xs sm:text-sm block">Zero Synthetic Dyes</span>
+            <p class="text-stone-600 dark:text-stone-300 text-[10px] sm:text-[11px] leading-tight sm:leading-normal">No Red-40 or artificial dyes. Colors from real fruit skin and matcha.</p>
+          </div>
+          <div class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 space-y-1 hover:scale-[1.02] hover:shadow-md transition-all cursor-default">
+            <span class="font-black text-purple-800 dark:text-purple-300 text-xs sm:text-sm block">Gluten-Free Bowls</span>
+            <p class="text-stone-600 dark:text-stone-300 text-[10px] sm:text-[11px] leading-tight sm:leading-normal">Almond-flour cones and paper cups available on request.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: FAQ ACCORDION (Interactive Hover & Rotate)
+         ==================================================================== -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="text-center mb-8 sm:mb-10 space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Got Questions?</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white font-fun">Menu & Tasting FAQs</h2>
+      </div>
+
+      <div class="space-y-3">
+        <details class="group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-rose-300 dark:hover:border-stone-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+          <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+            <span>Can I sample flavours before choosing my scoop?</span>
+            <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300"></i>
+          </summary>
+          <p class="text-xs text-stone-600 dark:text-stone-300 mt-3 leading-relaxed border-t border-stone-100 dark:border-stone-800 pt-3">
+            Absolutely! Our scoopers provide complimentary wooden sample spoons for up to three flavours so you can discover your exact match before ordering.
+          </p>
+        </details>
+
+        <details class="group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-rose-300 dark:hover:border-stone-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+          <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+            <span>Do your sundaes come with hot or cold fudge?</span>
+            <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300"></i>
+          </summary>
+          <p class="text-xs text-stone-600 dark:text-stone-300 mt-3 leading-relaxed border-t border-stone-100 dark:border-stone-800 pt-3">
+            All our chocolate and salted caramel drizzles are kept at a constant 45°C in heated copper pots, poured warm over cold scoops for the classic hot-cold dessert sensation.
+          </p>
+        </details>
+
+        <details class="group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-rose-300 dark:hover:border-stone-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+          <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+            <span>How long do takeaway tubs stay frozen during transport?</span>
+            <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300"></i>
+          </summary>
+          <p class="text-xs text-stone-600 dark:text-stone-300 mt-3 leading-relaxed border-t border-stone-100 dark:border-stone-800 pt-3">
+            Our insulated chill packs and double-walled containers keep pints and party tubs completely frozen for up to 3 hours travel time at room temperature.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: TAKEAWAY TUBS REDIRECT BANNER
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
+        <div class="space-y-2 sm:space-y-3 max-w-xl">
+          <span class="px-3.5 py-1 rounded-full bg-stone-900 text-amber-400 text-xs font-black uppercase tracking-wider inline-block">Takeaway Insulated Tubs</span>
+          <h3 class="text-2xl sm:text-4xl font-black font-fun leading-tight">Want to take your favourite flavours home?</h3>
+          <p class="text-white/90 text-xs sm:text-sm leading-relaxed">
+            All our 36 flavours are available in 475ml pints, 2L family packs, and 5L party tubs packed in thermal chill boxes.
+          </p>
+        </div>
+        <a href="pricing.html" class="btn-hover w-full sm:w-auto text-center px-8 py-3.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-black text-xs uppercase tracking-wider shadow-xl hover:shadow-stone-900/40 transition-all">
+          View Tub Packaging & Prices
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SHARED FOOTER PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="footer-placeholder"></div>
+
+
+
+  <!-- Shared Global JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>

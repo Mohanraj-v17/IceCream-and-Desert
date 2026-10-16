@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Artisan Parlour & Craft | SugarSwirl & Co.</title>
+  
+  <!-- Browser Tab Favicon Logo -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍦</text></svg>">
+  
+  <meta name="description" content="Discover SugarSwirl's artisan philosophy: single-farm grass-fed dairy, 12-hour maturation churning, and wholehearted dessert craft in Hosur.">
+
+  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs instantly in head before <body> paints) -->
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('sugarswirl_theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+        const dir = localStorage.getItem('sugarswirl_direction') || 'ltr';
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parlour: {
+              cream: '#FFF9F0',
+              pink: '#FF6B8B',
+              caramel: '#FFB703',
+              mint: '#06D6A0',
+              cocoa: '#2D1E18',
+              dark: '#14100E'
+            }
+          },
+          fontFamily: {
+            fun: ['Fredoka', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* 1. Card Lift & Neon Dessert Glow */
+    .dessert-hover {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.35s ease, 
+                  border-color 0.35s ease;
+      will-change: transform;
+    }
+    .dessert-hover:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+    .light .dessert-hover:hover {
+      box-shadow: 0 20px 30px -10px rgba(255, 107, 139, 0.20), 0 10px 15px -5px rgba(255, 183, 3, 0.12);
+    }
+    .dark .dessert-hover:hover {
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.75), 0 0 20px 2px rgba(255, 107, 139, 0.15);
+    }
+
+    /* 2. Button Pop & Active Squash */
+    .btn-hover {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.2s ease, 
+                  filter 0.2s ease,
+                  background-color 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: brightness(1.06);
+    }
+    .btn-hover:active {
+      transform: translateY(1px) scale(0.96);
+    }
+
+    /* 3. Image Micro Zoom */
+    .img-zoom-box img {
+      transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .img-zoom-box:hover img {
+      transform: scale(1.08);
+    }
+
+    /* 4. Filter Chips & Quick Links */
+    .chip-hover {
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .chip-hover:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 16px -4px rgba(255, 107, 139, 0.3);
+    }
+    .chip-hover:active {
+      transform: scale(0.95);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .dark .glass-nav {
+      background: rgba(28, 23, 21, 0.94);
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#FFF9F0] dark:bg-[#120E0D] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- ====================================================================
+       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
+
+  <main class="pt-24 lg:pt-28 flex-1">
+
+    <!-- ====================================================================
+         SECTION 1: EDITORIAL MANIFESTO HERO (Interactive Hover & Badges)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 sm:pt-4 pb-8 sm:py-12">
+      <div class="relative bg-gradient-to-br from-amber-50 via-pink-50/60 to-rose-100/70 dark:from-[#1D1412] dark:via-[#221613] dark:to-[#170E0C] rounded-[2rem] sm:rounded-[3.5rem] p-5 sm:p-10 lg:p-14 border-2 border-pink-200/80 dark:border-stone-800 shadow-xl overflow-hidden">
+        
+        <!-- Ambient Decorative Glow -->
+        <div class="absolute -top-24 -right-24 w-80 h-80 bg-rose-400/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-amber-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+          
+          <!-- Left Column: Narrative -->
+          <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-stone-800 text-rose-600 dark:text-rose-400 border border-pink-200 dark:border-stone-700 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Morning Milk Run: Completed at 06:30 AM</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-fun leading-[1.1] tracking-tight text-stone-900 dark:text-white">
+              Crafted with Honest Milk, <span class="text-rose-500 underline decoration-amber-400 decoration-wavy">Never Pre-Mixed.</span>
+            </h1>
+
+            <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+              SugarSwirl & Co. was founded on a simple observation: modern commercial ice cream is mostly pumped air and powdered palm oil. We chose the slower, harder road—partnering directly with highland mountain dairies to slow-churn uncompromised, velvety gelato fresh every single morning.
+            </p>
+
+            <!-- Brand Fast-Facts Badges with Hover Micro-Lift -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-1 sm:pt-2 max-w-lg mx-auto lg:mx-0">
+              <div class="dessert-hover p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-stone-800/80 border border-pink-100 dark:border-stone-700 hover:border-rose-400 shadow-sm text-center cursor-default">
+                <span class="text-base sm:text-2xl font-black text-rose-500 font-fun block">Est. 2021</span>
+                <span class="text-[9px] sm:text-[10px] text-stone-500 font-bold uppercase block mt-0.5">Small-Batch</span>
+              </div>
+              <div class="dessert-hover p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-stone-800/80 border border-pink-100 dark:border-stone-700 hover:border-amber-400 shadow-sm text-center cursor-default">
+                <span class="text-base sm:text-2xl font-black text-amber-500 font-fun block">&lt; 20%</span>
+                <span class="text-[9px] sm:text-[10px] text-stone-500 font-bold uppercase block mt-0.5">Zero Puffed Air</span>
+              </div>
+              <div class="dessert-hover p-2.5 sm:p-3 rounded-2xl bg-white/80 dark:bg-stone-800/80 border border-pink-100 dark:border-stone-700 hover:border-emerald-400 shadow-sm text-center cursor-default">
+                <span class="text-base sm:text-2xl font-black text-emerald-500 font-fun block">100%</span>
+                <span class="text-[9px] sm:text-[10px] text-stone-500 font-bold uppercase block mt-0.5">Single-Herd</span>
+              </div>
+            </div>
+
+            <!-- Action Links with Button Bounce -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-2">
+              <a href="#churn-lifecycle" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-stone-900 hover:bg-rose-500 text-white font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-rose-500/25 transition-all text-center">
+                Explore How We Churn
+              </a>
+              <a href="menu.html" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-white dark:bg-stone-800 hover:bg-stone-50 dark:hover:bg-stone-700 text-stone-800 dark:text-white font-black text-xs uppercase tracking-wider border border-stone-200 dark:border-stone-700 hover:border-rose-400 transition-all text-center">
+                View 36 Flavours
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Visual Composition with Safe Floating Badges -->
+          <div class="lg:col-span-5 relative w-full pt-4 lg:pt-0">
+            
+            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-stone-800 aspect-[4/3] sm:aspect-[1/1] img-zoom-box cursor-pointer group">
+              <img src="public/madagascar.avif" alt="Gelatier hand scooping artisan gelato" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 sm:p-5 text-white">
+                <span class="text-[10px] font-black uppercase text-amber-300 tracking-wider">The Open Churn Station</span>
+                <h3 class="text-base sm:text-lg font-black font-fun group-hover:text-amber-300 transition-colors">Behind the Glass in Hosur</h3>
+              </div>
+            </div>
+
+            <!-- Floating Farm Badge Top Left -->
+            <div class="absolute -top-2.5 left-2 sm:-left-4 bg-white dark:bg-stone-900 px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl border border-pink-200 dark:border-stone-700 flex items-center gap-2 hover:scale-105 hover:border-rose-400 transition-all cursor-pointer">
+              <span class="text-base sm:text-lg">🚜</span>
+              <div class="text-left">
+                <span class="text-[9px] font-black uppercase text-stone-400 block leading-tight">Direct Terroir</span>
+                <span class="text-xs font-black text-rose-500 font-fun">Highland Grass-Fed</span>
+              </div>
+            </div>
+
+            <!-- Floating Texture Badge Bottom Right -->
+            <div class="absolute -bottom-3 right-2 sm:-right-4 bg-white dark:bg-stone-900 px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl border border-pink-200 dark:border-stone-700 flex items-center gap-2 hover:scale-105 hover:border-amber-400 transition-all cursor-pointer">
+              <span class="text-base sm:text-lg">🌡️</span>
+              <div class="text-left">
+                <span class="text-[9px] font-black uppercase text-stone-400 block leading-tight">Serving Window</span>
+                <span class="text-xs font-black text-amber-500 font-fun">-12°C Velvety Silk</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: THE 6-STEP COLD-CRAFT CHURNING LIFECYCLE (Hover Lift)
+         ==================================================================== -->
+    <section id="churn-lifecycle" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Methodology</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">The 6-Step Cold-Craft Lifecycle</h2>
+        <p class="text-xs sm:text-sm text-stone-500">From the early morning grass pastures to the final frosted counter dip.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch">
+        
+        <!-- Step 1 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-rose-500 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">01</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-rose-500 transition-colors">A2 Whole Milk Pasteurization</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Arrives raw at 6:30 AM from mountain cows. Gently batch-pasteurized at 65°C for 30 minutes to preserve delicate proteins without caramelizing natural lactose.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-rose-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 1 • Gentle Heat</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-stone-950 font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">02</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-amber-500 transition-colors">12-Hour Cold Maturation</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              The base rests in chilled aging vats at 4°C overnight. This enables milk proteins to fully hydrate and bind with cocoa fats for an ultra-dense, non-icy mouthfeel.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-amber-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 2 • 4°C Resting</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">03</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-emerald-500 transition-colors">Slow Vertical Churning</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Spun in traditional Italian batch freezers. Unlike industrial factory ice cream that pumps 100% air, our blades fold gently, incorporating under 20% natural overrun.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-emerald-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 3 • Sub-Zero Spin</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-purple-400 dark:hover:border-purple-400 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-500 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">04</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-purple-500 transition-colors">Hand-Ribbon Inclusions</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              As the gelato exits the spigot, our chefs fold in warm Belgian chocolate ribbons, Bronte pistachio praline, and fresh berry preserves by hand using spatulas.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-purple-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 4 • Manual Swirl</span>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-pink-400 dark:hover:border-pink-400 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-pink-500 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">05</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-pink-500 transition-colors">-35°C Shock Freezing</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Tubs enter a blast freezer for exactly 15 minutes. This locks the micro-crystals instantaneously, preventing ice jaggedness and preserving pure silkiness.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-pink-500 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 5 • Blast Lock</span>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 shadow-sm flex flex-col justify-between h-full space-y-3.5 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-stone-700 text-white font-black text-xs sm:text-sm flex items-center justify-center font-fun shadow-md group-hover:scale-110 group-hover:rotate-12 transition-transform">06</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-rose-500 transition-colors">-12°C Tempered Pozzetti Wells</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Held in sunken Italian Pozzetti wells shielded from air and light. Served slightly warmer than commercial ice cream so flavour explodes on your tongue immediately.
+            </p>
+          </div>
+          <span class="text-[10px] font-bold text-stone-900 dark:text-stone-100 uppercase tracking-wider block pt-2 border-t border-stone-100 dark:border-stone-800">Stage 6 • Ready to Scoop</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: OUR 4 CORE CHURNING PILLARS (Interactive Emoji Bounce)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">The Quality Standard</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">What We Stand For</h2>
+        <p class="text-xs sm:text-sm text-stone-500">Four non-negotiable promises behind every scoop that hits your spoon.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+        
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-3 cursor-pointer">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-rose-100 dark:bg-rose-950 text-rose-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform">
+            🐄
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-rose-500 transition-colors">100% Single-Farm Dairy</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mt-1">
+              Delivered fresh every morning from grass-fed mountain cows. High natural butterfat density without heavy cream powder shortcuts.
+            </p>
+          </div>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm flex flex-col justify-between h-full space-y-3 cursor-pointer">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform">
+            🍓
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-amber-500 transition-colors">Tree-Ripened Fruit Puree</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mt-1">
+              Real Ratnagiri Alphonso mangoes and wild blackberries. Cold-pressed with natural cane sugar, zero artificial fruit syrups.
+            </p>
+          </div>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm flex flex-col justify-between h-full space-y-3 cursor-pointer">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform">
+            🌱
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-emerald-500 transition-colors">Inclusive Plant Sorbets</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mt-1">
+              Dairy-free oat milk and cold-pressed coconut creams so friends with lactose sensitivities never miss the parlour magic.
+            </p>
+          </div>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-pink-400 dark:hover:border-pink-400 shadow-sm flex flex-col justify-between h-full space-y-3 cursor-pointer">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-pink-100 dark:bg-pink-950 text-pink-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform">
+            🧇
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-pink-500 transition-colors">Fresh Caramelized Cones</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mt-1">
+              Cast-iron griddles roll warm cinnamon-butter waffle cones every 45 minutes, finished with a melted chocolate seal at the bottom.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: FARM-TO-CONE SOURCING PROVENANCE (Interactive Terroir Bento)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="bg-gradient-to-br from-amber-50 via-pink-50 to-rose-50 dark:from-[#1E1715] dark:via-[#221614] dark:to-[#160D0A] rounded-[2rem] sm:rounded-[3.5rem] p-5 sm:p-10 lg:p-12 border-2 border-pink-200 dark:border-stone-800 shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          
+          <div class="lg:col-span-6 space-y-3.5 sm:space-y-4 text-center lg:text-left">
+            <span class="text-xs font-black uppercase tracking-widest text-rose-600">Terroir Matters</span>
+            <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun leading-tight">
+              Where Our Ingredients Come From
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              We travel directly to the farmers and cooperatives who protect heirloom crop varieties. No middleman brokers or warehouse aging.
+            </p>
+
+            <div class="space-y-2.5 sm:space-y-3 pt-1 text-left">
+              <div class="dessert-hover p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-stone-800/80 border border-pink-100 dark:border-stone-700 hover:border-rose-400 flex items-center gap-3 cursor-default">
+                <span class="text-lg sm:text-xl">🥛</span>
+                <div>
+                  <h5 class="text-xs font-bold text-stone-900 dark:text-white font-fun">A2 Whole Mountain Milk • Highland Farms</h5>
+                  <p class="text-[11px] text-stone-500">Unpasteurized single-herd collection delivered before sunrise daily.</p>
+                </div>
+              </div>
+
+              <div class="dessert-hover p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-stone-800/80 border border-pink-100 dark:border-stone-700 hover:border-amber-400 flex items-center gap-3 cursor-default">
+                <span class="text-lg sm:text-xl">🍫</span>
+                <div>
+                  <h5 class="text-xs font-bold text-stone-900 dark:text-white font-fun">70% Single-Origin Arriba Cacao • Ecuador</h5>
+                  <p class="text-[11px] text-stone-500">Direct trade Ecuadorian dark chocolate roasted at low temperature for floral notes.</p>
+                </div>
+              </div>
+
+              <div class="dessert-hover p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-stone-800/80 border border-pink-100 dark:border-stone-700 hover:border-emerald-400 flex items-center gap-3 cursor-default">
+                <span class="text-lg sm:text-xl">🥜</span>
+                <div>
+                  <h5 class="text-xs font-bold text-stone-900 dark:text-white font-fun">D.O.P. Green Pistachios • Bronte, Sicily</h5>
+                  <p class="text-[11px] text-stone-500">Grown on volcanic slopes of Mount Etna, roasted in copper pans with sea salt.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="aspect-[16/10] sm:aspect-[16/11] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white dark:border-stone-700 img-zoom-box cursor-pointer">
+              <img src="public/cow.avif" alt="Dairy cow grazing on green pastures" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: TIMELINE (Interactive Card Lifts)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">The Journey</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">How SugarSwirl Swirled to Life</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 shadow-sm space-y-2.5 cursor-pointer">
+          <span class="text-xs font-black text-rose-500 font-fun group-hover:tracking-wider transition-all">March 2021</span>
+          <h4 class="text-base font-bold font-fun text-stone-900 dark:text-white group-hover:text-rose-500 transition-colors">The Garage Churn</h4>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+            Started with one secondhand 4-quart Italian batch freezer, experimenting with local jaggery and roasted pistachio blends for neighbours.
+          </p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 shadow-sm space-y-2.5 cursor-pointer">
+          <span class="text-xs font-black text-amber-500 font-fun group-hover:tracking-wider transition-all">August 2022</span>
+          <h4 class="text-base font-bold font-fun text-stone-900 dark:text-white group-hover:text-amber-500 transition-colors">The Mobile Cart</h4>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+            Built our first vintage pastel ice cream cart, scooping at local weekend food fairs and birthday lawns with fresh waffle irons.
+          </p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 shadow-sm space-y-2.5 cursor-pointer">
+          <span class="text-xs font-black text-emerald-500 font-fun group-hover:tracking-wider transition-all">October 2024</span>
+          <h4 class="text-base font-bold font-fun text-stone-900 dark:text-white group-hover:text-emerald-500 transition-colors">First Flagship Parlour</h4>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+            Opened our brick-and-mortar dessert counter in Hosur with an open glass kitchen and our signature 45°C hot molten fudge fountains.
+          </p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-purple-400 shadow-sm space-y-2.5 cursor-pointer">
+          <span class="text-xs font-black text-purple-500 font-fun group-hover:tracking-wider transition-all">Today</span>
+          <h4 class="text-base font-bold font-fun text-stone-900 dark:text-white group-hover:text-purple-500 transition-colors">36+ Recipes & Beyond</h4>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+            Over 18,000 satisfied dessert lovers, 30+ wedding carts catered monthly, and a commitment to pure dairy that never wavers.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: MEET OUR MASTER GELATIERS (Micro-Zoom Portraits)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-2 sm:gap-4 text-center md:text-left">
+        <div>
+          <span class="text-xs font-black uppercase tracking-widest text-rose-500">The People Behind The Scoop</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Meet Our Dessert Artisans</h2>
+        </div>
+        <p class="text-xs text-stone-500 max-w-sm mx-auto md:mx-0">Every recipe has a creator who spent months balancing fat, sucrose, and freezing curves.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 items-stretch">
+        
+        <!-- Chef 1 -->
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full group cursor-pointer">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden img-zoom-box">
+              <img src="public/master-1.avif" alt="Master Gelatier Matteo Rossi" class="w-full h-full object-cover object-[50%_30%]">
+            </div>
+            <div class="p-5 sm:p-6 space-y-2">
+              <div class="flex justify-between items-center">
+                <h4 class="text-base sm:text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Matteo Rossi</h4>
+                <span class="text-xs font-black text-rose-500">Bologna Trained</span>
+              </div>
+              <p class="text-[11px] text-amber-600 font-bold uppercase tracking-wider">Head Gelatier & Flavour Architect</p>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed pt-1">
+                Spent 12 years formulating artisan gelato bases across Northern Italy. Matteo calibrates the precise sugar-to-fat balance for our melt-in-mouth texture.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chef 2 -->
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm flex flex-col justify-between h-full group cursor-pointer">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden img-zoom-box">
+              <img src="public/master-2.avif" alt="Pastry Chef Chloe Dubois" class="w-full h-full object-cover">
+            </div>
+            <div class="p-5 sm:p-6 space-y-2">
+              <div class="flex justify-between items-center">
+                <h4 class="text-base sm:text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-amber-500 transition-colors">Chloe Dubois</h4>
+                <span class="text-xs font-black text-rose-500">Parisian Certified</span>
+              </div>
+              <p class="text-[11px] text-amber-600 font-bold uppercase tracking-wider">Master Pastry & Waffle Artisan</p>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed pt-1">
+                Oversees our waffle irons, caramel drizzles, and gelato cakes. Her chocolate molten fondue recipe is our parlour's crowning achievement.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chef 3 -->
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm flex flex-col justify-between h-full group cursor-pointer">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden img-zoom-box">
+              <img src="public/master-3.avif" alt="Botanical Specialist Kenji Sato" class="w-full h-full object-cover object-[50%_10%]">
+            </div>
+            <div class="p-5 sm:p-6 space-y-2">
+              <div class="flex justify-between items-center">
+                <h4 class="text-base sm:text-lg font-black text-stone-900 dark:text-white font-fun group-hover:text-emerald-500 transition-colors">Kenji Sato</h4>
+                <span class="text-xs font-black text-rose-500">Kyoto Specialist</span>
+              </div>
+              <p class="text-[11px] text-amber-600 font-bold uppercase tracking-wider">Botanical Infusions & Vegan Sorbets</p>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed pt-1">
+                Kenji sources ceremonial Uji matcha, fresh yuzu, and organic oat creams to craft vegan sorbettos that rival traditional dairy in silky depth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: OPEN-KITCHEN HYGIENE PROTOCOL (Hover Lift)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <div class="bg-white dark:bg-[#1C1614] rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-pink-200 dark:border-stone-800 shadow-md space-y-5 sm:space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 border-b border-stone-100 dark:border-stone-800 pb-3 sm:pb-4 text-center sm:text-left">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-rose-500">Food Safety First</span>
+            <h3 class="text-xl sm:text-2xl font-black text-stone-900 dark:text-white font-fun">Our Open Kitchen Hygiene Protocol</h3>
+          </div>
+          <span class="text-xs text-stone-500 font-semibold"><i class="fas fa-shield-halved text-emerald-500 mr-1"></i> FSSAI Certified Clean Facility</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-xs text-stone-600 dark:text-stone-300">
+          <div class="space-y-1 p-3.5 rounded-2xl hover:bg-pink-50/50 dark:hover:bg-stone-800/50 transition-all cursor-default">
+            <h5 class="font-bold text-stone-900 dark:text-white text-sm font-fun">Separate Allergy Wells</h5>
+            <p class="leading-relaxed">Pistachio and peanut tubs are isolated in separate counter wells with dedicated dipping wells to prevent cross-contact.</p>
+          </div>
+          <div class="space-y-1 p-3.5 rounded-2xl hover:bg-pink-50/50 dark:hover:bg-stone-800/50 transition-all cursor-default">
+            <h5 class="font-bold text-stone-900 dark:text-white text-sm font-fun">Transparent Open Glass</h5>
+            <p class="leading-relaxed">Nothing is hidden behind solid kitchen walls. You can watch every churn, fruit fold, and waffle roll from your table.</p>
+          </div>
+          <div class="space-y-1 p-3.5 rounded-2xl hover:bg-pink-50/50 dark:hover:bg-stone-800/50 transition-all cursor-default">
+            <h5 class="font-bold text-stone-900 dark:text-white text-sm font-fun">Sub-Zero Continuous Wash</h5>
+            <p class="leading-relaxed">Stainless steel scoops are continuously cycled through fresh pressurized water rinsers after every individual serving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: NIGHT OWL PARLOUR VISIT BANNER (Button Pop Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
+        <div class="space-y-2 sm:space-y-3 max-w-xl">
+          <span class="px-3.5 py-1 rounded-full bg-stone-900 text-amber-400 text-xs font-black uppercase tracking-wider inline-block">Visit Our Kitchen</span>
+          <h3 class="text-2xl sm:text-4xl font-black font-fun leading-tight">Come Taste Fresh Churns in Hosur</h3>
+          <p class="text-white/90 text-xs sm:text-sm leading-relaxed">
+            We are open daily from 11:00 AM until 11:30 PM on weekends. Free tasting samples always on the house!
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 w-full sm:w-auto shrink-0">
+          <a href="menu.html" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-stone-900 font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-white/30 transition-all text-center">
+            Explore 36 Flavours
+          </a>
+          <a href="contacts.html" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-black text-xs uppercase tracking-wider shadow-xl hover:shadow-stone-900/40 transition-all text-center">
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SHARED FOOTER PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Shared Global JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Our Parlour & Contact | SugarSwirl & Co.</title>
+  
+ <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📍%3C/text%3E%3C/svg%3E">
+  
+  <meta name="description" content="Visit SugarSwirl & Co. on Denkanikottai Road, Hosur for fresh small-batch gelato, molten waffle sundaes, and midnight dessert cravings. Open daily till 11:30 PM.">
+
+  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs in head before <body> paints) -->
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('sugarswirl_theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+        const dir = localStorage.getItem('sugarswirl_direction') || 'ltr';
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parlour: {
+              cream: '#FFF9F0',
+              pink: '#FF6B8B',
+              caramel: '#FFB703',
+              mint: '#06D6A0',
+              cocoa: '#2D1E18',
+              dark: '#14100E'
+            }
+          },
+          fontFamily: {
+            fun: ['Fredoka', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* 1. Card Lift & Neon Glow */
+    .dessert-hover {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.35s ease, 
+                  border-color 0.35s ease;
+      will-change: transform;
+    }
+    .dessert-hover:hover {
+      transform: translateY(-5px);
+    }
+    .light .dessert-hover:hover {
+      box-shadow: 0 16px 26px -8px rgba(255, 107, 139, 0.18), 0 8px 12px -4px rgba(255, 183, 3, 0.10);
+    }
+    .dark .dessert-hover:hover {
+      box-shadow: 0 18px 30px -8px rgba(0, 0, 0, 0.75), 0 0 18px 2px rgba(255, 107, 139, 0.15);
+    }
+
+    /* 2. Button Pop & Active Squash */
+    .btn-hover {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.2s ease, 
+                  filter 0.2s ease,
+                  background-color 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: brightness(1.06);
+    }
+    .btn-hover:active {
+      transform: translateY(1px) scale(0.96);
+    }
+
+    /* 3. Chip & Badge Hovers */
+    .chip-hover {
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .chip-hover:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 16px -4px rgba(255, 107, 139, 0.3);
+    }
+    .chip-hover:active {
+      transform: scale(0.95);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .dark .glass-nav {
+      background: rgba(28, 23, 21, 0.94);
+    }
+  </style>
+</head>
+<body class="bg-[#FFF9F0] dark:bg-[#120E0D] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- ====================================================================
+       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
+
+  <main class="pt-24 lg:pt-28 flex-1">
+
+    <!-- ====================================================================
+         SECTION 1: CONTACT HERO (Quick Jump Chips with Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-14 text-center">
+      <div class="max-w-2xl mx-auto space-y-3 sm:space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 dark:bg-rose-950/70 text-rose-700 dark:text-rose-300 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Open Today Till 11:30 PM • Fresh Waffles Rolling</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white leading-[1.1] font-fun">
+          Drop By For a Scoop <br>
+          <span class="text-rose-500 underline decoration-amber-400 decoration-wavy">In Hosur!</span>
+        </h1>
+
+        <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm sm:leading-relaxed max-w-xl mx-auto">
+          Located right on Denkanikottai Road, Hosur. Stop by for our 36+ small-batch gelato flavours, freshly rolled waffle cones, or pick up insulated takeaway tubs[cite: 19].
+        </p>
+
+        <!-- Quick Jump Links with Hover Effects -->
+        <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-3 sm:pt-4">
+          <a href="#map-section" class="btn-hover px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold bg-rose-500 text-white shadow-md hover:bg-rose-600 transition">
+            🗺️ Live GPS Map
+          </a>
+          <a href="#parlour-info" class="chip-hover px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 text-stone-700 dark:text-stone-300 transition shadow-sm">
+            📍 Exact Address
+          </a>
+          <a href="#contact-form-section" class="chip-hover px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 text-stone-700 dark:text-stone-300 transition shadow-sm">
+            ✍️ Send Message
+          </a>
+          <a href="#amenities-section" class="chip-hover px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 text-stone-700 dark:text-stone-300 transition shadow-sm">
+            ☕ Visitor Amenities
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: PARLOUR ESSENTIALS BENTO CARDS (Interactive Hovers)
+         ==================================================================== -->
+    <section id="parlour-info" class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+        
+        <!-- Card 1: Exact Location -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-4 cursor-pointer">
+          <div class="space-y-3">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-rose-100 dark:bg-rose-950 text-rose-600 flex items-center justify-center text-lg sm:text-xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <span class="text-[10px] font-black uppercase text-rose-500 tracking-wider">Exact Parlour Spot</span>
+            <h4 class="font-black text-stone-900 dark:text-white text-base font-fun group-hover:text-rose-500 transition-colors">SugarSwirl Hosur</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              No. 1, Bagalur Road, Teachers colony, Hosur, Tamil Nadu — 635109[cite: 19].
+            </p>
+          </div>
+          <a href="#map-section" class="text-xs font-bold text-rose-500 hover:underline flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+            <span>View on Live Map</span> <i class="fas fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Card 2: Operating Hours -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm flex flex-col justify-between h-full space-y-4 cursor-pointer">
+          <div class="space-y-3">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-600 flex items-center justify-center text-lg sm:text-xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform">
+              <i class="fas fa-clock"></i>
+            </div>
+            <span class="text-[10px] font-black uppercase text-amber-500 tracking-wider">Kitchen Hours</span>
+            <h4 class="font-black text-stone-900 dark:text-white text-base font-fun group-hover:text-amber-500 transition-colors">Daily Churning</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Mon – Thu: 11:00 AM – 10:30 PM<br>
+              Fri – Sun: 11:00 AM – 11:30 PM<br>
+              <span class="text-amber-500 font-bold">Late Night Sweet Cravings</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-emerald-500 flex items-center gap-1.5">
+            <i class="fas fa-circle text-[8px] animate-pulse"></i> Open Everyday
+          </span>
+        </div>
+
+        <!-- Card 3: Direct Phone & WhatsApp -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm flex flex-col justify-between h-full space-y-4 cursor-pointer">
+          <div class="space-y-3">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center text-lg sm:text-xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <span class="text-[10px] font-black uppercase text-emerald-500 tracking-wider">Direct Order Desk</span>
+            <h4 class="font-black text-stone-900 dark:text-white text-base font-fun group-hover:text-emerald-500 transition-colors">Call & WhatsApp</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Order Desk: +91 12345 67890<br>
+              Catering Lead: +91 09876 54321<br>
+              <span class="text-stone-400 text-[11px]">Direct WhatsApp orders supported</span>
+            </p>
+          </div>
+          <button onclick="toastCart('WhatsApp chat opened for Hosur counter!')" class="text-xs font-bold text-emerald-600 hover:underline flex items-center gap-1.5 text-left group-hover:translate-x-1 transition-transform">
+            <span>Message on WhatsApp</span> <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Card 4: Email & Event Desk -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-purple-400 dark:hover:border-purple-400 shadow-sm flex flex-col justify-between h-full space-y-4 cursor-pointer">
+          <div class="space-y-3">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center text-lg sm:text-xl shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <span class="text-[10px] font-black uppercase text-purple-500 tracking-wider">Email Inquiry</span>
+            <h4 class="font-black text-stone-900 dark:text-white text-base font-fun group-hover:text-purple-500 transition-colors">Digital Inquiries</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Orders: hello@sugarswirl.com<br>
+              Catering: party@sugarswirl.com<br>
+              <span class="text-stone-400 text-[11px]">2-hour daytime response guarantee</span>
+            </p>
+          </div>
+          <a href="mailto:hello@sugarswirl.com" class="text-xs font-bold text-purple-500 hover:underline flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+            <span>Send Email</span> <i class="fas fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: EXACT GOOGLE MAPS EMBED (Hover Card Frame)
+         ==================================================================== -->
+    <section id="map-section" class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <div class="dessert-hover bg-white dark:bg-[#1A1412] p-4 sm:p-7 rounded-2xl sm:rounded-[2.5rem] border border-pink-100 dark:border-stone-800 shadow-md space-y-3 sm:space-y-4">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 border-b border-stone-100 dark:border-stone-800 pb-3">
+          <div>
+            <span class="text-[10px] sm:text-xs font-black uppercase tracking-widest text-rose-500">GPS: 12.7398° N, 77.8330° E</span>
+            <h3 class="text-lg sm:text-2xl font-black text-stone-900 dark:text-white font-fun">SugarSwirl Parlour Map — Denkanikottai Road</h3>
+          </div>
+          <span class="text-xs text-stone-500">
+            <i class="fas fa-motorcycle text-amber-500 mr-1.5"></i> Easy Parking & Drive-in Access
+          </span>
+        </div>
+
+        <!-- Responsive Map Frame -->
+        <div class="w-full aspect-[16/10] sm:aspect-[21/9] rounded-xl sm:rounded-2xl overflow-hidden shadow-inner relative border border-stone-200 dark:border-stone-700">
+          <iframe 
+            src="https://maps.google.com/maps?q=12.7398021,77.8329584&z=17&output=embed" 
+            class="w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="SugarSwirl Hosur Exact Location"
+          ></iframe>
+        </div>
+
+        <div class="pt-1 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-2.5 text-center sm:text-left">
+          <span>Landmark: Bagalur Road, Teachers Colony, Hosur 635126.</span>
+          <a 
+            href="https://www.google.com/maps/dir/?api=1&destination=12.7398021,77.8329584" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-hover w-full sm:w-auto px-5 py-2.5 rounded-full bg-rose-500 hover:bg-rose-600 text-white font-bold text-xs shadow-md transition flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-diamond-turn-right"></i>
+            <span>Get Live GPS Directions</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: CONTACT FORM & VISITOR INFORMATION SPLIT (Interactive Focus)
+         ==================================================================== -->
+    <section id="contact-form-section" class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+      <div class="bg-white dark:bg-[#161211] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-12 border border-pink-200 dark:border-stone-800 shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-4 sm:space-y-6 text-center lg:text-left">
+            <div class="space-y-1.5 sm:space-y-2">
+              <span class="text-xs font-black uppercase tracking-widest text-rose-500">Reach the Churn Master</span>
+              <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun leading-tight">
+                Drop Us a Message or Plan a Visit
+              </h2>
+              <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Planning a birthday celebration, want to check if your favourite seasonal flavour is in the batch wells, or need a dietary clearance? Fill out this quick form.
+              </p>
+            </div>
+
+            <!-- Trust Highlights with Hover -->
+            <div class="space-y-2.5 sm:space-y-3 pt-1 text-left">
+              <div class="dessert-hover p-3 sm:p-3.5 rounded-2xl bg-pink-50/70 dark:bg-[#1C1614] border border-pink-100 dark:border-stone-800 hover:border-rose-300 flex items-center gap-3 cursor-default">
+                <span class="text-lg sm:text-xl">🍦</span>
+                <div>
+                  <h5 class="text-xs font-bold text-stone-900 dark:text-white font-fun">Free Tasting Spoons Always</h5>
+                  <p class="text-[11px] text-stone-500">Walk into our Denkanikottai Road parlour and sample any 3 flavours on the house[cite: 19].</p>
+                </div>
+              </div>
+
+              <div class="dessert-hover p-3 sm:p-3.5 rounded-2xl bg-pink-50/70 dark:bg-[#1C1614] border border-pink-100 dark:border-stone-800 hover:border-amber-300 flex items-center gap-3 cursor-default">
+                <span class="text-lg sm:text-xl">📦</span>
+                <div>
+                  <h5 class="text-xs font-bold text-stone-900 dark:text-white font-fun">Pre-Packed Insulated Pickups</h5>
+                  <p class="text-[11px] text-stone-500">Call ahead and we will have your pints or 5L party tubs chill-packed for drive-by pickup[cite: 19].</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="lg:col-span-7 bg-stone-50 dark:bg-[#1E1715] p-5 sm:p-7 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 shadow-sm space-y-3.5">
+            <h3 class="text-base sm:text-lg font-black font-fun text-stone-900 dark:text-white text-center sm:text-left">Send Us a Direct Message</h3>
+            
+            <form onsubmit="handleContactSubmit(event); return false;" class="space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="text-[10px] uppercase font-bold text-stone-500 tracking-wider block mb-1">Your Name *</label>
+                  <input 
+                    type="text" 
+                    id="contact-name"
+                    required 
+                    placeholder="e.g. john" 
+                    class="w-full text-xs px-3.5 py-3 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 transition"
+                  >
+                </div>
+                <div>
+                  <label class="text-[10px] uppercase font-bold text-stone-500 tracking-wider block mb-1">Phone / WhatsApp *</label>
+                  <input 
+                    type="tel" 
+                    id="contact-phone"
+                    required 
+                    placeholder="+91 12345 67890" 
+                    class="w-full text-xs px-3.5 py-3 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 transition"
+                  >
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="text-[10px] uppercase font-bold text-stone-500 tracking-wider block mb-1">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="contact-email"
+                    placeholder="name@email.com" 
+                    class="w-full text-xs px-3.5 py-3 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 transition"
+                  >
+                </div>
+                <div>
+                  <label class="text-[10px] uppercase font-bold text-stone-500 tracking-wider block mb-1">Inquiry Topic *</label>
+                  <select id="contact-topic" class="w-full text-xs px-3 py-3 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white focus:outline-none focus:border-rose-500 transition cursor-pointer">
+                    <option>General Question & Visit</option>
+                    <option>Party Tub Takeaway Pre-Order</option>
+                    <option>Mobile Cart Catering Booking</option>
+                    <option>Dietary / Allergy Inquiry</option>
+                    <option>Feedback & Suggestions</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="text-[10px] uppercase font-bold text-stone-500 tracking-wider block mb-1">Your Message or Sweet Craving *</label>
+                <textarea 
+                  id="contact-message"
+                  required 
+                  rows="3" 
+                  placeholder="Tell us what flavours you're looking for, guest count, or any special requests..." 
+                  class="w-full text-xs p-3.5 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 transition"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="btn-hover w-full py-3.5 rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white text-xs font-black uppercase tracking-wider shadow-lg hover:shadow-rose-500/25 transition-all"
+              >
+                Send Message to Parlour Team
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: PARLOUR VISITOR AMENITIES (Emoji Bounce & Pop Hovers)
+         ==================================================================== -->
+    <section id="amenities-section" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Visitor Comforts</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Parlour Amenities & Perks</h2>
+        <p class="text-xs sm:text-sm text-stone-500">Designed for relaxing evening hangouts, family celebrations, and late-night sweet dates.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 text-center">
+        
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm space-y-1.5 sm:space-y-2 cursor-pointer">
+          <span class="text-xl sm:text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">🚗</span>
+          <h4 class="font-bold text-stone-900 dark:text-white text-xs font-fun group-hover:text-rose-500 transition-colors">Free Parking</h4>
+          <p class="text-[10px] sm:text-[11px] text-stone-500">Dedicated car & bike slots.</p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm space-y-1.5 sm:space-y-2 cursor-pointer">
+          <span class="text-xl sm:text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">📶</span>
+          <h4 class="font-bold text-stone-900 dark:text-white text-xs font-fun group-hover:text-amber-500 transition-colors">High-Speed Wi-Fi</h4>
+          <p class="text-[10px] sm:text-[11px] text-stone-500">Free fibre broadband for guests.</p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm space-y-1.5 sm:space-y-2 cursor-pointer">
+          <span class="text-xl sm:text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">🌿</span>
+          <h4 class="font-bold text-stone-900 dark:text-white text-xs font-fun group-hover:text-emerald-500 transition-colors">Outdoor Patio</h4>
+          <p class="text-[10px] sm:text-[11px] text-stone-500">Open-air breezy seating.</p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-pink-400 dark:hover:border-pink-400 shadow-sm space-y-1.5 sm:space-y-2 cursor-pointer">
+          <span class="text-xl sm:text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">🐾</span>
+          <h4 class="font-bold text-stone-900 dark:text-white text-xs font-fun group-hover:text-pink-500 transition-colors">Pet Friendly</h4>
+          <p class="text-[10px] sm:text-[11px] text-stone-500">Porch seating welcome for pets.</p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-purple-400 dark:hover:border-purple-400 shadow-sm space-y-1.5 sm:space-y-2 cursor-pointer">
+          <span class="text-xl sm:text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">🧊</span>
+          <h4 class="font-bold text-stone-900 dark:text-white text-xs font-fun group-hover:text-purple-500 transition-colors">Open Kitchen</h4>
+          <p class="text-[10px] sm:text-[11px] text-stone-500">Watch batches churn live.</p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm space-y-1.5 sm:space-y-2 cursor-pointer">
+          <span class="text-xl sm:text-2xl inline-block group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">💳</span>
+          <h4 class="font-bold text-stone-900 dark:text-white text-xs font-fun group-hover:text-emerald-500 transition-colors">UPI & Tap Pay</h4>
+          <p class="text-[10px] sm:text-[11px] text-stone-500">All QR codes & cards accepted.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: NIGHT OWL LATE-NIGHT CTA BANNER (Button Pop Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
+        <div class="space-y-2 sm:space-y-3 max-w-xl">
+          <span class="px-3.5 py-1 rounded-full bg-stone-900 text-amber-400 text-xs font-black uppercase tracking-wider inline-block">Late Night Sweet Cravings</span>
+          <h3 class="text-2xl sm:text-4xl font-black font-fun leading-tight">Heading to Bagalur Road Tonight?</h3>
+          <p class="text-white/90 text-xs sm:text-sm leading-relaxed">
+            Our waffle griddles are hot and our molten fudge taps are flowing until 11:30 PM on weekends. Free tasting spoons always ready![cite: 19]
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 w-full sm:w-auto shrink-0">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=12.7398021,77.8329584" target="_blank" rel="noopener noreferrer" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-black text-xs uppercase tracking-wider shadow-xl hover:shadow-stone-900/40 transition-all text-center">
+            <i class="fas fa-diamond-turn-right mr-1.5"></i> Navigate Now
+          </a>
+          <a href="menu.html" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/20 hover:bg-white/30 border border-white/40 text-white font-black text-xs uppercase tracking-wider transition-all text-center">
+            Browse Menu First
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SHARED FOOTER PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Contact Form Submission Helper -->
+  <script>
+    function handleContactSubmit(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const nameInput = document.getElementById('contact-name');
+      const topicInput = document.getElementById('contact-topic');
+      const name = nameInput ? nameInput.value.trim() : 'Guest';
+      const topic = topicInput ? topicInput.value : 'General Inquiry';
+
+      if (typeof window.showToast === 'function') {
+        window.showToast(`Thank you, ${name}! Your inquiry about "${topic}" has been registered.`, 'pink');
+      } else {
+        alert(`Thank you, ${name}! Your message has been received.`);
+      }
+
+      if (e && e.target && e.target.reset) {
+        e.target.reset();
+      }
+      return false;
+    }
+  </script>
+
+  <!-- Shared Global JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>

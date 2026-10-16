@@ -1,0 +1,114 @@
+<!-- Shared fixed header: announcement strip collapses after scrolling -->
+<header class="site-header fixed inset-x-0 top-0 z-50 px-3 sm:px-6 lg:px-8 pt-2 pb-2">
+  <div class="promo-announcement max-w-7xl mx-auto bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 text-white text-xs py-2 px-4 text-center font-semibold tracking-wide rounded-full shadow-md">
+    <span>🍨 Free waffle upgrade above ₹399 · Code: <button type="button" class="bg-transparent border-0 p-0 text-white underline font-extrabold focus-visible:outline-white" onclick="window.copyPromo('SCOOPJOY')">SCOOPJOY</button></span>
+  </div>
+
+  <!-- Floating pill navbar -->
+  <nav class="max-w-7xl mx-auto mt-2 pill-nav-glass border border-pink-200/80 dark:border-zinc-800 rounded-full px-4 sm:px-6 py-2.5 shadow-xl shadow-pink-500/5 flex items-center justify-between transition-all duration-300">
+    
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+      <div class="brand-mark rounded-full bg-gradient-to-tr from-pink-500 to-amber-400 flex items-center justify-center text-xl shadow-md group-hover:rotate-12 transition-transform">
+        🍨
+      </div>
+      <div class="flex flex-col">
+        <span class="font-display font-bold text-lg sm:text-xl leading-none bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+          ScoopCraft
+        </span>
+        <span class="text-[10px] uppercase tracking-widest text-zinc-400 dark:text-zinc-500 font-bold">Parlour</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <div class="hidden 2xl:flex items-center gap-1 text-xs sm:text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+      <!-- Home Dropdown -->
+      <div class="relative" data-dropdown>
+        <button type="button" data-dropdown-btn aria-haspopup="true" aria-expanded="false" class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 flex items-center gap-1 transition-colors">
+          <span>Home</span>
+          <svg class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div data-dropdown-menu class="hidden absolute top-full start-0 mt-2 w-52 bg-white dark:bg-zinc-900 border border-pink-100 dark:border-zinc-800 rounded-2xl shadow-2xl p-2 z-50">
+          <a href="index.html" data-nav-link class="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 text-xs transition-colors">
+            <span>Home 1 (Vibrant Parlour)</span> <span>✨</span>
+          </a>
+          <a href="home-2.html" data-nav-link class="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 text-xs mt-1 transition-colors">
+            <span>Home 2 (Gelato Lab)</span> <span>🍦</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="about.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">About</a>
+      <a href="sessions.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">Sessions</a>
+      <a href="services.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">Services</a>
+      <a href="blog.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">Blogs</a>
+      <a href="pricing.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">Pricing</a>
+      <a href="faq.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">FAQ</a>
+      <a href="contacts.html" data-nav-link class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 transition-colors">Contact</a>
+
+      <!-- Dashboard Dropdown -->
+      <div class="relative" data-dropdown>
+        <button type="button" data-dropdown-btn aria-haspopup="true" aria-expanded="false" class="px-3.5 py-2 rounded-full hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 flex items-center gap-1 transition-colors">
+          <span>Dashboard</span>
+          <svg class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div data-dropdown-menu class="hidden absolute top-full end-0 mt-2 w-48 bg-white dark:bg-zinc-900 border border-pink-100 dark:border-zinc-800 rounded-2xl shadow-2xl p-2 z-50">
+          <a href="user-dashboard.html" data-nav-link class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 text-xs transition-colors">
+            <span>👤</span> <span>User Dashboard</span>
+          </a>
+          <a href="admin-dashboard.html" data-nav-link class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl hover:bg-pink-50 dark:hover:bg-zinc-800 hover:text-pink-500 text-xs mt-1 transition-colors">
+            <span>⚡</span> <span>Admin Dashboard</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Controls: Theme, LTR/RTL, Login/Register -->
+    <div class="hidden lg:flex items-center gap-2 shrink-0">
+      <button type="button" data-theme-toggle aria-label="Toggle light/dark theme" class="w-9 h-9 rounded-full bg-pink-50 dark:bg-zinc-800 text-pink-500 dark:text-amber-300 flex items-center justify-center hover:scale-105 transition-transform">
+        <span class="dark:hidden text-sm">🌙</span>
+        <span class="hidden dark:inline text-sm">☀️</span>
+      </button>
+      <button type="button" data-dir-toggle aria-label="Switch text direction between left-to-right and right-to-left" class="px-3 py-1.5 rounded-full bg-teal-50 dark:bg-zinc-800 text-teal-600 dark:text-teal-400 font-bold text-xs hover:scale-105 transition-transform">
+        LTR
+      </button>
+      <a href="login.html" data-nav-link class="px-3.5 py-2 rounded-full text-xs font-bold text-zinc-700 dark:text-zinc-200 hover:text-pink-500 transition-colors">Login</a>
+      <a href="register.html" data-nav-link class="px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-pink-500 to-purple-600 shadow-md hover:opacity-95 transition-all">Register</a>
+    </div>
+
+    <!-- Mobile Hamburger Trigger -->
+    <div class="flex items-center gap-2 2xl:hidden">
+      <button type="button" data-theme-toggle aria-label="Toggle light/dark theme" class="w-9 h-9 rounded-full bg-pink-50 dark:bg-zinc-800 flex items-center justify-center lg:hidden">
+        <span class="dark:hidden text-xs">🌙</span>
+        <span class="hidden dark:inline text-xs">☀️</span>
+      </button>
+      <button type="button" data-dir-toggle aria-label="Switch text direction between left-to-right and right-to-left" class="px-2.5 py-1.5 rounded-full bg-teal-50 dark:bg-zinc-800 text-teal-600 dark:text-teal-400 font-bold text-[11px] lg:hidden">
+        LTR
+      </button>
+      <button type="button" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-controls="mobileMenu" aria-expanded="false" class="w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-md">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Dropdown Drawer -->
+  <div id="mobileMenu" aria-label="Mobile navigation" class="hidden 2xl:hidden max-w-7xl mx-auto mt-2 bg-white dark:bg-zinc-900 border border-pink-100 dark:border-zinc-800 rounded-3xl shadow-2xl p-5">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-bold">
+      <a href="index.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">✨ Home 1</a>
+      <a href="home-2.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">🍦 Home 2</a>
+      <a href="about.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">📖 About Us</a>
+      <a href="sessions.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">👨‍🍳 Sessions</a>
+      <a href="services.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">🛎️ Services</a>
+      <a href="blog.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">📝 Blogs</a>
+      <a href="pricing.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">💎 Pricing</a>
+      <a href="faq.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">❓ FAQ</a>
+      <a href="contacts.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl hover:bg-pink-50 dark:hover:bg-zinc-800">📍 Contact</a>
+      <a href="user-dashboard.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl bg-purple-50 dark:bg-zinc-800 text-purple-600 dark:text-purple-400">👤 User Dash</a>
+      <a href="admin-dashboard.html" data-nav-link class="px-3.5 py-2.5 rounded-2xl bg-teal-50 dark:bg-zinc-800 text-teal-600 dark:text-teal-400">⚡ Admin Dash</a>
+    </div>
+    <div class="mt-4 pt-4 border-t border-pink-100 dark:border-zinc-800 flex gap-3">
+      <a href="login.html" class="w-1/2 py-2.5 text-center rounded-full border border-pink-200 dark:border-zinc-700 font-bold text-xs">Login</a>
+      <a href="register.html" class="w-1/2 py-2.5 text-center rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold text-xs">Register</a>
+    </div>
+  </div>
+</header>

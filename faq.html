@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | SugarSwirl & Co.</title>
+  
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E❓%3C/text%3E%3C/svg%3E">
+  
+  <meta name="description" content="Find clear answers on SugarSwirl allergen safety, dairy-free vegan sorbets, takeaway chill packaging, and event catering logistics.">
+
+  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs in head before <body> paints) -->
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('sugarswirl_theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+        const dir = localStorage.getItem('sugarswirl_direction') || 'ltr';
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parlour: {
+              cream: '#FFF9F0',
+              pink: '#FF6B8B',
+              caramel: '#FFB703',
+              mint: '#06D6A0',
+              cocoa: '#2D1E18',
+              dark: '#14100E'
+            }
+          },
+          fontFamily: {
+            fun: ['Fredoka', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* 1. Card Lift & Neon Glow */
+    .dessert-hover {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.35s ease, 
+                  border-color 0.35s ease;
+      will-change: transform;
+    }
+    .dessert-hover:hover {
+      transform: translateY(-5px);
+    }
+    .light .dessert-hover:hover {
+      box-shadow: 0 16px 26px -8px rgba(255, 107, 139, 0.18), 0 8px 12px -4px rgba(255, 183, 3, 0.10);
+    }
+    .dark .dessert-hover:hover {
+      box-shadow: 0 18px 30px -8px rgba(0, 0, 0, 0.75), 0 0 18px 2px rgba(255, 107, 139, 0.15);
+    }
+
+    /* 2. Button Pop & Active Squash */
+    .btn-hover {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.2s ease, 
+                  filter 0.2s ease,
+                  background-color 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: brightness(1.06);
+    }
+    .btn-hover:active {
+      transform: translateY(1px) scale(0.96);
+    }
+
+    /* 3. Filter Chips & Quick Topic Tags */
+    .chip-hover {
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .chip-hover:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 16px -4px rgba(255, 107, 139, 0.3);
+    }
+    .chip-hover:active {
+      transform: scale(0.95);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .dark .glass-nav {
+      background: rgba(28, 23, 21, 0.94);
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#FFF9F0] dark:bg-[#120E0D] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- ====================================================================
+       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
+
+  <main class="pt-24 lg:pt-28 flex-1">
+
+    <!-- ====================================================================
+         SECTION 1: FAQ HERO & LIVE SEARCH BAR (Interactive Chips)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-14 text-center">
+      <div class="max-w-2xl mx-auto space-y-3 sm:space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 dark:bg-rose-950/70 text-rose-700 dark:text-rose-300 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
+          <i class="fas fa-circle-question text-amber-500 animate-pulse"></i>
+          <span>SugarSwirl Help Center & Allergen Desk</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white leading-[1.1] font-fun">
+          Got Sweet Questions? <br>
+          <span class="text-rose-500 underline decoration-amber-400 decoration-wavy">We've Got Answers.</span>
+        </h1>
+
+        <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm sm:leading-relaxed max-w-xl mx-auto">
+          Everything you need to know about our single-farm milk, lactose-free options, takeaway travel limits, and party catering bookings.
+        </p>
+
+        <!-- Centered Live FAQ Search Bar with Focus Ring -->
+        <div class="pt-2 sm:pt-4 max-w-lg mx-auto w-full px-1">
+          <div class="relative flex items-center w-full shadow-lg rounded-full group">
+            <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-rose-500 group-focus-within:scale-110 transition-transform">
+              <i class="fas fa-magnifying-glass text-xs sm:text-sm"></i>
+            </span>
+            <input 
+              type="text" 
+              id="faq-search" 
+              placeholder="Search questions (e.g. vegan, nuts, delivery)..." 
+              class="w-full text-xs sm:text-sm py-3 sm:py-3.5 pl-10 sm:pl-11 pr-10 sm:pr-11 rounded-full bg-white dark:bg-[#1E1715] border-2 border-pink-200 dark:border-stone-800 text-stone-900 dark:text-white placeholder-stone-400 focus:outline-none focus:border-rose-500 focus:ring-4 focus:ring-rose-500/10 transition-all"
+            >
+            <button id="faq-clear-btn" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-stone-400 hover:text-rose-500 transition text-sm">
+              <i class="fas fa-times-circle"></i>
+            </button>
+          </div>
+
+          <!-- Quick Trend Chips with Hover Pop -->
+          <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-3 text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400">
+            <span class="font-bold">Popular Topics:</span>
+            <button type="button" onclick="quickFaq('vegan')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Vegan</button>
+            <button type="button" onclick="quickFaq('nuts')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Nut Allergies</button>
+            <button type="button" onclick="quickFaq('takeaway')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Takeaway</button>
+            <button type="button" onclick="quickFaq('catering')" class="chip-hover px-2.5 py-1 rounded-full bg-pink-100 dark:bg-stone-800 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 transition-all">Catering</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Category Filter Tabs: Responsive Wrap & Button Pop -->
+      <div class="flex flex-wrap items-center justify-center gap-2 pt-6 sm:pt-8" id="faq-category-tabs">
+        <button class="faq-filter-btn btn-hover active px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-rose-500 text-white shadow-md shadow-rose-500/20" data-cat="all">
+          ✨ All Questions
+        </button>
+        <button class="faq-filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="diet">
+          🌱 Dietary & Allergens
+        </button>
+        <button class="faq-filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="parlour">
+          🍦 Parlour & Tasting
+        </button>
+        <button class="faq-filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="tubs">
+          📦 Takeaway & Tubs
+        </button>
+        <button class="faq-filter-btn btn-hover px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-black transition-all bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-white hover:bg-rose-500 dark:hover:bg-rose-500 border border-stone-200 dark:border-stone-700 hover:border-transparent" data-cat="catering">
+          🎉 Party & Catering
+        </button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: INTERACTIVE ACCORDION CARDS GRID (Hover Lift & Rotation)
+         ==================================================================== -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 py-4 pb-16 space-y-3 sm:space-y-4" id="faq-container">
+
+      <!-- ITEM 1: DIET -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm cursor-pointer" data-category="diet" data-keywords="vegan dairy free lactose sorbet plant based oat milk fruit">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-rose-500 text-base sm:text-lg group-hover:scale-110 transition-transform">🌱</span>
+            <span>Do you have dairy-free and 100% vegan options?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed space-y-2">
+          <p>
+            Yes! We offer a dedicated lineup of plant-based creations. Our cold-pressed fruit sorbettos (like Ratnagiri Alphonso Mango and Wild Black Raspberry) are 100% dairy-free, churned purely with fresh fruit and organic cane sugar.
+          </p>
+          <p>
+            We also craft creamy non-dairy gelato using virgin coconut cream and oat milk for chocolate and matcha lovers.
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 2: DIET -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm cursor-pointer" data-category="diet" data-keywords="nut allergies peanut pistachio cross contamination allergen safe wells">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-amber-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-amber-500 text-base sm:text-lg group-hover:scale-110 transition-transform">🥜</span>
+            <span>How do you handle nut allergies and cross-contamination?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed space-y-2">
+          <p>
+            We take allergies very seriously. Nut-containing flavours (such as Bronte Pistachio and Roasted Pecan) are stored in segregated counter wells away from nut-free churns.
+          </p>
+          <p class="font-medium text-stone-800 dark:text-stone-200">
+            If you alert our scooper to a severe nut allergy, they will wash their hands, sanitize a fresh stainless steel scoop, and serve you directly from an unopened back-up batch tub.
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 3: DIET -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm cursor-pointer" data-category="diet" data-keywords="artificial dyes colors red-40 preservatives corn syrup chemical natural">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-emerald-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-emerald-500 text-base sm:text-lg group-hover:scale-110 transition-transform">🧪</span>
+            <span>Do you use artificial colors, food gels, or high-fructose corn syrup?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            Never. Zero synthetic food dyes (no Red-40 or Yellow-5), no preservative gums, and zero corn syrup. Our vibrant colors come directly from real ingredients: deep purple from mountain blackberries, rich emerald from roasted Sicilian pistachios, and pale gold from bourbon vanilla beans.
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 4: DIET -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-purple-400 dark:hover:border-purple-400 shadow-sm cursor-pointer" data-category="diet" data-keywords="gluten free cones bowls celiac wheat flour">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-purple-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-purple-500 text-base sm:text-lg group-hover:scale-110 transition-transform">🌾</span>
+            <span>Are there gluten-free cone options?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            Yes! All our standard paper cups are 100% gluten-free. For those who want the full cone experience, we offer crisp waffle cones baked from certified gluten-free almond and brown rice flour (+ $0.75 upgrade).
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 5: PARLOUR -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm cursor-pointer" data-category="parlour" data-keywords="samples taste try spoons test parlour counter">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-rose-500 text-base sm:text-lg group-hover:scale-110 transition-transform">🥄</span>
+            <span>Can I sample flavours before choosing my scoop?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            Always! We encourage curiosity. Our scoop baristas will happily provide up to three complimentary wooden sample spoons so you can discover your exact sweet spot before placing your order.
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 6: PARLOUR -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm cursor-pointer" data-category="parlour" data-keywords="waffle cones baked fresh iron griddle warm smell">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-amber-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-amber-500 text-base sm:text-lg group-hover:scale-110 transition-transform">🧇</span>
+            <span>Are your waffle cones really baked in-house?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            Every 45 minutes! We pour fresh batter onto cast-iron griddles right in front of the counter. As soon as the waffle turns golden brown, we roll it around a wooden mandrel and seal the bottom tip with melted Belgian chocolate.
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 7: PARLOUR -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm cursor-pointer" data-category="parlour" data-keywords="hours late night open closing time hosur midnight">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-amber-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-amber-400 text-base sm:text-lg group-hover:scale-110 transition-transform">🌙</span>
+            <span>What are your parlour opening and late-night closing hours?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            We are open Monday to Thursday from 11:00 AM to 10:30 PM. On Friday, Saturday, and Sunday, our counter remains open late until 11:30 PM for our famous Midnight Waffle Hour!
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 8: TUBS -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm cursor-pointer" data-category="tubs" data-keywords="takeaway insulated tub melt travel cold hours chill box">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-rose-500 text-base sm:text-lg group-hover:scale-110 transition-transform">📦</span>
+            <span>How long do insulated takeaway tubs stay frozen during travel?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            All pints, 2L quarts, and 5L tubs are packed in double-walled thermal containers with reusable eco-chill ice blankets. They are guaranteed to stay rock-solid for up to 3 hours travel time at room temperature.
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 9: TUBS -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500/60 shadow-sm cursor-pointer" data-category="tubs" data-keywords="home freezer storage shelf life leftovers expire">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-emerald-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-emerald-500 text-base sm:text-lg group-hover:scale-110 transition-transform">🧊</span>
+            <span>How should I store leftover gelato at home?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            Keep your tub in the coldest section of your freezer (usually at the back, away from the door). Reseal the snap-lock lid tightly. For the softest texture, let the tub sit on your kitchen counter for 3 to 5 minutes before scooping. Keeps fresh for up to 4 weeks!
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 10: CATERING -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 shadow-sm cursor-pointer" data-category="catering" data-keywords="catering wedding birthday event vintage scoop cart wagon hire staff">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-amber-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-amber-500 text-base sm:text-lg group-hover:scale-110 transition-transform">🎉</span>
+            <span>How does hiring the Vintage Mobile Scoop Cart work?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            Our vintage pastel scoop wagon is driven directly to your wedding lawn, villa, or banquet hall. It includes 2 hours of live scooping service with 2 uniformed baristas, 6 curated artisan flavours, and freshly baked waffle cones rolled on-site. The cart needs zero electrical outlets!
+          </p>
+        </div>
+      </details>
+
+      <!-- ITEM 11: CATERING -->
+      <details class="faq-item dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm cursor-pointer" data-category="catering" data-keywords="advance booking party notice rush order tubs cancellation">
+        <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm md:text-base text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-rose-500 text-base sm:text-lg group-hover:scale-110 transition-transform">📅</span>
+            <span>How far in advance do I need to book party tubs or catering?</span>
+          </span>
+          <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-2"></i>
+        </summary>
+        <div class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 mt-3 pt-3 border-t border-stone-100 dark:border-stone-800 leading-relaxed">
+          <p>
+            For 5L Drop & Go tubs, we only need 24 to 48 hours notice. For large events requiring our Vintage Cart with scooper staff, we recommend locking in your date 1 to 2 weeks in advance via our party catering page.
+          </p>
+        </div>
+      </details>
+
+      <!-- Empty Search State -->
+      <div id="no-faq-results" class="hidden text-center py-12 space-y-3">
+        <div class="w-14 h-14 rounded-full bg-pink-100 dark:bg-stone-800 text-rose-500 mx-auto flex items-center justify-center text-xl shadow-sm">
+          🔍
+        </div>
+        <h4 class="text-base font-black text-stone-900 dark:text-white font-fun">No matching question found!</h4>
+        <p class="text-xs text-stone-500 max-w-sm mx-auto">
+          Can't find what you need? Ask our team directly via WhatsApp or call our Hosur parlour.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: DIRECT SUPPORT BOX (Button Hover Pop)
+         ==================================================================== -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 py-6 pb-16">
+      <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-2xl sm:rounded-3xl p-6 sm:p-10 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 text-center sm:text-left">
+        <div class="space-y-1.5 max-w-md">
+          <span class="px-3 py-1 rounded-full bg-stone-900 text-amber-300 text-[10px] font-black uppercase tracking-wider inline-block">Need Instant Help?</span>
+          <h3 class="text-xl sm:text-2xl font-black font-fun leading-tight">Have a question not listed here?</h3>
+          <p class="text-xs text-white/90">
+            Our parlour team is on standby to check flavour batches, allergies, and party dates.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2.5 w-full sm:w-auto shrink-0">
+          <button onclick="toastCart('WhatsApp Support Opened: +91 98765 43210')" class="btn-hover w-full sm:w-auto px-6 py-3 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-black text-xs uppercase tracking-wider transition-all shadow-md text-center flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp text-emerald-400"></i>
+            <span>Chat on WhatsApp</span>
+          </button>
+          <a href="contacts.html" class="btn-hover w-full sm:w-auto px-6 py-3 rounded-full bg-white/20 hover:bg-white/30 border border-white/40 text-white font-black text-xs uppercase tracking-wider transition-all text-center">
+            Visit Hosur Parlour
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SHARED FOOTER PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="footer-placeholder"></div>
+
+
+
+  <!-- Shared Global JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>

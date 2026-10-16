@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SugarSwirl Boutique | Artisan Gelato Atelier & Tasting Lounge</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23F59E0B' d='M304 32C206.8 32 128 110.8 128 208v16c0 17.7 14.3 32 32 32s32-14.3 32-32v-16c0-61.9 50.1-112 112-112s112 50.1 112 112v224c0 44.2-35.8 80-80 80s-80-35.8-80-80V176c0-17.7-14.3-32-32-32s-32 14.3-32 32v272c0 79.5 64.5 144 144 144s144-64.5 144-144V208C448 110.8 369.2 32 304 32z'/></svg>">
+  <meta name="description" content="An intimate boutique dessert lounge specializing in bespoke Italian gelato flights, chocolate fondue boards, and luxury dessert tastings.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parlour: {
+              cream: '#FFF9F0',
+              pink: '#FF6B8B',
+              caramel: '#FFB703',
+              mint: '#06D6A0',
+              cocoa: '#2D1E18',
+              dark: '#14100E'
+            }
+          },
+          fontFamily: {
+            fun: ['Fredoka', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    .dessert-hover {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+    .dessert-hover:hover {
+      transform: translateY(-5px);
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .dark .glass-nav {
+      background: rgba(28, 23, 21, 0.94);
+    }
+  </style>
+</head>
+<body class="bg-[#FBF7F0] dark:bg-[#120E0D] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
+
+  <main class="pt-24 lg:pt-28 flex-1">
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12 lg:py-16">
+      <div class="relative bg-white dark:bg-[#1C1614] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-10 lg:p-16 border border-pink-200/80 dark:border-stone-800 shadow-xl overflow-hidden">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <div class="lg:col-span-6 space-y-5 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 text-[11px] sm:text-xs font-black tracking-widest uppercase shadow-sm">
+              <i class="fas fa-certificate text-amber-500"></i>
+              <span>Haute Dessert Atelier & Lounge</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white leading-[1.1] font-fun">
+              Bespoke Gelato Flights & Warm Chocolate <span class="text-rose-500 underline decoration-amber-400 decoration-wavy">Fondue.</span>
+            </h1>
+
+            <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Step beyond ordinary ice cream into our quiet tasting lounge. We slow-churn ultra-dense Italian gelato with zero injected air, single-origin cacao from Ecuador, and Bronte pistachios.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
+              <a href="#tasting-flights" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-stone-900 hover:bg-rose-500 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-stone-950 font-black text-xs uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all text-center">
+                Reserve Tasting Board
+              </a>
+              <a href="menu.html" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-stone-300 dark:border-stone-700 hover:border-rose-400 text-stone-800 dark:text-white font-black text-xs uppercase tracking-wider hover:bg-stone-50 dark:hover:bg-stone-800 hover:scale-105 active:scale-95 transition-all text-center">
+                Full Flavour Menu
+              </a>
+            </div>
+
+            <div class="pt-5 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-stone-500 dark:text-stone-400 border-t border-stone-100 dark:border-stone-800">
+              <div class="flex items-center gap-1.5">
+                <i class="fas fa-check-circle text-rose-500"></i> 100% Italian Batch Churn
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i class="fas fa-check-circle text-emerald-500"></i> Fresh Sorbets Spun Daily
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 relative w-full pt-4 lg:pt-0">
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
+              <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/5] group">
+                <img src="public/ice.jpeg" alt="Decadent molten chocolate gelato" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              </div>
+              <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/5] mt-4 sm:mt-8 group">
+                <img src="public/ice-3.jpeg" alt="Wild Berry Sorbet and Cream" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              </div>
+            </div>
+
+            <div class="mt-3 sm:mt-0 sm:absolute sm:-bottom-4 sm:right-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-4 py-2.5 rounded-2xl shadow-lg text-[11px] sm:text-xs font-black flex items-center justify-center gap-2">
+              <i class="fas fa-cookie text-amber-300"></i>
+              <span>House-Baked Stroopwafels & Cones</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="tasting-flights" class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div class="text-center max-w-xl mx-auto mb-10 sm:mb-14 space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Boutique Experiences</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Curated Tasting Boards</h2>
+        <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm">Served on natural slate boards with chilled pairing sparkling water and palette cleansers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Flight 1 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-6 sm:p-8 rounded-3xl border border-pink-200 dark:border-stone-800 shadow-sm flex flex-col justify-between h-full space-y-5">
+          <div class="space-y-4">
+            <span class="text-[10px] font-black uppercase text-amber-500">European Classical</span>
+            <h3 class="text-xl sm:text-2xl font-black text-stone-900 dark:text-white font-fun">The Italian Heritage Flight</h3>
+            <div class="text-2xl sm:text-3xl font-black text-rose-500 font-fun">$14.50</div>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              A flight of three authentic European heritage recipes celebrating pure regional terroir.
+            </p>
+            <ul class="space-y-2 text-xs text-stone-600 dark:text-stone-300 pt-3 border-t border-stone-100 dark:border-stone-800">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Bronte Sicilian Roasted Pistachio</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Stracciatella with 70% dark shavings</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Fior di Latte mountain cream scoop</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> 2 warm waffle crisps</li>
+            </ul>
+          </div>
+          <button onclick="toastCart('The Italian Heritage Flight ($14.50)')" class="w-full py-3.5 rounded-full bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-stone-900 dark:text-white text-xs font-black transition-all">
+            Order Heritage Board
+          </button>
+        </div>
+
+        <div class="dessert-hover bg-gradient-to-br from-rose-500 to-pink-600 text-white p-6 sm:p-8 rounded-3xl shadow-2xl relative flex flex-col justify-between h-full space-y-5 transform md:-translate-y-3">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-stone-950 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-wider shadow">
+            Atelier Signature
+          </div>
+          <div class="space-y-4">
+            <span class="text-[10px] font-black uppercase text-rose-200">Decadent Indulgence</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white font-fun">Midnight Fondue & Gelato</h3>
+            <div class="text-2xl sm:text-3xl font-black text-amber-300 font-fun">$22.00</div>
+            <p class="text-xs text-rose-100 leading-relaxed">
+              Warm miniature stone pot of melted Valrhona chocolate fondue with 4 baby gelato quenelles.
+            </p>
+            <ul class="space-y-2 text-xs text-rose-100 pt-3 border-t border-rose-400/40">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-300"></i> Madagascar Vanilla Bean Quenelle</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-300"></i> Salted Butter Caramel Gelato</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-300"></i> Fresh strawberry skewers & brownies</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-300"></i> Roasted crushed hazelnut praline</li>
+            </ul>
+          </div>
+          <button onclick="toastCart('Midnight Fondue & Gelato Board ($22.00)')" class="w-full py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-stone-950 text-xs font-black uppercase tracking-wider transition-all shadow-md">
+            Order Fondue Experience
+          </button>
+        </div>
+
+        <!-- Flight 3 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-6 sm:p-8 rounded-3xl border border-pink-200 dark:border-stone-800 shadow-sm flex flex-col justify-between h-full space-y-5">
+          <div class="space-y-4">
+            <span class="text-[10px] font-black uppercase text-emerald-500">100% Dairy-Free & Vegan</span>
+            <h3 class="text-xl sm:text-2xl font-black text-stone-900 dark:text-white font-fun">Tropical Sunlight Sorbetto</h3>
+            <div class="text-2xl sm:text-3xl font-black text-rose-500 font-fun">$13.50</div>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Intense, palate-refreshing cold-pressed fruit sorbets churned with pure natural fruit puree.
+            </p>
+            <ul class="space-y-2 text-xs text-stone-600 dark:text-stone-300 pt-3 border-t border-stone-100 dark:border-stone-800">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Alphonso Mango & Passion Fruit</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Persian Lime & Garden Mint</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Wild Mountain Black Raspberry</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-500"></i> Crystallized ginger root flakes</li>
+            </ul>
+          </div>
+          <button onclick="toastCart('Tropical Sunlight Sorbetto Flight ($13.50)')" class="w-full py-3.5 rounded-full bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-stone-900 dark:text-white text-xs font-black transition-all">
+            Order Sorbet Flight
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-3">
+        <div>
+          <span class="text-xs font-black uppercase tracking-widest text-rose-500">Artisan Craftsmanship</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Meet Our Master Gelatiers</h2>
+        </div>
+        <a href="menu.html" class="text-xs font-bold text-amber-600 hover:text-rose-500 flex items-center gap-1 group">
+          <span>Explore All 36 Small-Batch Recipes</span>
+          <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 shadow-sm flex flex-col justify-between h-full group">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden">
+              <img src="public/master-1.avif" alt="Master Gelatier Matteo Rossi" class="w-full h-full object-cover object-[50%_20%] group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-5 sm:p-6 space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-black text-stone-900 dark:text-white font-fun">Matteo Rossi</h4>
+                <span class="text-xs font-black text-rose-500">Bologna Trained</span>
+              </div>
+              <p class="text-[11px] text-amber-600 font-bold uppercase tracking-wider">Head Gelatier & Flavor Architect</p>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                With 12 years of artisanal gelato production across Northern Italy, Matteo formulates our precise sugar-to-fat balance for silky texture.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 shadow-sm flex flex-col justify-between h-full group">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden">
+              <img src="public/master-2.avif" alt="Pastry Chef Chloe Dubois" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-5 sm:p-6 space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-black text-stone-900 dark:text-white font-fun">Chloe Dubois</h4>
+                <span class="text-xs font-black text-rose-500">Parisian Certified</span>
+              </div>
+              <p class="text-[11px] text-amber-600 font-bold uppercase tracking-wider">Master Pastry & Waffle Artisan</p>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                Chloe oversees our waffle irons, caramel drizzles, and gelato cakes. Her chocolate molten fondue recipe is our lounge's crowning achievement.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] rounded-3xl overflow-hidden border border-pink-100 dark:border-stone-800 shadow-sm flex flex-col justify-between h-full group">
+          <div>
+            <div class="aspect-[4/3] w-full overflow-hidden">
+              <img src="public/master-3.avif" alt="Botanical Specialist Kenji Sato" class="w-full h-full object-cover object-[50%_10%] group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-5 sm:p-6 space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-lg font-black text-stone-900 dark:text-white font-fun">Kenji Sato</h4>
+                <span class="text-xs font-black text-rose-500">Kyoto Specialist</span>
+              </div>
+              <p class="text-[11px] text-amber-600 font-bold uppercase tracking-wider">Botanical Infusions & Sorbets</p>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                Kenji sources ceremonial Uji matcha, fresh yuzu, and organic oat creams to craft vegan sorbettos that rival traditional dairy in silky depth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+      <div class="bg-white dark:bg-[#1C1614] rounded-3xl p-5 sm:p-10 border border-pink-200 dark:border-stone-800 shadow-md space-y-6">
+        <div>
+          <span class="text-xs font-black uppercase tracking-widest text-rose-500">The Churning Difference</span>
+          <h2 class="text-xl sm:text-3xl font-black text-stone-900 dark:text-white font-fun">Artisan Gelato vs Commercial Supermarket Tubs</h2>
+        </div>
+
+        <div class="overflow-x-auto -mx-2 sm:mx-0 px-2 sm:px-0">
+          <table class="w-full min-w-[550px] text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-stone-200 dark:border-stone-800 text-stone-400 uppercase tracking-wider text-[11px]">
+                <th class="py-3.5">Crafting Parameter</th>
+                <th class="py-3.5 text-rose-500 font-black">SugarSwirl Atelier Gelato</th>
+                <th class="py-3.5 text-stone-500">Standard Commercial Tubs</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-100 dark:divide-stone-800/60 text-stone-700 dark:text-stone-300">
+              <tr class="hover:bg-pink-50/40 dark:hover:bg-stone-800/50 transition-colors">
+                <td class="py-3.5 font-semibold text-stone-900 dark:text-white">Air Overrun (Pumped Air)</td>
+                <td class="py-3.5 text-rose-600 dark:text-rose-400 font-bold"><i class="fas fa-check-circle mr-1"></i> Under 25% (Extremely dense)</td>
+                <td class="py-3.5 text-stone-400"><i class="fas fa-times-circle mr-1"></i> Up to 100% (50% empty air)</td>
+              </tr>
+              <tr class="hover:bg-pink-50/40 dark:hover:bg-stone-800/50 transition-colors">
+                <td class="py-3.5 font-semibold text-stone-900 dark:text-white">Milk Fat Balance</td>
+                <td class="py-3.5 text-rose-600 dark:text-rose-400 font-bold"><i class="fas fa-check-circle mr-1"></i> 6% - 9% (Pure fruit shines)</td>
+                <td class="py-3.5 text-stone-400"><i class="fas fa-times-circle mr-1"></i> 14% - 22% (Heavy butterfat coat)</td>
+              </tr>
+              <tr class="hover:bg-pink-50/40 dark:hover:bg-stone-800/50 transition-colors">
+                <td class="py-3.5 font-semibold text-stone-900 dark:text-white">Serving Temperature</td>
+                <td class="py-3.5 text-rose-600 dark:text-rose-400 font-bold"><i class="fas fa-check-circle mr-1"></i> -12°C (Vibrant taste)</td>
+                <td class="py-3.5 text-stone-400"><i class="fas fa-times-circle mr-1"></i> -18°C (Frozen hard, numbs tongue)</td>
+              </tr>
+              <tr class="hover:bg-pink-50/40 dark:hover:bg-stone-800/50 transition-colors">
+                <td class="py-3.5 font-semibold text-stone-900 dark:text-white">Shelf Life & Additives</td>
+                <td class="py-3.5 text-rose-600 dark:text-rose-400 font-bold"><i class="fas fa-check-circle mr-1"></i> Spun fresh every 48 hrs</td>
+                <td class="py-3.5 text-stone-400"><i class="fas fa-times-circle mr-1"></i> 12+ months with gum binders</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-5 space-y-5 text-center lg:text-left">
+          <span class="text-xs font-black uppercase tracking-widest text-amber-500">Pure Provenance</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white leading-tight font-fun">
+            Every Ingredient Traced Directly to the Source
+          </h2>
+          <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto lg:mx-0">
+            We partner with independent organic dairy cooperatives and heritage fruit orchards. No middle-tier syrups or preservative drums ever enter our kitchen.
+          </p>
+
+          <div class="grid grid-cols-2 gap-3 sm:gap-4 pt-2">
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#1C1614] border border-pink-200 dark:border-stone-800 shadow-sm dessert-hover text-center">
+              <div class="text-2xl sm:text-3xl font-black text-rose-500 font-fun">48 Hrs</div>
+              <div class="text-[11px] text-stone-500">Batch Freshness</div>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#1C1614] border border-pink-200 dark:border-stone-800 shadow-sm dessert-hover text-center">
+              <div class="text-2xl sm:text-3xl font-black text-amber-500 font-fun">100%</div>
+              <div class="text-[11px] text-stone-500">Single-Origin Dairy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-3.5">
+          <div class="bg-white dark:bg-[#1C1614] p-5 sm:p-6 rounded-3xl border border-pink-200 dark:border-stone-800 shadow-sm dessert-hover flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-rose-100 dark:bg-rose-950 flex items-center justify-center text-rose-600 text-lg shrink-0">
+              🥛
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-bold text-stone-900 dark:text-white text-xs sm:text-sm font-fun">A2 Grass-Fed Whole Mountain Milk</h5>
+              <p class="text-xs text-stone-600 dark:text-stone-300">
+                Delivered every morning at 6:00 AM from heritage cows grazing on highland clover pastures.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#1C1614] p-5 sm:p-6 rounded-3xl border border-pink-200 dark:border-stone-800 shadow-sm dessert-hover flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-amber-100 dark:bg-amber-950 flex items-center justify-center text-amber-600 text-lg shrink-0">
+              🍫
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-bold text-stone-900 dark:text-white text-xs sm:text-sm font-fun">70% Single-Origin Arriba Cacao</h5>
+              <p class="text-xs text-stone-600 dark:text-stone-300">
+                Direct trade Ecuadorian dark chocolate roasted at low temperature for floral notes without bitterness.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#1C1614] p-5 sm:p-6 rounded-3xl border border-pink-200 dark:border-stone-800 shadow-sm dessert-hover flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 text-lg shrink-0">
+              🌿
+            </div>
+            <div class="space-y-1">
+              <h5 class="font-bold text-stone-900 dark:text-white text-xs sm:text-sm font-fun">Cold-Pressed Ratnagiri Alphonso Puree</h5>
+              <p class="text-xs text-stone-600 dark:text-stone-300">
+                Naturally sweetened tree-ripened mango pulp extracted without water dilution or glucose fillers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Lounge Impressions</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Loved by Connoisseurs & Families</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] p-6 rounded-3xl border border-pink-100 dark:border-stone-800 shadow-sm space-y-3">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-xs text-stone-600 dark:text-stone-300 italic leading-relaxed">
+            "The Italian Heritage tasting board is pure genius. The Bronte pistachio has that unmistakable green richness you only find in Sicily."
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div class="w-9 h-9 rounded-full bg-rose-500 text-white font-bold flex items-center justify-center text-xs">AL</div>
+            <div>
+              <span class="text-xs font-bold text-stone-900 dark:text-white block">Dr. Aaron Laurent</span>
+              <span class="text-[10px] text-stone-400">Food & Travel Columnist</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] p-6 rounded-3xl border border-pink-100 dark:border-stone-800 shadow-sm space-y-3">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-xs text-stone-600 dark:text-stone-300 italic leading-relaxed">
+            "We booked the private suite for our 5th anniversary. The warm Valrhona chocolate fondue paired with salted caramel gelato was sublime."
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div class="w-9 h-9 rounded-full bg-amber-500 text-stone-900 font-bold flex items-center justify-center text-xs">PK</div>
+            <div>
+              <span class="text-xs font-bold text-stone-900 dark:text-white block">Pooja & Karan Mehta</span>
+              <span class="text-[10px] text-stone-400">VIP Lounge Guests</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dessert-hover bg-white dark:bg-[#1A1412] p-6 rounded-3xl border border-pink-100 dark:border-stone-800 shadow-sm space-y-3">
+          <div class="flex text-amber-400 text-xs gap-1">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-xs text-stone-600 dark:text-stone-300 italic leading-relaxed">
+            "Hands down the best dairy-free dessert in town. The Black Raspberry Sorbetto is intense and velvety without tasting icy."
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <div class="w-9 h-9 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-xs">TG</div>
+            <div>
+              <span class="text-xs font-bold text-stone-900 dark:text-white block">Tara Ganguly</span>
+              <span class="text-[10px] text-stone-400">Pastry Chef & Blogger</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-2">
+        <div>
+          <span class="text-xs font-black uppercase tracking-widest text-rose-500">Visual Gallery</span>
+          <h2 class="text-xl sm:text-3xl font-black text-stone-900 dark:text-white font-fun">Moments in the Tasting Room</h2>
+        </div>
+        <a href="https://instagram.com" target="_blank" class="text-xs font-bold text-rose-500 hover:text-rose-600 flex items-center gap-1">
+          <span>Follow @SugarSwirlParlour</span> <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <div class="aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm group">
+          <img src="public/ice-2.jpeg" alt="Chocolatier pouring hot fudge" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm group">
+          <img src="public/ice-3.jpeg" alt="Berry gelato quenelle" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm group">
+          <img src="public/ice.jpeg" alt="Handcrafted dessert milkshake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm group">
+          <img src="public/wild.avif" alt="Gelato torte slice" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="bg-stone-900 text-white rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-14 border border-stone-800 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center sm:text-left">
+        <div class="space-y-2 sm:space-y-3 max-w-xl">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest inline-block">Reserve Your Tasting Experience</span>
+          <h2 class="text-2xl sm:text-4xl font-black font-fun leading-tight">An intimate lounge tailored for dessert exploration.</h2>
+          <p class="text-stone-400 text-xs sm:text-sm">
+            Book a private tasting suite for 2 to 8 guests. Sample seasonal test-batch flavors paired with artisanal coffee and warm fondue.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
+          <button onclick="toastCart('VIP Tasting Suite Request Logged')" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-rose-500 hover:bg-rose-600 text-white font-black text-xs tracking-wider uppercase shadow-xl hover:scale-105 active:scale-95 transition-all text-center">
+            Book Tasting Suite
+          </button>
+          <a href="contacts.html" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-stone-700 hover:bg-stone-800 text-stone-200 font-bold text-xs tracking-wider uppercase hover:scale-105 active:scale-95 transition-all text-center">
+            View Lounge Location
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="app.js"></script>
+  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs instantly before HTML paints) -->
+<script>
+  (function () {
+    try {
+      const theme = localStorage.getItem('sugarswirl_theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      const dir = localStorage.getItem('sugarswirl_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', dir);
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>

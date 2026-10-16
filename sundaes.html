@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signature Sundaes & Freakshakes | SugarSwirl & Co.</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍨%3C/text%3E%3C/svg%3E">
+  
+  <meta name="description" content="Explore decadent molten fudge volcanoes, architectural freakshakes, and warm chocolate dipping boards at SugarSwirl Sundae Lounge.">
+
+  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs instantly in head before <body> paints) -->
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('sugarswirl_theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+        const dir = localStorage.getItem('sugarswirl_direction') || 'ltr';
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parlour: {
+              cream: '#FFF9F0',
+              pink: '#FF6B8B',
+              caramel: '#FFB703',
+              mint: '#06D6A0',
+              cocoa: '#2D1E18',
+              dark: '#14100E'
+            }
+          },
+          fontFamily: {
+            fun: ['Fredoka', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* 1. Card Lift & Neon Dessert Glow */
+    .dessert-hover {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.35s ease, 
+                  border-color 0.35s ease;
+      will-change: transform;
+    }
+    .dessert-hover:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+    .light .dessert-hover:hover {
+      box-shadow: 0 20px 30px -10px rgba(255, 107, 139, 0.20), 0 10px 15px -5px rgba(255, 183, 3, 0.12);
+    }
+    .dark .dessert-hover:hover {
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.75), 0 0 20px 2px rgba(255, 107, 139, 0.15);
+    }
+
+    /* 2. Button Pop & Active Squash */
+    .btn-hover {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.2s ease, 
+                  filter 0.2s ease,
+                  background-color 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: brightness(1.06);
+    }
+    .btn-hover:active {
+      transform: translateY(1px) scale(0.96);
+    }
+
+    /* 3. Image Micro Zoom */
+    .img-zoom-box img {
+      transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .img-zoom-box:hover img {
+      transform: scale(1.08);
+    }
+
+    /* 4. Filter Chips & Preset Buttons */
+    .chip-hover {
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .chip-hover:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 16px -4px rgba(255, 107, 139, 0.3);
+    }
+    .chip-hover:active {
+      transform: scale(0.95);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .dark .glass-nav {
+      background: rgba(28, 23, 21, 0.94);
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#FFF9F0] dark:bg-[#120E0D] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- ====================================================================
+       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
+
+  <main class="pt-24 lg:pt-28 flex-1">
+
+    <!-- ====================================================================
+         SECTION 1: RADICAL "STAGE SHOWCASE" INTERACTIVE HERO
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 sm:pt-4 pb-8 sm:py-12">
+      
+      <div class="relative bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50 dark:from-[#1D1412] dark:via-[#221613] dark:to-[#160E0C] rounded-[2rem] sm:rounded-[3.5rem] p-5 sm:p-10 lg:p-14 border-2 border-pink-200/80 dark:border-stone-800 shadow-2xl overflow-hidden">
+        
+        <!-- Ambient Glow -->
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-rose-400/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-amber-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+          
+          <!-- Left Content & Interactive Preset Tabs -->
+          <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-stone-800 text-rose-600 dark:text-rose-400 border border-pink-200 dark:border-stone-700 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
+              <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+              <span>Live Churning • Artisan Sundae Atelier</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-fun leading-[1.1] tracking-tight text-stone-900 dark:text-white">
+              The Art of <span id="hero-title" class="text-rose-500 underline decoration-amber-400 decoration-wavy">Molten Fudge</span> Layering.
+            </h1>
+
+            <p id="hero-desc" class="text-stone-600 dark:text-stone-300 text-xs sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Freshly baked 40°C Valrhona brownies resting under twin mountains of -12°C dark chocolate gelato, drowned in steaming bittersweet chocolate lava.
+            </p>
+
+            <!-- Preset Buttons with Hover Pop -->
+            <div class="space-y-2 pt-1">
+              <span class="text-[10px] font-black uppercase tracking-wider text-stone-400 block">Switch Spotlight Sundae:</span>
+              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2">
+                <button type="button" onclick="switchHeroSundae('volcano', this)" class="hero-tab chip-hover active px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-black bg-rose-500 text-white shadow-md shadow-rose-500/25 transition-all">
+                  🌋 Obsidian Volcano
+                </button>
+                <button type="button" onclick="switchHeroSundae('berry', this)" class="hero-tab chip-hover px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-black bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 transition-all">
+                  🫐 Berry Parfait
+                </button>
+                <button type="button" onclick="switchHeroSundae('pretzel', this)" class="hero-tab chip-hover px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-black bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 transition-all">
+                  🥨 Pretzel Tower
+                </button>
+              </div>
+            </div>
+
+            <!-- CTAs with Hover Squash -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2 sm:pt-3">
+              <button id="hero-order-btn" onclick="toastCart('The Obsidian Volcano Sundae ($7.85)')" class="btn-hover w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-stone-900 hover:bg-rose-500 text-white font-black text-xs uppercase tracking-wider shadow-xl hover:shadow-rose-500/25 transition-all text-center">
+                Order Spotlight ($7.85)
+              </button>
+              <a href="#signature-sundaes" class="btn-hover w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-white dark:bg-stone-800 hover:bg-stone-50 dark:hover:bg-stone-700 text-stone-800 dark:text-white font-black text-xs uppercase tracking-wider border border-stone-200 dark:border-stone-700 hover:border-rose-400 transition-all text-center">
+                View All 6 Goblets
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Central Stage Podium with Floating Badges (Interactive Hovers) -->
+          <div class="lg:col-span-5 relative w-full pt-4 lg:pt-0">
+            
+            <div class="relative bg-white dark:bg-[#1A1412] p-3.5 sm:p-5 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border-2 border-pink-200 dark:border-stone-800 dessert-hover group cursor-pointer">
+              <div class="aspect-[4/3] sm:aspect-[1/1] w-full rounded-2xl sm:rounded-3xl overflow-hidden relative img-zoom-box">
+                <img 
+                  id="hero-image" 
+                  src="public/ice-5.jpeg" 
+                  alt="Spotlight Sundae" 
+                  class="w-full h-full object-cover"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 sm:p-5 text-white">
+                  <span id="hero-badge-tag" class="text-[10px] font-black uppercase text-amber-400 tracking-wider">Freshly Poured</span>
+                  <h3 id="hero-card-title" class="text-base sm:text-lg font-black font-fun group-hover:text-amber-300 transition-colors">The Obsidian Volcano</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge Top Left with Hover -->
+            <div class="absolute -top-2 left-2 sm:-left-4 bg-white dark:bg-stone-900 px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl border border-pink-200 dark:border-stone-700 flex items-center gap-2 hover:scale-105 hover:border-rose-400 transition-all cursor-pointer">
+              <span class="text-base sm:text-lg">🍫</span>
+              <div class="text-left">
+                <span class="text-[9px] font-black uppercase text-stone-400 block leading-tight">Sauce Tap</span>
+                <span class="text-xs font-black text-rose-500 font-fun">45°C Warm Lava</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge Bottom Right with Hover -->
+            <div class="absolute -bottom-3 right-2 sm:-right-4 bg-white dark:bg-stone-900 px-3.5 py-2 rounded-xl sm:rounded-2xl shadow-xl border border-pink-200 dark:border-stone-700 flex items-center gap-2 hover:scale-105 hover:border-amber-400 transition-all cursor-pointer">
+              <span class="text-base sm:text-lg">⭐</span>
+              <div class="text-left">
+                <span class="text-[9px] font-black uppercase text-stone-400 block leading-tight">Critic Verified</span>
+                <span class="text-xs font-black text-amber-500 font-fun">4.98 / 5 Rating</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Live Marquee Ticker -->
+      <div class="mt-4 bg-stone-900 text-white rounded-2xl py-2.5 sm:py-3 px-4 sm:px-6 overflow-hidden shadow-md flex items-center justify-between text-xs font-bold font-fun">
+        <div class="flex items-center gap-2 text-amber-400 shrink-0">
+          <i class="fas fa-bullhorn text-xs animate-bounce"></i>
+          <span class="uppercase tracking-wider text-[10px] sm:text-[11px]">PARLOUR TICKER:</span>
+        </div>
+        <div class="truncate text-stone-300 text-[11px] sm:text-xs pl-3 sm:pl-4">
+          ⚡ Warm Stroopwafels Rolling Off Iron Griddles • Late Night Sundaes Served Till 11:30 PM • 100% Grass-Fed Mountain Dairy • 🍨
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: SIGNATURE SUNDAES (Full Hover Card Suite)
+         ==================================================================== -->
+    <section id="signature-sundaes" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-14 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Parlour Hall of Fame</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Signature Sundae Goblets</h2>
+        <p class="text-xs sm:text-sm text-stone-500">Every sundae is hand-layered in frosted European glass goblets or warm waffle bowls.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Card 1 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
+          <div class="space-y-3.5">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/belgian.avif" alt="Molten Fudge Volcano" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-rose-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Bestseller</span>
+            </div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 group-hover:bg-amber-200 transition-colors">Warm 45°C Lava</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Valrhona Brownie</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Belgian Molten Fudge Volcano</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Warm Valrhona fudge brownie base, double scoops of dark chocolate and Bourbon vanilla, drenched in flowing molten lava and candied pecans.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl sm:text-2xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$7.50</span>
+            <button onclick="toastCart('Belgian Molten Fudge Volcano ($7.50)')" class="btn-hover px-4 sm:px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add Sundae
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
+          <div class="space-y-3.5">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/wild-2.avif" alt="Wild Berry Cheesecake Parfait" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-purple-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Berry Loaded</span>
+            </div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 group-hover:bg-pink-200 transition-colors">Blackberry Coulis</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Graham Crust</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Wild Berry Cheesecake Parfait</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Cream cheese gelato layered with hand-reduced mountain blackberries, crushed cinnamon biscuit crust, and fresh raspberry drizzle.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl sm:text-2xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$6.95</span>
+            <button onclick="toastCart('Wild Berry Cheesecake Parfait ($6.95)')" class="btn-hover px-4 sm:px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add Sundae
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
+          <div class="space-y-3.5">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/brucelee.avif" alt="Brulee Banana Split" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-amber-400 text-stone-950 font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Torched Cane</span>
+            </div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 group-hover:bg-amber-200 transition-colors">Caramelized</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Trio Scoops</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">The Royal Brulee Banana Split</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Torched raw sugar caramelized banana split lengthwise, trio of vanilla, dark chocolate, and strawberry gelato with sour cherry crown.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl sm:text-2xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$8.20</span>
+            <button onclick="toastCart('Royal Brulee Banana Split ($8.20)')" class="btn-hover px-4 sm:px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add Sundae
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
+          <div class="space-y-3.5">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/sici.avif" alt="Pistachio Baklava Sundae" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">D.O.P. Sicily</span>
+            </div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 group-hover:bg-emerald-200 transition-colors">Bronte Nut</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">Honey Drizzle</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Bronte Pistachio Baklava</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Sicilian roasted pistachio gelato layered with flaky honey baklava phyllo crisps, crushed green pistachios, and warm clover honey.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl sm:text-2xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$7.75</span>
+            <button onclick="toastCart('Bronte Pistachio Baklava ($7.75)')" class="btn-hover px-4 sm:px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add Sundae
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
+          <div class="space-y-3.5">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/salted.avif" alt="Pretzel Caramel Tower" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-amber-500 text-stone-950 font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">Sweet & Salty</span>
+            </div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 group-hover:bg-amber-200 transition-colors">Butter Caramel</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Stroopwafel</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Salted Pretzel Caramel Tower</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Caramel gelato, crunchy mini salted pretzels, Dutch stroopwafel wedge, and sea salt butter caramel cascade.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl sm:text-2xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$7.25</span>
+            <button onclick="toastCart('Salted Pretzel Caramel Tower ($7.25)')" class="btn-hover px-4 sm:px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add Sundae
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] rounded-3xl p-5 sm:p-6 border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full cursor-pointer">
+          <div class="space-y-3.5">
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden relative img-zoom-box">
+              <img src="public/ice-3.jpeg" alt="Vegan Coconut Lava" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-emerald-600 text-white font-black text-[10px] uppercase shadow group-hover:rotate-3 transition-transform">100% Vegan</span>
+            </div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 group-hover:bg-emerald-200 transition-colors">Dairy-Free</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">Oat Brownie</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Vegan Coconut Lava Sundae</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Coconut cocoa gelato over gluten-free oat brownies, warm dark chocolate drizzle, toasted coconut flakes, and cacao nib crunch.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-xl sm:text-2xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$7.50</span>
+            <button onclick="toastCart('Vegan Coconut Lava Sundae ($7.50)')" class="btn-hover px-4 sm:px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+              + Add Sundae
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Wide Family Boat Banner with Hover -->
+      <div class="mt-8 dessert-hover bg-gradient-to-r from-stone-900 via-[#231713] to-stone-900 text-white rounded-3xl p-5 sm:p-10 border border-stone-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 group cursor-pointer">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full inline-block group-hover:scale-105 transition-transform">Serves 4 - 6 Friends</span>
+          <h3 class="text-xl sm:text-3xl font-black font-fun group-hover:text-amber-300 transition-colors">The Grand Titanic Glass Skiff</h3>
+          <p class="text-xs sm:text-sm text-stone-300 max-w-xl">
+            8 signature scoops piled onto warm brownies and stroopwafel sails, 4 warm drizzle jugs, and celebration sparkler candles.
+          </p>
+        </div>
+        <div class="text-center md:text-right shrink-0 space-y-2 w-full md:w-auto">
+          <div class="text-2xl sm:text-3xl font-black text-amber-400 font-fun group-hover:scale-110 transition-transform inline-block">$29.99</div>
+          <button onclick="toastCart('Grand Titanic Glass Skiff ($29.99)')" class="btn-hover w-full md:w-auto px-6 py-3 rounded-full bg-rose-500 hover:bg-rose-600 text-white text-xs font-black uppercase tracking-wider transition-all shadow-lg">
+            Order Family Skiff
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: ANATOMY OF A SUNDAE (Step Bounce Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+      <div class="bg-white dark:bg-[#161211] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-12 border border-pink-200 dark:border-stone-800 shadow-xl">
+        
+        <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+          <span class="text-xs font-black uppercase tracking-widest text-rose-500">Deconstructed Formula</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">The Anatomy of a Perfect Sundae</h2>
+          <p class="text-xs sm:text-sm text-stone-500">Every goblet follows an exact 4-layer textural balance designed to stay frosty and rich.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+          <div class="p-4 sm:p-5 rounded-2xl bg-pink-50/70 dark:bg-[#1C1614] border border-pink-100 dark:border-stone-800 hover:border-amber-400/80 space-y-2 text-center dessert-hover group cursor-default">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-stone-950 font-black text-xs sm:text-sm flex items-center justify-center mx-auto shadow-md group-hover:rotate-12 group-hover:scale-110 transition-transform">01</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-sm sm:text-base font-fun group-hover:text-rose-500 transition-colors">The Warm Foundation</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300">Oven-fresh fudgy brownie, salted butter waffle disc, or torched banana resting at 40°C.</p>
+          </div>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-pink-50/70 dark:bg-[#1C1614] border border-pink-100 dark:border-stone-800 hover:border-rose-400/80 space-y-2 text-center dessert-hover group cursor-default">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-rose-500 text-white font-black text-xs sm:text-sm flex items-center justify-center mx-auto shadow-md group-hover:rotate-12 group-hover:scale-110 transition-transform">02</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-sm sm:text-base font-fun group-hover:text-rose-500 transition-colors">Sub-Zero Core</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300">Two dense gelato scoops (-12°C) forming an impenetrable thermal barrier against melting.</p>
+          </div>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-pink-50/70 dark:bg-[#1C1614] border border-pink-100 dark:border-stone-800 hover:border-amber-400/80 space-y-2 text-center dessert-hover group cursor-default">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-600 text-white font-black text-xs sm:text-sm flex items-center justify-center mx-auto shadow-md group-hover:rotate-12 group-hover:scale-110 transition-transform">03</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-sm sm:text-base font-fun group-hover:text-rose-500 transition-colors">Thermal Shock Lava</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300">45°C warm chocolate or caramel drizzle creating crisp micro-crust shards on contact.</p>
+          </div>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-pink-50/70 dark:bg-[#1C1614] border border-pink-100 dark:border-stone-800 hover:border-emerald-400/80 space-y-2 text-center dessert-hover group cursor-default">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500 text-white font-black text-xs sm:text-sm flex items-center justify-center mx-auto shadow-md group-hover:rotate-12 group-hover:scale-110 transition-transform">04</div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-sm sm:text-base font-fun group-hover:text-rose-500 transition-colors">The Crown & Crunch</h4>
+            <p class="text-xs text-stone-600 dark:text-stone-300">Chantilly cream cloud, roasted nut praline shards, and a stem-on maraschino cherry.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: FREAKSHAKE SHOWDOWN (Interactive Battle Duel)
+         ==================================================================== -->
+    <section id="freakshake-duel" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-amber-500">The Heavyweights</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Freakshake Showdown</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 items-stretch">
+        
+        <!-- Fighter 1 -->
+        <div class="dessert-hover group bg-gradient-to-br from-[#1E1410] to-[#2B1B15] text-white p-5 sm:p-8 rounded-[2rem] border border-stone-800 hover:border-amber-400/80 shadow-xl flex flex-col justify-between h-full space-y-4 sm:space-y-5 cursor-pointer">
+          <div class="space-y-3.5 sm:space-y-4">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-black uppercase text-amber-400 group-hover:tracking-wider transition-all">Fighter #1 • The Dark Titan</span>
+              <span class="font-bold px-2.5 py-0.5 rounded-full bg-rose-500 text-white text-[10px]">92% Cacao</span>
+            </div>
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden img-zoom-box">
+              <img src="public/salted.avif" alt="Choc Freakshake" class="w-full h-full object-cover object-[50%_30%]">
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black font-fun group-hover:text-amber-400 transition-colors">The Death by Brownie Freakshake</h3>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Dark chocolate gelato blended with fudge cream in a Nutella-rimmed stein, crowned with a whole chocolate donut and marshmallows.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-stone-800 flex justify-between items-center">
+            <span class="text-xl sm:text-2xl font-black text-amber-400 font-fun group-hover:scale-105 transition-transform inline-block">$8.95</span>
+            <button onclick="toastCart('Death by Brownie Freakshake ($8.95)')" class="btn-hover px-4 sm:px-5 py-2.5 rounded-full bg-rose-500 hover:bg-rose-600 text-white text-xs font-black uppercase tracking-wider transition shadow-md">
+              Order Fighter #1
+            </button>
+          </div>
+        </div>
+
+        <!-- Fighter 2 -->
+        <div class="dessert-hover group bg-gradient-to-br from-[#201017] to-[#2E1422] text-white p-5 sm:p-8 rounded-[2rem] border border-pink-900/60 hover:border-pink-400/80 shadow-xl flex flex-col justify-between h-full space-y-4 sm:space-y-5 cursor-pointer">
+          <div class="space-y-3.5 sm:space-y-4">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-black uppercase text-pink-300 group-hover:tracking-wider transition-all">Fighter #2 • Pink Carnival</span>
+              <span class="font-bold px-2.5 py-0.5 rounded-full bg-pink-500 text-white text-[10px]">Berry Cloud</span>
+            </div>
+            <div class="aspect-[16/10] w-full rounded-2xl overflow-hidden img-zoom-box">
+              <img src="public/cotton.avif" alt="Cotton Candy Freakshake" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black font-fun group-hover:text-pink-300 transition-colors">Cotton Candy Sky Tower</h3>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Strawberry shortcake gelato shake enveloped in spun pink cotton candy, bubblegum pearls, rainbow wafer straws, and sour crystals.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-stone-800 flex justify-between items-center">
+            <span class="text-xl sm:text-2xl font-black text-pink-400 font-fun group-hover:scale-105 transition-transform inline-block">$8.75</span>
+            <button onclick="toastCart('Cotton Candy Sky Tower ($8.75)')" class="btn-hover px-4 sm:px-5 py-2.5 rounded-full bg-pink-500 hover:bg-pink-600 text-white text-xs font-black uppercase tracking-wider transition shadow-md">
+              Order Fighter #2
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: TRADITIONAL AFFOGATO BAR (Interactive Cups)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14">
+      <div class="bg-white dark:bg-[#161211] rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 lg:p-12 border border-pink-200 dark:border-stone-800 shadow-md">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          
+          <div class="lg:col-span-5 space-y-3.5 sm:space-y-4 text-center lg:text-left">
+            <span class="text-xs font-black uppercase tracking-widest text-amber-600">Italian Coffee Ritual</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white font-fun">The Traditional Affogato Bar</h2>
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
+              For those who prefer a bittersweet climax. A double shot of freshly pulled piping hot Arabica espresso poured directly tableside over cold gelato quenelles.
+            </p>
+            <div class="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center lg:justify-start">
+              <button onclick="toastCart('Classic Vanilla Affogato ($4.75)')" class="btn-hover w-full sm:w-auto px-5 py-2.5 rounded-full bg-stone-900 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md">
+                Classic Vanilla ($4.75)
+              </button>
+              <button onclick="toastCart('Hazelnut Praline Affogato ($5.25)')" class="btn-hover w-full sm:w-auto px-5 py-2.5 rounded-full bg-pink-100 dark:bg-stone-800 text-stone-800 dark:text-white hover:bg-rose-500 hover:text-white text-xs font-bold transition shadow-md">
+                Hazelnut Praline ($5.25)
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow img-zoom-box cursor-pointer">
+              <img src="public/tea.avif" alt="Espresso Affogato pour" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow img-zoom-box cursor-pointer">
+              <img src="public/brwonie.avif" alt="Hot chocolate dessert skillet" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: GUEST POLAROID WALL (Tilt & Pop Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Unfiltered Reactions</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Caught in the Sundae High</h2>
+        <p class="text-xs text-stone-500">Snaps taken straight from our weekend parlour sessions.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
+        
+        <div class="bg-white dark:bg-[#1E1715] p-4 sm:p-5 pb-5 sm:pb-6 rounded-2xl shadow-lg border border-stone-200 dark:border-stone-800 md:-rotate-1 hover:rotate-0 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+          <div class="aspect-[4/3] w-full rounded-xl overflow-hidden mb-3 img-zoom-box">
+            <img src="public/ice-5.jpeg" alt="Sundae snapshot" class="w-full h-full object-cover">
+          </div>
+          <p class="text-xs font-bold text-stone-800 dark:text-stone-200 font-fun italic text-center group-hover:text-rose-500 transition-colors">
+            "The hot fudge literally steamed on our table! Finished the Obsidian Volcano in 4 minutes."
+          </p>
+          <span class="text-[10px] text-stone-400 block text-center mt-2">— Priya & Arun S.</span>
+        </div>
+
+        <div class="bg-white dark:bg-[#1E1715] p-4 sm:p-5 pb-5 sm:pb-6 rounded-2xl shadow-lg border border-pink-200 dark:border-stone-800 md:rotate-1 hover:rotate-0 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+          <div class="aspect-[4/3] w-full rounded-xl overflow-hidden mb-3 img-zoom-box">
+            <img src="public/salted.avif" alt="Freakshake photo" class="w-full h-full object-cover">
+          </div>
+          <p class="text-xs font-bold text-stone-800 dark:text-stone-200 font-fun italic text-center group-hover:text-rose-500 transition-colors">
+            "The doughnut on top was freshly glazed and warm. Showstopper shake!"
+          </p>
+          <span class="text-[10px] text-stone-400 block text-center mt-2">— Vikrant M., Hosur</span>
+        </div>
+
+        <div class="bg-white dark:bg-[#1E1715] p-4 sm:p-5 pb-5 sm:pb-6 rounded-2xl shadow-lg border border-stone-200 dark:border-stone-800 md:-rotate-1 hover:rotate-0 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+          <div class="aspect-[4/3] w-full rounded-xl overflow-hidden mb-3 img-zoom-box">
+            <img src="public/wild.avif" alt="Parfait photo" class="w-full h-full object-cover">
+          </div>
+          <p class="text-xs font-bold text-stone-800 dark:text-stone-200 font-fun italic text-center group-hover:text-rose-500 transition-colors">
+            "Tart blackberry and the cheesecake gelato was perfection. Pure artisan joy."
+          </p>
+          <span class="text-[10px] text-stone-400 block text-center mt-2">— Sandra K.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: NIGHT OWL CTA BANNER (Button Pop Hover)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
+        <div class="space-y-2 sm:space-y-3 max-w-xl">
+          <span class="px-3.5 py-1 rounded-full bg-stone-900 text-amber-400 text-xs font-black uppercase tracking-wider inline-block">Late Night Sweet Cravings</span>
+          <h3 class="text-2xl sm:text-4xl font-black font-fun leading-tight">Ready for a Hot Fudge Flood?</h3>
+          <p class="text-white/90 text-xs sm:text-sm">
+            Visit our parlour counter in Hosur. Warm molten fudge bowls and freakshake steins served until 11:30 PM!
+          </p>
+        </div>
+        <a href="contacts.html" class="btn-hover whitespace-nowrap w-full sm:w-auto px-8 py-3.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-black text-xs uppercase tracking-wider shadow-xl hover:shadow-stone-900/40 transition-all text-center">
+          Get Parlour Directions
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Interactive Hero Sundae Switcher Helper -->
+  <script>
+    const sundaeData = {
+      volcano: {
+        title: "Molten Fudge",
+        desc: "Freshly baked 40°C Valrhona brownies resting under twin mountains of -12°C dark chocolate gelato, drowned in steaming bittersweet chocolate lava.",
+        cardTitle: "The Obsidian Volcano",
+        badge: "Freshly Poured",
+        price: "$7.85",
+        img: "public/belgian.avif"
+      },
+      berry: {
+        title: "Wild Berry",
+        desc: "Philadelphia cream cheese gelato layered with hand-reduced mountain blackberries, crushed spiced graham cracker crust, and sweet raspberry coulis.",
+        cardTitle: "Blueberry Glass Parfait",
+        badge: "Tart & Silky",
+        price: "$6.90",
+        img: "public/madagascar.avif"
+      },
+      pretzel: {
+        title: "Salted Caramel",
+        desc: "Butter caramel gelato, salted pretzel crunch, Dutch stroopwafel sail, and sea salt butter caramel drizzle cascading down frosted glass.",
+        cardTitle: "Salted Pretzel Tower",
+        badge: "Sweet & Salty",
+        price: "$7.25",
+        img: "public/ice-5.jpeg"
+      }
+    };
+
+    function switchHeroSundae(key, btn) {
+      const item = sundaeData[key];
+      if (!item) return;
+
+      document.querySelectorAll('.hero-tab').forEach(b => {
+        b.className = 'hero-tab chip-hover px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-black bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 transition-all';
+      });
+      btn.className = 'hero-tab chip-hover active px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-black bg-rose-500 text-white shadow-md shadow-rose-500/25 transition-all';
+
+      const img = document.getElementById('hero-image');
+      img.style.opacity = '0';
+
+      setTimeout(() => {
+        document.getElementById('hero-title').textContent = item.title;
+        document.getElementById('hero-desc').textContent = item.desc;
+        document.getElementById('hero-card-title').textContent = item.cardTitle;
+        document.getElementById('hero-badge-tag').textContent = item.badge;
+        document.getElementById('hero-order-btn').textContent = `Order Spotlight (${item.price})`;
+        document.getElementById('hero-order-btn').setAttribute('onclick', `toastCart('${item.cardTitle} (${item.price})')`);
+        img.src = item.img;
+        img.style.opacity = '1';
+      }, 150);
+    }
+  </script>
+
+  <!-- Shared Global JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>

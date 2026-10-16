@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparent Pricing & Tub Tiers | SugarSwirl & Co.</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏷️%3C/text%3E%3C/svg%3E">
+  
+  <meta name="description" content="Transparent pricing for artisan gelato scoops, insulated takeaway tubs, loaded sundaes, and bulk dessert catering packages.">
+
+  <!-- ZERO-FLASH THEME & DIRECTION SCRIPT (Runs in head before <body> paints) -->
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('sugarswirl_theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+        const dir = localStorage.getItem('sugarswirl_direction') || 'ltr';
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parlour: {
+              cream: '#FFF9F0',
+              pink: '#FF6B8B',
+              caramel: '#FFB703',
+              mint: '#06D6A0',
+              cocoa: '#2D1E18',
+              dark: '#14100E'
+            }
+          },
+          fontFamily: {
+            fun: ['Fredoka', 'cursive'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Fredoka & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* 1. Card Lift & Neon Dessert Glow */
+    .dessert-hover {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.35s ease, 
+                  border-color 0.35s ease;
+      will-change: transform;
+    }
+    .dessert-hover:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+    .light .dessert-hover:hover {
+      box-shadow: 0 20px 30px -10px rgba(255, 107, 139, 0.20), 0 10px 15px -5px rgba(255, 183, 3, 0.12);
+    }
+    .dark .dessert-hover:hover {
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.75), 0 0 20px 2px rgba(255, 107, 139, 0.15);
+    }
+
+    /* 2. Button Pop & Active Squash */
+    .btn-hover {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.2s ease, 
+                  filter 0.2s ease,
+                  background-color 0.2s ease;
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: brightness(1.06);
+    }
+    .btn-hover:active {
+      transform: translateY(1px) scale(0.96);
+    }
+
+    /* 3. Image Micro Zoom */
+    .img-zoom-box img {
+      transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .img-zoom-box:hover img {
+      transform: scale(1.08);
+    }
+
+    /* 4. Filter Chips & Quick Links */
+    .chip-hover {
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .chip-hover:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 16px -4px rgba(255, 107, 139, 0.3);
+    }
+    .chip-hover:active {
+      transform: scale(0.95);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .dark .glass-nav {
+      background: rgba(28, 23, 21, 0.94);
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#FFF9F0] dark:bg-[#120E0D] text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+  <!-- ====================================================================
+       PERMANENTLY FIXED NAVBAR PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="navbar-placeholder" class="fixed top-2 sm:top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none"></div>
+
+  <main class="pt-24 lg:pt-28 flex-1">
+
+    <!-- ====================================================================
+         SECTION 1: PRICING HERO & RESPONSIVE CHIPS (Interactive Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-14 text-center">
+      <div class="max-w-2xl mx-auto space-y-3 sm:space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 dark:bg-rose-950/70 text-rose-700 dark:text-rose-300 text-[11px] sm:text-xs font-black uppercase tracking-widest shadow-sm hover:scale-105 transition-transform cursor-pointer">
+          <i class="fas fa-tag text-amber-500 animate-pulse"></i>
+          <span>Honest, Transparent & Flat Rates</span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 dark:text-white leading-[1.1] font-fun">
+          Simple Pricing for <span class="text-rose-500 underline decoration-amber-400 decoration-wavy">Sweet Cravings.</span>
+        </h1>
+        
+        <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm sm:leading-relaxed max-w-xl mx-auto">
+          Whether you want a quick single scoop in a fresh warm waffle cone or thermal-packed insulated party tubs delivered cold to your celebration, we keep every price clear and upfront.
+        </p>
+
+        <!-- Category Quick Jump Chips with Hover Pop -->
+        <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-3 sm:pt-4">
+          <a href="#scoop-tiers" class="chip-hover px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 text-stone-700 dark:text-stone-300 transition shadow-sm">
+            🍦 Parlour Scoops
+          </a>
+          <a href="#takeaway-tubs" class="chip-hover px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 text-stone-700 dark:text-stone-300 transition shadow-sm">
+            📦 Takeaway Tubs
+          </a>
+          <a href="#matrix-table" class="chip-hover px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:border-rose-400 hover:text-rose-500 text-stone-700 dark:text-stone-300 transition shadow-sm">
+            📊 Value Comparison
+          </a>
+          <a href="#vip-pass" class="btn-hover px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold bg-rose-500 text-white shadow-md hover:bg-rose-600 transition">
+            ⭐ VIP Monthly Pass
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: CORE SCOOP & SUNDAE TIERS (Equal Height Hover Cards)
+         ==================================================================== -->
+    <section id="scoop-tiers" class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        
+        <!-- Tier 1: Single Scoop -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-8 rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-5 cursor-pointer">
+          <div class="space-y-3.5">
+            <span class="text-[10px] font-black uppercase text-amber-500 tracking-wider">The Everyday Treat</span>
+            <h3 class="text-xl sm:text-2xl font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Single Artisan Scoop</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl sm:text-4xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$3.50</span>
+              <span class="text-xs text-stone-400 font-semibold">/ cup or cone</span>
+            </div>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              One generous 120g scoop of any small-batch churn served in an eco-friendly cup or crisp wafer cone.
+            </p>
+            <ul class="space-y-2 text-xs text-stone-600 dark:text-stone-300 pt-3 border-t border-stone-100 dark:border-stone-800">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Choice of any 1 artisan flavour</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Standard sugar or wafer cone included</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Complimentary wooden taster spoons</li>
+              <li class="flex items-center gap-2 text-stone-400"><i class="fas fa-plus text-stone-300"></i> Waffle bowl upgrade (+$1.25)</li>
+            </ul>
+          </div>
+          <button onclick="toastCart('Single Artisan Scoop ($3.50)')" class="btn-hover w-full py-3.5 rounded-2xl bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-stone-900 dark:text-white text-xs font-black uppercase tracking-wider transition-all shadow-sm">
+            Order Single Scoop
+          </button>
+        </div>
+
+        <!-- Tier 2: Double Waffle Bowl (Featured) -->
+        <div class="dessert-hover group bg-gradient-to-br from-rose-500 to-pink-600 text-white p-5 sm:p-8 rounded-3xl shadow-2xl relative flex flex-col justify-between h-full space-y-5 transform md:-translate-y-2 cursor-pointer">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-stone-950 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-wider shadow group-hover:scale-105 transition-transform">
+            Customer Favourite
+          </div>
+          <div class="space-y-3.5">
+            <span class="text-[10px] font-black uppercase text-rose-200 tracking-wider">Most Popular</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white font-fun group-hover:text-amber-200 transition-colors">Double Waffle Bowl</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl sm:text-4xl font-black text-amber-300 font-fun group-hover:scale-105 transition-transform inline-block">$5.50</span>
+              <span class="text-xs text-rose-100 font-semibold">/ loaded bowl</span>
+            </div>
+            <p class="text-xs text-rose-100 leading-relaxed">
+              Two massive scoops packed into a warm, fresh brown-sugar waffle bowl with 1 warm drizzle included.
+            </p>
+            <ul class="space-y-2 text-xs text-rose-100 pt-3 border-t border-rose-400/40">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-300"></i> 2 distinct flavour combinations</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-300"></i> Fresh caramelized waffle bowl</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-300"></i> 1 warm fudge or caramel drizzle</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-300"></i> Rainbow confetti or pecan crunch</li>
+            </ul>
+          </div>
+          <button onclick="toastCart('Double Waffle Bowl ($5.50)')" class="btn-hover w-full py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-stone-950 text-xs font-black uppercase tracking-wider transition-all shadow-md">
+            Order Waffle Bowl
+          </button>
+        </div>
+
+        <!-- Tier 3: Molten Deluxe Sundae -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 sm:p-8 rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-5 cursor-pointer">
+          <div class="space-y-3.5">
+            <span class="text-[10px] font-black uppercase text-amber-500 tracking-wider">The Ultimate Stack</span>
+            <h3 class="text-xl sm:text-2xl font-black text-stone-900 dark:text-white font-fun group-hover:text-rose-500 transition-colors">Deluxe Molten Sundae</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl sm:text-4xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$7.50</span>
+              <span class="text-xs text-stone-400 font-semibold">/ glass goblet</span>
+            </div>
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+              Three scoops layered with warm brownie bites, hot molten fudge, chantilly whipped cream, and maraschino cherry.
+            </p>
+            <ul class="space-y-2 text-xs text-stone-600 dark:text-stone-300 pt-3 border-t border-stone-100 dark:border-stone-800">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> 3 scoops of your choice</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Double fudge lava & caramel</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Warm Belgian brownie chunks</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-rose-500"></i> Unlimited extra sprinkles & nuts</li>
+            </ul>
+          </div>
+          <button onclick="toastCart('Deluxe Molten Sundae ($7.50)')" class="btn-hover w-full py-3.5 rounded-2xl bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-stone-900 dark:text-white text-xs font-black uppercase tracking-wider transition-all shadow-sm">
+            Order Deluxe Sundae
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: INSULATED TAKEAWAY TUBS (Interactive Micro-Zoom Cards)
+         ==================================================================== -->
+    <section id="takeaway-tubs" class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Chill Guarantee</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-stone-900 dark:text-white font-fun">Insulated Takeaway Tubs</h2>
+        <p class="text-xs sm:text-sm text-stone-500">
+          Packed in double-walled insulated containers with eco-friendly chill packs. Guaranteed to stay solid for up to 3 hours travel time.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+        
+        <!-- Pint -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-4 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="aspect-[16/10] w-full rounded-xl sm:rounded-2xl overflow-hidden img-zoom-box">
+              <img src="public/brucelee.avif" alt="Pint ice cream tub" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-baseline pt-1">
+              <span class="text-[10px] font-black uppercase text-amber-500">Pint (475 ml)</span>
+              <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$8.00</span>
+            </div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-rose-500 transition-colors">Personal Pint Tub</h4>
+            <p class="text-xs text-stone-500 leading-relaxed">Serves 1-2 people. Up to 2 flavour layers sealed in an airtight insulated container.</p>
+          </div>
+          <button onclick="toastCart('Personal Pint Tub ($8.00)')" class="btn-hover w-full py-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-xs font-bold transition">
+            Order Pint
+          </button>
+        </div>
+
+        <!-- Quart -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-4 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="aspect-[16/10] w-full rounded-xl sm:rounded-2xl overflow-hidden img-zoom-box">
+              <img src="public/madagascar.avif" alt="Quart ice cream tub" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-baseline pt-1">
+              <span class="text-[10px] font-black uppercase text-amber-500">Quart (950 ml)</span>
+              <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$14.00</span>
+            </div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-rose-500 transition-colors">Family Quart Tub</h4>
+            <p class="text-xs text-stone-500 leading-relaxed">Serves 3-4 people. Pick up to 3 flavours and includes 4 free wafer cones.</p>
+          </div>
+          <button onclick="toastCart('Family Quart Tub ($14.00)')" class="btn-hover w-full py-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-xs font-bold transition">
+            Order Quart
+          </button>
+        </div>
+
+        <!-- 2L -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-4 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="aspect-[16/10] w-full rounded-xl sm:rounded-2xl overflow-hidden img-zoom-box">
+              <img src="public/ice.jpeg" alt="Gathering ice cream tub" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-baseline pt-1">
+              <span class="text-[10px] font-black uppercase text-amber-500">Half-Gallon (2L)</span>
+              <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$22.00</span>
+            </div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-rose-500 transition-colors">Gathering Tub (2L)</h4>
+            <p class="text-xs text-stone-500 leading-relaxed">Serves 6-8 people. Up to 4 flavours with warm fudge bottle & waffle wedges.</p>
+          </div>
+          <button onclick="toastCart('Gathering Tub 2L ($22.00)')" class="btn-hover w-full py-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-rose-500 hover:text-white text-xs font-bold transition">
+            Order 2L Tub
+          </button>
+        </div>
+
+        <!-- 5L Bulk -->
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-5 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 shadow-sm flex flex-col justify-between h-full space-y-4 cursor-pointer">
+          <div class="space-y-2.5">
+            <div class="aspect-[16/10] w-full rounded-xl sm:rounded-2xl overflow-hidden img-zoom-box">
+              <img src="public/wild-2.avif" alt="Bulk party tub" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-baseline pt-1">
+              <span class="text-[10px] font-black uppercase text-rose-500">Bulk Party (5L)</span>
+              <span class="text-xl font-black text-rose-500 font-fun group-hover:scale-105 transition-transform inline-block">$30.00</span>
+            </div>
+            <h4 class="font-bold text-stone-900 dark:text-white text-base font-fun group-hover:text-rose-500 transition-colors">Party Tub (5 Litres)</h4>
+            <p class="text-xs text-stone-500 leading-relaxed">Serves ~35 scoops. Includes 20 cups, wooden spoons, and a commercial scoop hire.</p>
+          </div>
+          <button onclick="toastCart('Party Tub 5L ($30.00)')" class="btn-hover w-full py-2.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold transition">
+            Order 5L Bulk
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: COMPARISON MATRIX TABLE (Hover Highlight Rows)
+         ==================================================================== -->
+    <section id="matrix-table" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <div class="bg-white dark:bg-[#1C1614] rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-pink-200 dark:border-stone-800 shadow-md space-y-4 sm:space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-100 dark:border-stone-800 pb-3">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-rose-500">Compare Value</span>
+            <h2 class="text-xl sm:text-3xl font-black text-stone-900 dark:text-white font-fun">Pricing & Inclusions Matrix</h2>
+          </div>
+          <span class="text-[11px] text-stone-400 sm:hidden flex items-center gap-1">
+            <i class="fas fa-arrows-left-right text-rose-500"></i> Swipe sideways to compare
+          </span>
+        </div>
+
+        <div class="overflow-x-auto -mx-2 sm:mx-0 px-2 sm:px-0">
+          <table class="w-full min-w-[620px] text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-stone-200 dark:border-stone-800 text-stone-400 uppercase tracking-wider text-[11px]">
+                <th class="py-3 sm:py-4">Features & Inclusions</th>
+                <th class="py-3 sm:py-4 font-bold text-stone-900 dark:text-white">Single ($3.50)</th>
+                <th class="py-3 sm:py-4 font-bold text-rose-500">Waffle Bowl ($5.50)</th>
+                <th class="py-3 sm:py-4 font-bold text-amber-500">Deluxe Sundae ($7.50)</th>
+                <th class="py-3 sm:py-4 font-bold text-emerald-500">5L Party Tub ($30.00)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-100 dark:divide-stone-800/60 text-stone-700 dark:text-stone-300">
+              <tr class="hover:bg-pink-50/60 dark:hover:bg-stone-800/60 transition-colors">
+                <td class="py-3 font-semibold text-stone-900 dark:text-white">Flavour Selections</td>
+                <td class="py-3">1 Flavour</td>
+                <td class="py-3 font-bold text-rose-500">2 Flavours</td>
+                <td class="py-3 font-bold text-amber-500">3 Flavours</td>
+                <td class="py-3 font-bold text-emerald-500">Up to 4 Flavours</td>
+              </tr>
+              <tr class="hover:bg-pink-50/60 dark:hover:bg-stone-800/60 transition-colors">
+                <td class="py-3 font-semibold text-stone-900 dark:text-white">Fresh Waffle Bowl/Cone</td>
+                <td class="py-3 text-stone-400">Wafer Only</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> Included</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> Waffle Wedges</td>
+                <td class="py-3 text-stone-400">Cones Optional</td>
+              </tr>
+              <tr class="hover:bg-pink-50/60 dark:hover:bg-stone-800/60 transition-colors">
+                <td class="py-3 font-semibold text-stone-900 dark:text-white">Warm Drizzle (Fudge / Caramel)</td>
+                <td class="py-3 text-stone-400">+$1.00</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> 1 Drizzle</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> Double Drizzle</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> 250ml Squeeze Bottle</td>
+              </tr>
+              <tr class="hover:bg-pink-50/60 dark:hover:bg-stone-800/60 transition-colors">
+                <td class="py-3 font-semibold text-stone-900 dark:text-white">Gourmet Crunch Toppings</td>
+                <td class="py-3 text-stone-400">+$0.75</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> 1 Topping</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> Unlimited</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> 2 Shaker Jars</td>
+              </tr>
+              <tr class="hover:bg-pink-50/60 dark:hover:bg-stone-800/60 transition-colors">
+                <td class="py-3 font-semibold text-stone-900 dark:text-white">Insulated Chill Box (3-Hr Cold)</td>
+                <td class="py-3 text-stone-400">—</td>
+                <td class="py-3 text-stone-400">—</td>
+                <td class="py-3 text-stone-400">—</td>
+                <td class="py-3 text-emerald-500 font-bold"><i class="fas fa-check"></i> Cold-Box Included</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: À LA CARTE ADD-ONS MENU (Interactive Bento Hovers)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Extra Sweetness</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white font-fun">À La Carte Add-Ons & Sauces</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-rose-400 dark:hover:border-rose-500/60 space-y-1.5 sm:space-y-2 cursor-pointer">
+          <div class="flex justify-between items-center">
+            <h4 class="font-bold text-stone-900 dark:text-white text-sm font-fun group-hover:text-rose-500 transition-colors">Warm Fudge Shot</h4>
+            <span class="font-black text-rose-500 text-sm group-hover:scale-110 transition-transform">$1.00</span>
+          </div>
+          <p class="text-xs text-stone-500">Melted Belgian 70% dark chocolate lava poured hot over scoops.</p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-400 space-y-1.5 sm:space-y-2 cursor-pointer">
+          <div class="flex justify-between items-center">
+            <h4 class="font-bold text-stone-900 dark:text-white text-sm font-fun group-hover:text-amber-500 transition-colors">Fresh Stroopwafel</h4>
+            <span class="font-black text-rose-500 text-sm group-hover:scale-110 transition-transform">$1.50</span>
+          </div>
+          <p class="text-xs text-stone-500">Warm Dutch cinnamon-caramel waffle wedge baked in our iron.</p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-400 space-y-1.5 sm:space-y-2 cursor-pointer">
+          <div class="flex justify-between items-center">
+            <h4 class="font-bold text-stone-900 dark:text-white text-sm font-fun group-hover:text-emerald-500 transition-colors">Toasted Macadamia</h4>
+            <span class="font-black text-rose-500 text-sm group-hover:scale-110 transition-transform">$1.20</span>
+          </div>
+          <p class="text-xs text-stone-500">Honey-glazed toasted macadamias sprinkled fresh on top.</p>
+        </div>
+
+        <div class="dessert-hover group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-pink-100 dark:border-stone-800 hover:border-purple-400 dark:hover:border-purple-400 space-y-1.5 sm:space-y-2 cursor-pointer">
+          <div class="flex justify-between items-center">
+            <h4 class="font-bold text-stone-900 dark:text-white text-sm font-fun group-hover:text-purple-500 transition-colors">Chantilly Cloud</h4>
+            <span class="font-black text-rose-500 text-sm group-hover:scale-110 transition-transform">$0.80</span>
+          </div>
+          <p class="text-xs text-stone-500">Fluffy vanilla bean whipped cream piped fresh onto your bowl.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: VIP DESSERT PASS SUBSCRIPTION (Button Pop Hover)
+         ==================================================================== -->
+    <section id="vip-pass" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-14 text-center">
+      <div class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 max-w-4xl mx-auto space-y-3.5 sm:space-y-4 shadow-2xl text-white">
+        <span class="px-3.5 py-1 rounded-full bg-stone-900 text-amber-400 text-xs font-black uppercase tracking-wider inline-block">VIP Sweet Pass</span>
+        <h3 class="text-2xl sm:text-4xl font-black font-fun leading-tight">Join the SugarSwirl Monthly Club</h3>
+        <p class="text-xs sm:text-sm text-white/90 max-w-md mx-auto leading-relaxed">
+          For just $19.99/month, receive 4 free double scoops, unlimited waffle bowl upgrades, and priority reservations for seasonal secret flavours!
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row justify-center gap-2.5 sm:gap-3">
+          <button onclick="toastCart('VIP Sweet Pass Membership Activated ($19.99)!')" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-black text-xs uppercase tracking-wider shadow-xl transition-all text-center">
+            Get Sweet Pass ($19.99)
+          </button>
+          <a href="party-orders.html" class="btn-hover w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/20 hover:bg-white/30 border border-white/40 text-white font-black text-xs uppercase tracking-wider transition-all text-center">
+            Catering & Bulk Inquiry
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: PRICING FAQ ACCORDION (Interactive Hovers & Smooth Rotation)
+         ==================================================================== -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <div class="text-center mb-8 sm:mb-10 space-y-1.5 sm:space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-rose-500">Got Questions?</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white font-fun">Pricing & Billing FAQs</h2>
+      </div>
+
+      <div class="space-y-3">
+        <details class="group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-rose-300 dark:hover:border-stone-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+          <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+            <span>Are taxes included in the menu price?</span>
+            <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300"></i>
+          </summary>
+          <p class="text-xs text-stone-600 dark:text-stone-300 mt-3 leading-relaxed border-t border-stone-100 dark:border-stone-800 pt-3">
+            Yes, all listed prices are inclusive of all applicable local dining taxes. What you see on the board is what you pay at the counter.
+          </p>
+        </details>
+
+        <details class="group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-rose-300 dark:hover:border-stone-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+          <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+            <span>Is there an extra charge for dairy-free or vegan scoops?</span>
+            <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300"></i>
+          </summary>
+          <p class="text-xs text-stone-600 dark:text-stone-300 mt-3 leading-relaxed border-t border-stone-100 dark:border-stone-800 pt-3">
+            No! We believe dessert happiness should be equal. All plant-based and cold-pressed fruit sorbettos are priced exactly the same as dairy scoops ($3.50 - $4.00).
+          </p>
+        </details>
+
+        <details class="group bg-white dark:bg-[#1A1412] p-4 sm:p-5 rounded-2xl border border-pink-100 dark:border-stone-800 hover:border-rose-300 dark:hover:border-stone-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+          <summary class="flex justify-between items-center cursor-pointer font-bold text-xs sm:text-sm text-stone-900 dark:text-white list-none group-hover:text-rose-500 transition-colors">
+            <span>Do party tubs require a security deposit for the cooler box?</span>
+            <i class="fas fa-chevron-down text-xs text-rose-500 group-open:rotate-180 transition-transform duration-300"></i>
+          </summary>
+          <p class="text-xs text-stone-600 dark:text-stone-300 mt-3 leading-relaxed border-t border-stone-100 dark:border-stone-800 pt-3">
+            Our 5L insulated chill boxes are complimentary and 100% recyclable. No security deposit is collected unless you request a stainless steel commercial ice cream cart.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: CTA BANNER (Button Glow Hover)
+         ==================================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="bg-gradient-to-r from-stone-900 via-[#231713] to-stone-900 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-14 text-white text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl border border-stone-800">
+        <div class="space-y-2 sm:space-y-3 max-w-xl">
+          <span class="px-3.5 py-1 rounded-full bg-amber-400 text-stone-950 text-xs font-black uppercase tracking-wider inline-block">Sweet Celebrations</span>
+          <h3 class="text-2xl sm:text-4xl font-black font-fun leading-tight">Ready to order your tubs or scoops?</h3>
+          <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+            Visit our parlour counter in Hosur or reserve party catering tubs in advance. Open daily till 11:30 PM!
+          </p>
+        </div>
+        <a href="contacts.html" class="btn-hover whitespace-nowrap w-full sm:w-auto px-8 py-3.5 rounded-full bg-rose-500 hover:bg-rose-600 text-white font-black text-xs uppercase tracking-wider shadow-xl hover:shadow-rose-500/25 transition-all text-center">
+          Get Parlour Directions
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SHARED FOOTER PLACEHOLDER (Injected by app.js)
+       ==================================================================== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Shared Global JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
