@@ -36,11 +36,7 @@
 
     toast.className = `pointer-events-auto flex items-center gap-3 px-5 py-3.5 rounded-2xl shadow-xl text-xs font-black transition-all duration-300 transform translate-y-4 opacity-0 font-fun ${colorClass}`;
     toast.innerHTML = `
-<<<<<<< HEAD
       <i class="fas fa-check-circle text-sm"></i>
-=======
-      <span class="text-base">🍦</span>
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
       <span>${message}</span>
     `;
 
@@ -103,7 +99,6 @@
 
     mount.innerHTML = `
       <header class="max-w-7xl mx-auto">
-<<<<<<< HEAD
         <nav class="glass-nav rounded-full px-3.5 sm:px-4 lg:px-5 py-2 sm:py-2.5 shadow-xl border border-pink-200/80 dark:border-stone-800 flex items-center justify-between gap-2 lg:gap-2.5 xl:gap-4 pointer-events-auto transition-all">
           
           <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
@@ -112,34 +107,16 @@
             </div>
             <div class="flex flex-col">
               <span class="font-black text-lg sm:text-xl xl:text-2xl tracking-tight text-stone-900 dark:text-white group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors duration-300 font-fun cursor-pointer whitespace-nowrap">
-=======
-        <nav class="glass-nav rounded-full px-4 sm:px-5 py-2.5 shadow-xl border border-pink-200/80 dark:border-stone-800 flex items-center justify-between gap-3 sm:gap-4 pointer-events-auto transition-all">
-          
-          <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-rose-500 to-amber-400 flex items-center justify-center text-white shadow-md group-hover:rotate-12 transition-transform duration-300">
-              <i class="fas fa-ice-cream text-base sm:text-lg"></i>
-            </div>
-            <div class="flex flex-col">
-              <span class="font-black text-xl sm:text-2xl tracking-tight text-stone-900 dark:text-white group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors duration-300 font-fun cursor-pointer">
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
                 SugarSwirl<span class="text-rose-500 group-hover:text-amber-400 transition-colors duration-300">.</span>
               </span>
             </div>
           </a>
 
-<<<<<<< HEAD
           <div class="desktop-nav-links hidden items-center justify-center gap-2 xl:gap-5 2xl:gap-7 text-[11px] xl:text-xs font-bold text-stone-700 dark:text-stone-300 mx-auto whitespace-nowrap shrink-0">
             <div class="relative group">
               <button type="button" class="flex items-center gap-1 py-1 ${isLinkActive('index.html')} ${isLinkActive('home-2.html')} focus:outline-none">
                 <span>Home</span>
                 <i class="fas fa-chevron-down text-[9px] group-hover:rotate-180 transition-transform duration-200"></i>
-=======
-          <div class="hidden lg:flex items-center justify-center gap-5 xl:gap-7 text-xs font-bold text-stone-700 dark:text-stone-300 mx-auto">
-            <div class="relative group">
-              <button type="button" class="flex items-center gap-1.5 py-1 ${isLinkActive('index.html')} ${isLinkActive('home-2.html')} focus:outline-none">
-                <span>Home</span>
-                <i class="fas fa-chevron-down text-[10px] group-hover:rotate-180 transition-transform duration-200"></i>
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
               </button>
               <div class="absolute ltr:left-0 rtl:right-0 mt-2 w-48 bg-white dark:bg-[#1E1715] rounded-2xl shadow-2xl border border-pink-100 dark:border-stone-800 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
                 <a href="index.html" class="block px-4 py-2 hover:bg-pink-50 dark:hover:bg-stone-800/70 text-xs font-semibold ${isLinkActive('index.html')}">
@@ -151,7 +128,6 @@
               </div>
             </div>
 
-<<<<<<< HEAD
             <a href="about.html" class="py-1 ${isLinkActive('about.html')}">About Us</a>
             <a href="menu.html" class="py-1 ${isLinkActive('menu.html')}">Menu</a>
             <a href="sundaes.html" class="py-1 ${isLinkActive('sundaes.html')}">Sundaes</a>
@@ -178,33 +154,6 @@
             </a>
 
             <button type="button" id="mobile-toggle" aria-expanded="false" aria-label="Open Navigation Menu" class="btn-hover w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-800 dark:text-stone-200 hover:bg-rose-100 dark:hover:bg-stone-700 transition focus:outline-none shrink-0">
-=======
-            <a href="menu.html" class="${isLinkActive('menu.html')}">Menu</a>
-            <a href="sundaes.html" class="${isLinkActive('sundaes.html')}">Sundaes</a>
-            <a href="pricing.html" class="${isLinkActive('pricing.html')}">Pricing & Tubs</a>
-            <a href="offers.html" class="${isLinkActive('offers.html')}">Offers</a>
-            <a href="party-orders.html" class="${isLinkActive('party-orders.html')}">Party Orders</a>
-            <a href="about.html" class="${isLinkActive('about.html')}">About Us</a>
-            <a href="faq.html" class="${isLinkActive('faq.html')}">FAQ</a>
-            <a href="contacts.html" class="${isLinkActive('contacts.html')}">Contacts</a>
-          </div>
-
-          <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-            <button type="button" onclick="toggleDirection(event)" class="btn-hover w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 flex items-center justify-center text-[11px] sm:text-xs font-black hover:bg-rose-100 dark:hover:bg-stone-700 transition" aria-label="Toggle Direction">
-              <span id="dir-toggle-text">LTR</span>
-            </button>
-
-            <button type="button" onclick="toggleTheme(event)" class="btn-hover w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 flex items-center justify-center text-xs hover:bg-amber-100 dark:hover:bg-stone-700 transition" aria-label="Toggle Dark Mode">
-              <i class="fas fa-moon" id="theme-icon"></i>
-            </button>
-
-            <a href="menu.html" class="btn-hover hidden sm:inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs font-black bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white shadow-md hover:shadow-rose-500/25 transition-all">
-              <i class="fas fa-bag-shopping text-[11px]"></i>
-              <span>Order Scoop</span>
-            </a>
-
-            <button type="button" id="mobile-toggle" aria-expanded="false" aria-label="Open Navigation Menu" class="btn-hover lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-800 dark:text-stone-200 hover:bg-rose-100 dark:hover:bg-stone-700 transition focus:outline-none">
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
               <i class="fas fa-bars text-xs sm:text-sm" id="mobile-icon"></i>
             </button>
           </div>
@@ -222,7 +171,6 @@
           
           <hr class="border-pink-100 dark:border-stone-800 my-1">
           <div class="text-[10px] uppercase tracking-wider text-amber-600 font-black px-3 pt-1">Parlour Treats & Pages</div>
-<<<<<<< HEAD
           <a href="about.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('about.html')}">About Us</a>
           <a href="menu.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('menu.html')}">Menu</a>
           <a href="sundaes.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('sundaes.html')}">Sundaes</a>
@@ -231,16 +179,6 @@
           <a href="party-orders.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('party-orders.html')}">Party Orders</a>
           <a href="faq.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('faq.html')}">FAQs</a>
           <a href="contacts.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('contacts.html')}">Contacts</a>
-=======
-          <a href="menu.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('menu.html')}">🍦 Menu </a>
-          <a href="sundaes.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('sundaes.html')}">🍨 Sundaes</a>
-          <a href="pricing.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('pricing.html')}">🏷️Pricing & Tubs</a>
-          <a href="offers.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('offers.html')}">🎁 Offers</a>
-          <a href="party-orders.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('party-orders.html')}">🎉 Party Orders</a>
-          <a href="about.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('about.html')}">📖 About us</a>
-          <a href="faq.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('faq.html')}">❓ FAQs</a>
-          <a href="contacts.html" class="drawer-link block py-2 px-3 rounded-xl hover:bg-pink-50 dark:hover:bg-stone-800 ${isLinkActive('contacts.html')}">📍 Contacts</a>
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
           
           <div class="pt-3">
             <a href="menu.html" class="drawer-link block w-full py-3 text-center rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 text-white font-black text-xs uppercase tracking-wider shadow-lg hover:scale-[1.02] active:scale-95 transition-all">
@@ -292,15 +230,12 @@
           closeDrawer();
         }
       });
-<<<<<<< HEAD
 
       window.addEventListener('resize', function () {
         if (window.innerWidth > 1133) {
           closeDrawer();
         }
       });
-=======
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
     }
 
     syncThemeIcons();
@@ -417,7 +352,6 @@
     }
   }
 
-<<<<<<< HEAD
   function updateTrendingChips(keyword) {
     document.querySelectorAll('.trending-chip').forEach(chip => {
       const chipKey = (chip.getAttribute('data-keyword') || chip.textContent).trim().toLowerCase();
@@ -429,8 +363,6 @@
     });
   }
 
-=======
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
   function initMenuPage() {
     const searchInput = document.getElementById('flavour-search');
     const clearBtn = document.getElementById('search-clear-btn');
@@ -441,10 +373,7 @@
       searchInput.oninput = function () {
         menuCurrentQuery = this.value.trim().toLowerCase();
         if (clearBtn) clearBtn.classList.toggle('hidden', menuCurrentQuery === '');
-<<<<<<< HEAD
         updateTrendingChips(menuCurrentQuery);
-=======
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
         applyMenuFilter();
       };
     }
@@ -455,10 +384,7 @@
         searchInput.value = '';
         menuCurrentQuery = '';
         clearBtn.classList.add('hidden');
-<<<<<<< HEAD
         updateTrendingChips('');
-=======
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
         applyMenuFilter();
         searchInput.focus();
       };
@@ -474,10 +400,7 @@
       searchInput.value = keyword;
       menuCurrentQuery = keyword.trim().toLowerCase();
       if (clearBtn) clearBtn.classList.remove('hidden');
-<<<<<<< HEAD
       updateTrendingChips(keyword);
-=======
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
       applyMenuFilter();
       showToast(`Filtered flavour: "${keyword}"`, 'amber');
     }
@@ -525,10 +448,7 @@
       searchInput.oninput = function () {
         faqCurrentQuery = this.value.trim().toLowerCase();
         if (clearBtn) clearBtn.classList.toggle('hidden', faqCurrentQuery === '');
-<<<<<<< HEAD
         updateTrendingChips(faqCurrentQuery);
-=======
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
         applyFaqFilter();
       };
     }
@@ -539,10 +459,7 @@
         searchInput.value = '';
         faqCurrentQuery = '';
         clearBtn.classList.add('hidden');
-<<<<<<< HEAD
         updateTrendingChips('');
-=======
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
         applyFaqFilter();
         searchInput.focus();
       };
@@ -558,10 +475,7 @@
       searchInput.value = keyword;
       faqCurrentQuery = keyword.trim().toLowerCase();
       if (clearBtn) clearBtn.classList.remove('hidden');
-<<<<<<< HEAD
       updateTrendingChips(keyword);
-=======
->>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
       applyFaqFilter();
       showToast(`Showing FAQs matching: "${keyword}"`, 'amber');
     }
