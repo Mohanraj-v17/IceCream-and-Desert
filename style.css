@@ -75,6 +75,7 @@ body {
   .chip-hover:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px -3px rgba(255, 107, 139, 0.25);
+<<<<<<< HEAD
   }
 
   /* Trending & Quick-Filter Chips - High Contrast & Clear Readability on Hover */
@@ -220,3 +221,6 @@ body {
     display: none !important;
   }
 }
+=======
+  }
+>>>>>>> 467520c03d0f252dee3527dfaa88ff06d5459f9d
