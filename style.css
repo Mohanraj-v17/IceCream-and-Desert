@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Fredoka:wght@500;600;700&display=swap');
+
+:root {
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-fun: 'Fredoka', cursive;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-fun {
+  font-family: var(--font-fun);
+}
+
+#navbar-placeholder {
+  position: fixed !important;
+  top: 0.75rem !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+  pointer-events: none !important;
+}
+
+#navbar-placeholder > * {
+  pointer-events: auto !important;
+}
+
+.dessert-card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.dessert-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+  .dessert-hover {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease;
+    will-change: transform;
+  }
+  .dessert-hover:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+  .light .dessert-hover:hover {
+    box-shadow: 0 20px 30px -10px rgba(255, 107, 139, 0.18), 0 10px 15px -5px rgba(255, 183, 3, 0.12);
+  }
+  .dark .dessert-hover:hover {
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px 2px rgba(255, 107, 139, 0.15);
+  }
+
+  .btn-hover {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.2s ease, 
+                filter 0.2s ease;
+  }
+  .btn-hover:hover {
+    transform: translateY(-2px) scale(1.03);
+    filter: brightness(1.06);
+  }
+  .btn-hover:active {
+    transform: translateY(1px) scale(0.97);
+  }
+
+  .img-zoom-box img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .img-zoom-box:hover img {
+    transform: scale(1.08);
+  }
+
+  .chip-hover {
+    transition: all 0.25s ease;
+  }
+  .chip-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px -3px rgba(255, 107, 139, 0.25);
+  }
+
+  /* Trending & Quick-Filter Chips - High Contrast & Clear Readability on Hover */
+  .trending-chip {
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .trending-chip:hover,
+  .trending-chip:focus-visible {
+    background-color: #FF6B8B !important;
+    color: #FFFFFF !important;
+    border-color: #FF6B8B !important;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 16px -2px rgba(255, 107, 139, 0.35);
+  }
+
+  .trending-chip.active {
+    background-color: #FF6B8B !important;
+    color: #FFFFFF !important;
+    border-color: #FF6B8B !important;
+    box-shadow: 0 4px 12px -2px rgba(255, 107, 139, 0.3);
+  }
+
+  .trending-chip:active {
+    transform: translateY(0) scale(0.96);
+  }
+
+  /* Parlour Hall of Fame (Sundaes Page) - High-Contrast Label Text on Hover in Dark & Light Modes */
+  .fame-chip-amber,
+  .fame-chip-pink,
+  .fame-chip-emerald {
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .group:hover .fame-chip-amber,
+  .fame-chip-amber:hover {
+    background-color: #FDE68A !important; /* amber-200 */
+    color: #1C140E !important; /* High-contrast dark cocoa */
+    font-weight: 800 !important;
+  }
+
+  .dark .group:hover .fame-chip-amber,
+  .dark .fame-chip-amber:hover {
+    background-color: #FDE68A !important; /* amber-200 */
+    color: #14100E !important; /* Maximum contrast against amber-200 in dark mode (14.8:1) */
+    font-weight: 800 !important;
+  }
+
+  .group:hover .fame-chip-pink,
+  .fame-chip-pink:hover {
+    background-color: #FBCFE8 !important; /* pink-200 */
+    color: #1C140E !important;
+    font-weight: 800 !important;
+  }
+
+  .dark .group:hover .fame-chip-pink,
+  .dark .fame-chip-pink:hover {
+    background-color: #FBCFE8 !important; /* pink-200 */
+    color: #14100E !important;
+    font-weight: 800 !important;
+  }
+
+  .group:hover .fame-chip-emerald,
+  .fame-chip-emerald:hover {
+    background-color: #A7F3D0 !important; /* emerald-200 */
+    color: #1C140E !important;
+    font-weight: 800 !important;
+  }
+
+  .dark .group:hover .fame-chip-emerald,
+  .dark .fame-chip-emerald:hover {
+    background-color: #A7F3D0 !important; /* emerald-200 */
+    color: #14100E !important;
+    font-weight: 800 !important;
+  }
+
+/* Uniform Hero Section Standards Across All Pages */
+.hero-section {
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    height: 520px;
+    min-height: 520px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.hero-card {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero-card {
+    height: 470px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Navbar Alignment & Anti-wrap Standards Across Breakpoints */
+.glass-nav,
+.pill-nav-glass {
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+
+/* Custom 1133px Responsive Breakpoint for Navbar:
+   - Width <= 1133px: Nav links go into the hamburger drawer, mobile toggle is visible.
+   - Width >= 1134px: Desktop links display horizontally with ample spacing, mobile toggle is hidden.
+*/
+@media (max-width: 1133px) {
+  #navbar-placeholder nav .desktop-nav-links,
+  .desktop-nav-links {
+    display: none !important;
+  }
+  #navbar-placeholder nav #mobile-toggle,
+  #mobile-toggle {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1134px) {
+  #navbar-placeholder nav .desktop-nav-links,
+  .desktop-nav-links {
+    display: flex !important;
+  }
+  #navbar-placeholder nav #mobile-toggle,
+  #mobile-toggle {
+    display: none !important;
+  }
+  #mobile-menu {
+    display: none !important;
+  }
+}
